@@ -21,6 +21,10 @@ const Container = styled.div`
 
 export const StyledArticleMedium: ComponentStory<typeof ArticleMedium> = args => (
 	<Container>
-		<ArticleMedium id={0} img="/sample.png" title="タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。" />
+		<ArticleMedium
+			id={0}
+			img="/sample.png"
+			title="タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。"
+		/>
 	</Container>
 );
