@@ -1,7 +1,14 @@
 import type { NextPage } from "next";
+import styled from "styled-components";
 import Head from "next/head";
 import Image from "next/image";
+import { Article } from "../components/molecules";
 import styles from "../styles/Home.module.css";
+
+const Container = styled.div`
+	margin: 0 auto;
+	width: 640px;
+`;
 
 const Home: NextPage = () => {
 	return (
@@ -20,7 +27,17 @@ const Home: NextPage = () => {
 				<p className={styles.description}>
 					Get started by editing <code className={styles.code}>pages/index.tsx</code>
 				</p>
-
+				<Container>
+					<Article
+						category="カテゴリ"
+						categoryLink="/category/sample"
+						date={new Date()}
+						id={1}
+						img="/sample.png"
+						text="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
+						title="記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。"
+					/>
+				</Container>
 				<div className={styles.grid}>
 					<a href="https://nextjs.org/docs" className={styles.card}>
 						<h2>Documentation &rarr;</h2>

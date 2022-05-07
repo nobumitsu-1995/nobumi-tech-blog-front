@@ -13,6 +13,7 @@ export type ButtonProps = {
 	iconPosition?: "right" | "left";
 	iconSpace?: string;
 	label: string;
+	margin?: string;
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	padding?: string;
 };
@@ -24,12 +25,13 @@ const StyledButton = styled.button<{
 	color: string;
 	fontSize: string;
 	fontWeight?: string;
+	margin?: string;
 	padding: string;
 }>`
 	background-color: ${({ backgroundColor }) => {
 		return backgroundColor;
 	}};
-	border: 1px solid
+	border: 2px solid
 		${({ borderColor }) => {
 			return borderColor;
 		}};
@@ -46,6 +48,9 @@ const StyledButton = styled.button<{
 	font-weight: ${({ fontWeight }) => {
 		return fontWeight;
 	}};
+	margin: ${({ margin }) => {
+		return margin;
+	}};
 	padding: ${({ padding }) => {
 		return padding;
 	}};
@@ -55,7 +60,7 @@ const StyledButton = styled.button<{
 
 	&:hover {
 		opacity: 0.7;
-		transition-duration: 0.1s;
+		transition-duration: 0.3s;
 	}
 
 	&:disabled {
@@ -85,8 +90,8 @@ const Icon = styled.div<{
 
 const Button: React.FC<ButtonProps> = ({
 	backgroundColor = "transparent",
-	borderColor = "#111",
-	color = "#111",
+	borderColor = "#9f9f9f",
+	color = "#9f9f9f",
 	fontSize = "16px",
 	padding = "10px 0",
 	disabled = false,
@@ -100,6 +105,7 @@ const Button: React.FC<ButtonProps> = ({
 			color={color}
 			fontSize={fontSize}
 			fontWeight={props.fontWeight}
+			margin={props.margin}
 			padding={padding}
 			type="button"
 			onClick={props.onClick}
