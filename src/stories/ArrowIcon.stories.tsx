@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { ArrowIcon } from "../../components/atoms";
+import { ArrowIcon } from "../components/atoms";
 
 export default {
 	title: "Atoms/Icon",
