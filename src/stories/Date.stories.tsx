@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Date as StyledDate } from "../../components/atoms";
+import { Date as StyledDate } from "../components/atoms";
 
 export default {
 	title: "Atoms/Text",

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export type TextProps = {
+type Props = {
 	color?: string;
 	fontFamily?: string;
 	fontSize?: string;
@@ -14,7 +14,7 @@ export type TextProps = {
 	textAlign?: "center" | "right" | "left";
 };
 
-const Text: React.FC<TextProps> = ({
+const Text: React.FC<Props> = ({
 	color = "#111",
 	fontFamily = "Noto Sans JP",
 	fontSize = "16px",
