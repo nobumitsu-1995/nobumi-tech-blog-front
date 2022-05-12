@@ -7,7 +7,7 @@ import { Flex } from "../../styles/styled-components";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-	title: "Molecules/Tag",
+	title: "Molecules/Title",
 	component: TtlTag,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {
