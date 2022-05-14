@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 import styled from "styled-components";
 import Head from "next/head";
 import { Articles, SideBar } from "../components/templates";
-import { articleDatas, userData } from "../../lib/datas";
-import { getArticlesAboutBackend, getArticlesAboutFrontend } from "../../lib/functions";
+import { articleDatas } from "../../lib/datas";
+import Layout from "../components/templates/Layout";
 
 const Flex = styled.div`
 	align-items: flex-start;
@@ -14,20 +14,10 @@ const Flex = styled.div`
 `;
 
 const Home: NextPage = () => {
-	const recommendArticles = articleDatas.slice(0, 3);
-	const recommendBackendArticles = getArticlesAboutBackend(articleDatas).slice(0, 4);
-	const recommendFrontendArticles = getArticlesAboutFrontend(articleDatas).slice(0, 4);
-
 	return (
-		<Flex>
+		<Layout>
 			<Articles articles={articleDatas.slice(0, 5)} />
-			<SideBar
-				userData={userData}
-				recommendArticles={recommendArticles}
-				recommendBackendArticles={recommendBackendArticles}
-				recommendFrontendArticles={recommendFrontendArticles}
-			/>
-		</Flex>
+		</Layout>
 	);
 };
 

@@ -34,7 +34,7 @@ const HeaderLink: React.FC<Props> = ({ ...props }) => {
   return (
     <Link href={props.link} passHref>
       <Flex>
-        <Image src={`/${props.img}`} alt={props.text} width="24" height="24" />
+        <Image src={`/images/${props.img}`} alt={props.text} width="24" height="24" />
         <Text color='#fff' fontSize='20px' fontWeight='bold' text={props.text}/>
       </Flex>
     </Link>
