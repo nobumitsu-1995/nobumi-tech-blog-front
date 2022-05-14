@@ -1,3 +1,21 @@
+export const headerDatas = [
+  {
+    text: "FRONTEND",
+    link: "/category/frontend",
+    img: "program.png",
+  },
+  {
+    text: "BACKEND",
+    link: "/category/backend",
+    img: "program.png",
+  },
+  {
+    text: "OTHER",
+    link: "/category/other",
+    img: "other.png",
+  },
+];
+
 export const userData = {
   img: "sample.png",
   name: "Nobumitsu",
