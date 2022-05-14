@@ -1,3 +1,21 @@
+export const headerDatas = [
+  {
+    text: "FRONTEND",
+    link: "/category/frontend",
+    img: "program.png",
+  },
+  {
+    text: "BACKEND",
+    link: "/category/backend",
+    img: "program.png",
+  },
+  {
+    text: "OTHER",
+    link: "/category/other",
+    img: "other.png",
+  },
+];
+
 export const userData = {
   img: "sample.png",
   name: "Nobumitsu",
@@ -86,3 +104,60 @@ export const articleDatas = [
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
 ];
+
+export const footerDatas = {
+  list1: {
+    datas: [
+      {
+        text: "HOME",
+        link: "/",
+      },
+      {
+        text: "SEARCH",
+        link: "/search",
+      },
+      {
+        text: "PROFILE",
+        link: "/profile",
+      },
+      {
+        text: "CONTACT",
+        link: "/contact",
+      },
+    ]
+  },
+  list2: {
+    title: "CATEGORIES",
+    datas: [
+      {
+        text: "FRONTEND",
+        link: "/category/frontend",
+      },
+      {
+        text: "BACKEND",
+        link: "/category/backend",
+      },
+      {
+        text: "OTHER",
+        link: "/category/other",
+      },
+    ]
+  },
+  list3: {
+    title: "LINKS",
+    datas: [
+      {
+        text: "TWITTER",
+        link: "/category/frontend",
+      },
+      {
+        text: "INSTAGRAM",
+        link: "/category/backend",
+      },
+      {
+        text: "GITHUB",
+        link: "/category/other",
+      },
+    ]
+  },
+}

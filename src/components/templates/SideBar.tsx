@@ -1,29 +1,31 @@
-import React from 'react'
-import styled from 'styled-components'
-import { RecommendArticle, RecommendArticleCategory, UserData } from '../../../lib/type'
-import { RecommendArticles, RecommendArticlesCategory, SearchCard, UserCard } from '../organisms'
+import React from "react";
+import styled from "styled-components";
+import { articleDatas, userData } from "../../../lib/datas";
+import { getArticlesAboutBackend, getArticlesAboutFrontend } from "../../../lib/functions";
+import { RecommendArticle, RecommendArticleCategory, UserData } from "../../../lib/type";
+import { GapColumnList } from "../../styles/styled-components";
+import { RecommendArticles, RecommendArticlesCategory, SearchCard, UserCard } from "../organisms";
 
-type Props = {
-  userData: UserData;
-  recommendArticles: RecommendArticle[];
-  recommendBackendArticles: RecommendArticleCategory[];
-  recommendFrontendArticles: RecommendArticleCategory[];
-}
-
-const Side = styled.div`
-  display: grid;
-  gap: 30px;
+const Side = styled(GapColumnList)`
+	width: 400px;
 `;
 
-const SideBar: React.FC<Props> = ({ ...props }) => {
-  return (
-    <Side>
-      <UserCard { ...props.userData } />
-      <SearchCard />
-      <RecommendArticles articles={props.recommendArticles} />
-      <RecommendArticlesCategory backendArticles={props.recommendBackendArticles} frontendArticles={props.recommendFrontendArticles} />
-    </Side>
-  )
-}
+const SideBar = () => {
+	const recommendArticles = articleDatas.slice(0, 3);
+	const recommendBackendArticles = getArticlesAboutBackend(articleDatas).slice(0, 4);
+	const recommendFrontendArticles = getArticlesAboutFrontend(articleDatas).slice(0, 4);
 
-export default SideBar
+	return (
+		<Side gap="30px">
+			<UserCard {...userData} />
+			<SearchCard />
+			<RecommendArticles articles={recommendArticles} />
+			<RecommendArticlesCategory
+				backendArticles={recommendBackendArticles}
+				frontendArticles={recommendFrontendArticles}
+			/>
+		</Side>
+	);
+};
+
+export default SideBar;

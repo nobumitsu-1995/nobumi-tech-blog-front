@@ -8,7 +8,7 @@ type Props = {
 	fontWeight?: string;
 	margin?: string;
 	padding?: string;
-	textAlign?: "center" | "right" | "left";
+	textalign?: "center" | "right" | "left";
 };
 
 const Time = styled.time<Omit<Props, "time">>`
@@ -27,13 +27,13 @@ const Time = styled.time<Omit<Props, "time">>`
 	padding: ${({ padding }) => {
 		return padding;
 	}};
-	text-align: ${({ textAlign }) => {
-		return textAlign;
+	text-align: ${({ textalign }) => {
+		return textalign;
 	}};
 	width: 100%;
 `;
 
-const Date: React.FC<Props> = ({ color = "#111", fontSize = "16px", textAlign = "left", ...props }) => {
+const Date: React.FC<Props> = ({ color = "#111", fontSize = "16px", textalign = "left", ...props }) => {
 	const year = props.time.getFullYear();
 	const month = props.time.getMonth() + 1;
 	const date = props.time.getDate();
@@ -45,7 +45,7 @@ const Date: React.FC<Props> = ({ color = "#111", fontSize = "16px", textAlign = 
 			fontWeight={props.fontWeight}
 			margin={props.margin}
 			padding={props.padding}
-			textAlign={textAlign}
+			textalign={textalign}
 			dateTime={`${year}-${month}-${date}`}
 		>{`${year}/${month}/${date}`}</Time>
 	);

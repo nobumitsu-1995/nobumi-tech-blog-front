@@ -12,3 +12,8 @@ export const GapColumnList = styled.ul<{ gap: string }>`
 		return gap;
 	}};
 `;
+
+export const Container = styled.div`
+	margin: 0 auto;
+	width: 1080px;
+`;
