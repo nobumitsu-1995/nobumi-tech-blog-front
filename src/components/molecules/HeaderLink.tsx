@@ -14,6 +14,7 @@ const Flex = styled.a`
   align-items: center;
   display: flex;
   gap: 5px;
+  height: 100%;
   justify-content: space-between;
   padding: 0 20px;
 
