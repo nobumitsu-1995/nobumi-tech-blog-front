@@ -9,6 +9,10 @@ type Props = {
   children: React.ReactNode;
 }
 
+const Main = styled.main`
+  background: #ECF0F1;
+`
+
 const StyledContainer = styled(Container)`
   align-items: flex-start;
 	display: flex;
@@ -20,12 +24,12 @@ const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <Header/>
-      <main>
+      <Main>
         <StyledContainer>
           {children}
           <SideBar />
         </StyledContainer>
-      </main>
+      </Main>
       <Footer/>
     </>
   )
