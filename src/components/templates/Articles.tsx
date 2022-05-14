@@ -1,5 +1,6 @@
 import React from "react";
 import { Article as ArticleType } from "../../../lib/type";
+import { GapColumnList } from "../../styles/styled-components";
 import { Article } from "../molecules";
 
 type Props = {
@@ -8,17 +9,15 @@ type Props = {
 
 const Articles: React.FC<Props> = ({ articles }) => {
 	return (
-		<ul>
+		<GapColumnList gap="30px">
 			{articles.map(article => {
 				return (
 					<li key={article.id}>
-						<article>
 							<Article {...article} />
-						</article>
 					</li>
 				);
 			})}
-		</ul>
+		</GapColumnList>
 	);
 };
 
