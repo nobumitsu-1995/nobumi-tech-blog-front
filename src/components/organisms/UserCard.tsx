@@ -12,10 +12,14 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Paper padding="40px">
 			<figure>
-				<Image src={props.img} alt={props.name} layout="responsive"
-						width="1100"
-						height="500"
-						objectFit="contain"/>
+				<Image
+					src={props.img}
+					alt={props.name}
+					layout="responsive"
+					width="1100"
+					height="500"
+					objectFit="contain"
+				/>
 			</figure>
 			<Text
 				color="#271E16"

@@ -37,7 +37,7 @@ const Accordion: React.FC<Props> = ({ children, isOpen = false, ...props }) => {
 	useEffect(() => {
 		const height = document.getElementById(`body${props.id}`)?.clientHeight as number;
 		setHeight(height);
-	}, [props.id])
+	}, [props.id]);
 
 	useEffect(() => {
 		isOpen && setOpen(true);

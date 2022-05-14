@@ -15,13 +15,18 @@ const Flex = styled.div`
 
 const Home: NextPage = () => {
 	const recommendArticles = articleDatas.slice(0, 3);
-	const recommendBackendArticles = getArticlesAboutBackend(articleDatas).slice(0,4);
-	const recommendFrontendArticles = getArticlesAboutFrontend(articleDatas).slice(0,4);
+	const recommendBackendArticles = getArticlesAboutBackend(articleDatas).slice(0, 4);
+	const recommendFrontendArticles = getArticlesAboutFrontend(articleDatas).slice(0, 4);
 
 	return (
 		<Flex>
 			<Articles articles={articleDatas.slice(0, 5)} />
-			<SideBar userData={userData} recommendArticles={recommendArticles} recommendBackendArticles={recommendBackendArticles} recommendFrontendArticles={recommendFrontendArticles} />
+			<SideBar
+				userData={userData}
+				recommendArticles={recommendArticles}
+				recommendBackendArticles={recommendBackendArticles}
+				recommendFrontendArticles={recommendFrontendArticles}
+			/>
 		</Flex>
 	);
 };

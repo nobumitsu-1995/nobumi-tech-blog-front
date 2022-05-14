@@ -15,28 +15,28 @@ export type TextProps = {
 };
 
 const P = styled(({ tag, ...props }) => React.createElement(tag, props))<TextProps>`
-	color: ${({color}) => {
+	color: ${({ color }) => {
 		return color;
 	}};
-	font-family: ${({fontFamily}) => {
+	font-family: ${({ fontFamily }) => {
 		return fontFamily;
 	}};
-	font-size: ${({fontSize}) => {
+	font-size: ${({ fontSize }) => {
 		return fontSize;
 	}};
-	font-weight: ${({fontWeight}) => {
+	font-weight: ${({ fontWeight }) => {
 		return fontWeight;
 	}};
-	line-height: ${({lineheight}) => {
+	line-height: ${({ lineheight }) => {
 		return lineheight;
 	}};
-	margin: ${({margin}) => {
+	margin: ${({ margin }) => {
 		return margin;
 	}};
-	padding: ${({padding}) => {
+	padding: ${({ padding }) => {
 		return padding;
 	}};
-	text-align: ${({textalign}) => {
+	text-align: ${({ textalign }) => {
 		return textalign;
 	}};
 `;
@@ -49,7 +49,11 @@ const Text: React.FC<TextProps> = ({
 	textalign = "left",
 	...props
 }) => {
-	return <P tag={tag} color={color} fontFamily={fontFamily} fontSize={fontSize} textalign={textalign} {...props}>{props.text}</P>;
+	return (
+		<P tag={tag} color={color} fontFamily={fontFamily} fontSize={fontSize} textalign={textalign} {...props}>
+			{props.text}
+		</P>
+	);
 };
 
 export default Text;

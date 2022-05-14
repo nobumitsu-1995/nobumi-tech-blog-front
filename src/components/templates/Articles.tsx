@@ -13,7 +13,7 @@ const Articles: React.FC<Props> = ({ articles }) => {
 			{articles.map(article => {
 				return (
 					<li key={article.id}>
-							<Article {...article} />
+						<Article {...article} />
 					</li>
 				);
 			})}
