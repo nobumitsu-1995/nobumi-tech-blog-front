@@ -5,7 +5,7 @@ import { Paper, Text } from "../atoms";
 import { ArticleMedium } from "../molecules";
 
 type Props = {
-	articles: RecommendArticle[]
+	articles: RecommendArticle[];
 };
 
 const RecommendArticles: React.FC<Props> = ({ ...props }) => {

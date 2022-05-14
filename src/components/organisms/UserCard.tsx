@@ -12,7 +12,14 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Paper padding="40px">
 			<figure>
-				<Image src={props.img} alt={props.name} />
+				<Image
+					src={props.img}
+					alt={props.name}
+					layout="responsive"
+					width="1100"
+					height="500"
+					objectFit="contain"
+				/>
 			</figure>
 			<Text
 				color="#271E16"
@@ -20,7 +27,7 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 				fontWeight="bold"
 				tag="h2"
 				text={props.name}
-				textAlign="center"
+				textalign="center"
 				margin="20px 0 35px"
 			/>
 			<Border color="#7C83CC" height="5px" width="230px" />
