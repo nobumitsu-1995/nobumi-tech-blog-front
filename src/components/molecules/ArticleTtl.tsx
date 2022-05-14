@@ -24,7 +24,7 @@ const ArticleTtl: React.FC<Props> = ({ ...props }) => {
 				fontWeight="bold"
 				tag="h2"
 				text={props.title}
-				textAlign="center"
+				textalign="center"
 				margin="25px 0"
 			/>
 			<StyledLink link={props.link} text={props.category} />

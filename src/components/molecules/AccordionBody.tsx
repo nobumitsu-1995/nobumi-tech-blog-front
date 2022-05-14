@@ -53,7 +53,7 @@ const AccordionBody: React.FC<Props> = ({ ...props }) => {
 					<Item key={article.id}>
 						<Link href={`/article/${article.id}`}>
 							<a>
-								<Text color="#555" fontSize="14px" tag="h2" lineHeight="24px" text={article.title} />
+								<Text color="#555" fontSize="14px" tag="h2" lineheight="24px" text={article.title} />
 							</a>
 						</Link>
 					</Item>

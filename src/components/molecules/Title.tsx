@@ -48,7 +48,7 @@ const Title: React.FC<Props> = ({ ...props }) => {
 	return (
 		<StyledTtl>
 			<Container subText={props.subText}>
-				<Text color="#271E16" fontSize="36px" fontWeight="bold" text={props.text} textAlign="right" />
+				<Text color="#271E16" fontSize="36px" fontWeight="bold" text={props.text} textalign="right" />
 			</Container>
 			{props.tags && <TtlTag tags={props.tags} />}
 		</StyledTtl>
