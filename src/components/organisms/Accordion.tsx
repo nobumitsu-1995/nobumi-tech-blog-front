@@ -32,7 +32,12 @@ const Button = styled.button`
 
 const Accordion: React.FC<Props> = ({ children, isOpen = false, ...props }) => {
 	const [open, setOpen] = useState(false);
-	const height = document.getElementById(`body${props.id}`)?.clientHeight;
+	const [height, setHeight] = useState(0);
+
+	useEffect(() => {
+		const height = document.getElementById(`body${props.id}`)?.clientHeight as number;
+		setHeight(height);
+	}, [props.id])
 
 	useEffect(() => {
 		isOpen && setOpen(true);
