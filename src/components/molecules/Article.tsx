@@ -19,7 +19,12 @@ const Article: React.FC<ArticleType> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#7c83cc">
 			<button type="button" onClick={handleClickLink}>
-				<ArticleTtl date={props.date} title={props.title} category={props.category} link={`/category/${props.category}`} />
+				<ArticleTtl
+					date={props.date}
+					title={props.title}
+					category={props.category}
+					link={`/category/${props.category}`}
+				/>
 				<figure>
 					<Image
 						src={props.img}
