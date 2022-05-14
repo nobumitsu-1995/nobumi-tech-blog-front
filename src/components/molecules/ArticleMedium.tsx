@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import React from "react";
 import { Border, Text } from "../atoms";
 
@@ -10,27 +10,17 @@ type Props = {
 };
 
 const ArticleMedium: React.FC<Props> = ({ ...props }) => {
-	const router = useRouter();
-	const handleClickButton = () => {
-		return router.push(`/article/${props.id}`);
-	};
-
 	return (
 		<article>
-			<button type="button" onClick={handleClickButton}>
-				<figure>
-					<Image
-						src={props.img}
-						alt={props.title}
-						layout="responsive"
-						width="1100"
-						height="500"
-						objectFit="contain"
-					/>
-				</figure>
-				<Text color="#555" fontSize="14px" text={props.title} textAlign="center" margin="20px 0 30px" />
-				<Border color="#882107" height="1px" width="50px" />
-			</button>
+			<Link href={`/article/${props.id}`}>
+				<a>
+					<figure>
+						<Image src={props.img} alt={props.title} width="1100" height="500" />
+					</figure>
+					<Text color="#555" fontSize="14px" text={props.title} textalign="center" margin="20px 0 30px" />
+					<Border color="#882107" height="1px" width="50px" />
+				</a>
+			</Link>
 		</article>
 	);
 };

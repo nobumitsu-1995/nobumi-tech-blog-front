@@ -6,35 +6,54 @@ export type TextProps = {
 	fontFamily?: string;
 	fontSize?: string;
 	fontWeight?: string;
-	lineHeight?: string;
+	lineheight?: string;
 	margin?: string;
 	padding?: string;
 	tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
 	text: string | React.ReactNode | (string & React.ReactNode);
-	textAlign?: "center" | "right" | "left";
+	textalign?: "center" | "right" | "left";
 };
+
+const P = styled(({ tag, ...props }) => React.createElement(tag, props))<TextProps>`
+	color: ${({ color }) => {
+		return color;
+	}};
+	font-family: ${({ fontFamily }) => {
+		return fontFamily;
+	}};
+	font-size: ${({ fontSize }) => {
+		return fontSize;
+	}};
+	font-weight: ${({ fontWeight }) => {
+		return fontWeight;
+	}};
+	line-height: ${({ lineheight }) => {
+		return lineheight;
+	}};
+	margin: ${({ margin }) => {
+		return margin;
+	}};
+	padding: ${({ padding }) => {
+		return padding;
+	}};
+	text-align: ${({ textalign }) => {
+		return textalign;
+	}};
+`;
 
 const Text: React.FC<TextProps> = ({
 	color = "#111",
 	fontFamily = "Noto Sans JP",
 	fontSize = "16px",
 	tag = "p",
-	textAlign = "left",
+	textalign = "left",
 	...props
 }) => {
-	const P = styled.p``;
-	const StyledText = styled(P.withComponent(tag))`
-		color: ${color};
-		font-family: ${fontFamily};
-		font-size: ${fontSize};
-		font-weight: ${props.fontWeight};
-		line-height: ${props.lineHeight};
-		margin: ${props.margin};
-		padding: ${props.padding};
-		text-align: ${textAlign};
-	`;
-
-	return <StyledText>{props.text}</StyledText>;
+	return (
+		<P tag={tag} color={color} fontFamily={fontFamily} fontSize={fontSize} textalign={textalign} {...props}>
+			{props.text}
+		</P>
+	);
 };
 
 export default Text;

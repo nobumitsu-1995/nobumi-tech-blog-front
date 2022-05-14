@@ -16,7 +16,7 @@ export default {
 } as ComponentMeta<typeof Title>;
 
 const Container = styled(Flex)`
-	background-color: #ECF0F1;
+	background-color: #ecf0f1;
 	flex-direction: column;
 	gap: 80px;
 	justify-content: center;

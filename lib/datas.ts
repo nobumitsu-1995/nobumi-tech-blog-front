@@ -1,5 +1,5 @@
 export const userData = {
-  img: "sample.png",
+  img: "/sample.png",
   name: "Nobumitsu",
   text: "プロフィールプロフィプロフィールプロフィプロフィールプロフィプロフィールプロフィプロフィールプロフィプロフィールプロフィールプロフィールプロフィールプロフィール",
 };
@@ -10,7 +10,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "backend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -18,7 +18,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "backend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -26,7 +26,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "backend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -34,7 +34,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "backend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -42,7 +42,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "backend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -50,7 +50,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "frontend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -58,7 +58,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "frontend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -66,7 +66,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "frontend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -74,7 +74,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "frontend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
   {
@@ -82,7 +82,7 @@ export const articleDatas = [
     date: new Date(),
     title: "記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル記事タイトル",
     category: "frontend",
-    img: "sample.png",
+    img: "/sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
   },
 ];

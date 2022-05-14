@@ -9,7 +9,7 @@ type Props = {
 
 const Container = styled.div`
 	background: #fff;
-  display: inline-block;
+	display: inline-block;
 	padding: 3px 5px;
 `;
 
