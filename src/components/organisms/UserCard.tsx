@@ -13,7 +13,7 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 		<Paper padding="40px">
 			<figure>
 				<Image
-					src={props.img}
+					src={`/${props.img}`}
 					alt={props.name}
 					layout="responsive"
 					width="1100"
