@@ -31,7 +31,7 @@ const Article: React.FC<ArticleType> = ({ ...props }) => {
 							/>
 						</object>
 						<figure>
-							<Image src={props.img} alt={props.title} width="1100" height="500" />
+							<Image src={`/${props.img}`} alt={props.title} width="1100" height="500" />
 						</figure>
 						<Container>
 							<Text color="#666" lineheight="30px" text={props.description} margin="40px 0" />
