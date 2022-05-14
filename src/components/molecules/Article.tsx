@@ -2,24 +2,15 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
+import { Article as ArticleType } from "../../../lib/type";
 import { Button, Paper, Text } from "../atoms";
 import ArticleTtl from "./ArticleTtl";
-
-type Props = {
-	category: string;
-	categoryLink: string;
-	date: Date;
-	id: number;
-	img: string;
-	text: string;
-	title: string;
-};
 
 const Container = styled.div`
 	padding: 0 50px 50px;
 `;
 
-const Article: React.FC<Props> = ({ ...props }) => {
+const Article: React.FC<ArticleType> = ({ ...props }) => {
 	const router = useRouter();
 	const handleClickLink = () => {
 		return router.push(`/article/${props.id}`);
@@ -28,7 +19,7 @@ const Article: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#7c83cc">
 			<button type="button" onClick={handleClickLink}>
-				<ArticleTtl date={props.date} title={props.title} category={props.category} link={props.categoryLink} />
+				<ArticleTtl date={props.date} title={props.title} category={props.category} link={`/category/${props.category}`} />
 				<figure>
 					<Image
 						src={props.img}
@@ -40,7 +31,7 @@ const Article: React.FC<Props> = ({ ...props }) => {
 					/>
 				</figure>
 				<Container>
-					<Text color="#666" lineHeight="30px" text={props.text} margin="40px 0" />
+					<Text color="#666" lineHeight="30px" text={props.description} margin="40px 0" />
 					<Button fontWeight="bold" label="READ MORE" onClick={handleClickLink} />
 				</Container>
 			</button>

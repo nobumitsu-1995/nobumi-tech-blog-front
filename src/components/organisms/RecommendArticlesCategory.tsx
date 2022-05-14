@@ -1,18 +1,13 @@
 import React from 'react'
+import { RecommendArticleCategory } from '../../../lib/type'
 import { GapColumnList } from '../../styles/styled-components'
 import { Paper, Text } from '../atoms'
 import { AccordionBody } from '../molecules'
 import Accordion from './Accordion'
 
 type Props = {
-  backendArticles: {
-    id: number;
-    title: string;
-  }[];
-  frontendArticles: {
-    id: number;
-    title: string;
-  }[];
+  backendArticles: RecommendArticleCategory[];
+  frontendArticles: RecommendArticleCategory[];
 }
 
 const RecommendArticlesCategory: React.FC<Props> = ({ ...props }) => {
