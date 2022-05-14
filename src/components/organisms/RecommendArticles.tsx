@@ -1,14 +1,11 @@
 import React from "react";
+import { RecommendArticle } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
 import { Paper, Text } from "../atoms";
 import { ArticleMedium } from "../molecules";
 
 type Props = {
-	articles: {
-		id: number;
-		img: string;
-		title: string;
-	}[];
+	articles: RecommendArticle[]
 };
 
 const RecommendArticles: React.FC<Props> = ({ ...props }) => {

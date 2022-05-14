@@ -4,6 +4,15 @@ export type UserData = {
   text: string;
 };
 
+export type Article = {
+  id: number;
+  date: Date;
+  title: string;
+  category: string;
+  img: string;
+  description: string;
+};
+
 export type RecommendArticle = {
   id: number;
   img: string;

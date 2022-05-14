@@ -9,7 +9,7 @@ type Props = {
   subText: string;
 };
 
-const StyledTtl = styled.h1`
+const StyledTtl = styled.h2`
   text-align: right;
 `;
 
