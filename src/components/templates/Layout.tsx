@@ -17,6 +17,7 @@ const StyledContainer = styled(Container)`
   align-items: flex-start;
 	display: flex;
 	gap: 30px;
+  justify-content: center;
   padding: 30px 0 50px
 `;
 

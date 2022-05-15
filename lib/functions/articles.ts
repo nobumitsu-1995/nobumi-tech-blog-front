@@ -1,4 +1,5 @@
-import { Article } from "./type";
+
+import { Article } from "../type";
 
 export const getArticlesAboutBackend = (articles: Article[]) => {
   return (
@@ -15,3 +16,5 @@ export const getArticlesAboutFrontend = (articles: Article[]) => {
     })
   );
 }
+
+

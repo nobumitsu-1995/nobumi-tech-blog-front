@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { articleDatas, userData } from "../../../lib/datas";
-import { getArticlesAboutBackend, getArticlesAboutFrontend } from "../../../lib/functions";
-import { RecommendArticle, RecommendArticleCategory, UserData } from "../../../lib/type";
+import { getArticlesAboutBackend, getArticlesAboutFrontend } from "../../../lib/functions/articles";
 import { GapColumnList } from "../../styles/styled-components";
 import { RecommendArticles, RecommendArticlesCategory, SearchCard, UserCard } from "../organisms";
 

@@ -6,6 +6,12 @@ export const Flex = styled.div`
 	justify-content: space-between;
 `;
 
+export const FlexCenter = styled.div`
+	align-items: center;
+	display: flex;
+	justify-content: center;
+`;
+
 export const GapColumnList = styled.ul<{ gap: string }>`
 	display: grid;
 	gap: ${({ gap }) => {

@@ -161,3 +161,26 @@ export const footerDatas = {
     ]
   },
 }
+
+export const tagDatas = [
+  {
+    text: "React.js",
+    link: ""
+  },
+  {
+    text: "Next.js",
+    link: ""
+  },
+  {
+    text: "Typescript",
+    link: ""
+  },
+  {
+    text: "Javascript",
+    link: ""
+  },
+  {
+    text: "Ruby on Rails",
+    link: ""
+  },
+]
