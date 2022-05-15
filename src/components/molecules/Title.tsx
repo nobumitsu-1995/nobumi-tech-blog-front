@@ -6,11 +6,15 @@ import TtlTag from "./TtlTag";
 type Props = {
 	tags?: string[];
 	text: string;
+	margin?: string;
 	subText: string;
 };
 
-const StyledTtl = styled.h2`
+const StyledTtl = styled.h2<{margin: string}>`
 	text-align: right;
+	margin: ${({margin}) => {
+		return margin;
+	}}
 `;
 
 const Container = styled.div<{ subText: string }>`
@@ -44,9 +48,9 @@ const Container = styled.div<{ subText: string }>`
 	}
 `;
 
-const Title: React.FC<Props> = ({ ...props }) => {
+const Title: React.FC<Props> = ({ margin = "0 0 50px", ...props }) => {
 	return (
-		<StyledTtl>
+		<StyledTtl margin={margin}>
 			<Container subText={props.subText}>
 				<Text color="#271E16" fontSize="36px" fontWeight="bold" text={props.text} textalign="right" />
 			</Container>

@@ -8,4 +8,5 @@ export { default as FooterList2 } from "./FooterList2";
 export { default as HeaderLink } from "./HeaderLink";
 export { default as IconInput } from "./IconInput";
 export { default as Title } from "./Title";
+export { default as TitleInPaper } from "./TitleInPaper";
 export { default as TtlTag } from "./TtlTag";
