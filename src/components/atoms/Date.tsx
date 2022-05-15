@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type Props = {
-	time: Date;
+	time: Date | string;
 	color?: string;
 	fontSize?: string;
 	fontWeight?: string;
@@ -33,10 +33,11 @@ const Time = styled.time<Omit<Props, "time">>`
 	width: 100%;
 `;
 
-const Date: React.FC<Props> = ({ color = "#111", fontSize = "16px", textalign = "left", ...props }) => {
-	const year = props.time.getFullYear();
-	const month = props.time.getMonth() + 1;
-	const date = props.time.getDate();
+const StyledDate: React.FC<Props> = ({ color = "#111", fontSize = "16px", textalign = "left", ...props }) => {
+	const time = new Date(props.time);
+	const year = time.getFullYear();
+	const month = time.getMonth() + 1;
+	const date = time.getDate();
 
 	return (
 		<Time
@@ -51,4 +52,4 @@ const Date: React.FC<Props> = ({ color = "#111", fontSize = "16px", textalign = 
 	);
 };
 
-export default Date;
+export default StyledDate;
