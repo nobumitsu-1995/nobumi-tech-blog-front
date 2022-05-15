@@ -18,14 +18,14 @@ type Params = {
   category: string;
 }
 
-const Section = styled(GapColumnList.withComponent('section'))`
+const Section = styled.section`
   padding: 80px 0 0;
 `;
 
 const Category: React.FC<Props> = ({ category, articles }) => {
   return (
     <Layout>
-      <Section gap="30px">
+      <Section>
         <Title text={`${category.toUpperCase()}に関する記事一覧`} subText='Category' />
         <Articles articles={articles} />
       </Section>
