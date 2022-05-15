@@ -9,6 +9,7 @@ type Props = {
 };
 
 const Card = styled.div<Omit<Props, "children">>`
+	background: #fff;
 	box-shadow: 3px 3px 8px #00000029;
 	padding: ${({ padding }) => {
 		return padding;
