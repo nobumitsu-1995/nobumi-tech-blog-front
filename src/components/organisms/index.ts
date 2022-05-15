@@ -6,4 +6,7 @@ export { default as Header2 } from "./Header2";
 export { default as RecommendArticles } from "./RecommendArticles";
 export { default as RecommendArticlesCategory } from "./RecommendArticlesCategory";
 export { default as SearchCard } from "./SearchCard";
+export { default as SearchCategoryCard } from "./SearchCategoryCard";
+export { default as SearchKeywordCard } from "./SearchKeywordCard";
+export { default as SearchTagCard } from "./SearchTagCard";
 export { default as UserCard } from "./UserCard";
