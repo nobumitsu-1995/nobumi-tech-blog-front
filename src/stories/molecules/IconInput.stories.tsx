@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 export default {
-	title: "Molecules/IconInput",
+	title: "Molecules/Input",
 	component: IconInput,
 	argTypes: {
 		backgroundColor: { control: "color" },
