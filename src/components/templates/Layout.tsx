@@ -15,7 +15,8 @@ const Main = styled.main`
 
 const StyledContainer = styled(Container)`
   align-items: flex-start;
-	display: flex;
+	display: grid;
+  grid-template-columns: 1fr 350px;
 	gap: 30px;
   justify-content: center;
   padding: 30px 0 50px

@@ -30,7 +30,8 @@ const ContactSNSCard = () => {
               color='#fff'
               fontWeight='bold'
               icon={<Image src={data.icon} alt={data.name} width={24} height={24}/>}
-              iconSpace='40px'
+              iconSpace='20px'
+              iconPosition='left'
               label={data.name} 
               onClick={() => handleClickButton(data.url)}
               padding="18px 0"  
