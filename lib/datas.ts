@@ -184,3 +184,24 @@ export const tagDatas = [
     link: ""
   },
 ]
+
+export const snsDatas = [
+  {
+    name: "Facebook",
+    url: "/",
+    icon: "/images/facebook.png",
+    color: "#356CE9"
+  },
+  {
+    name: "Twitter",
+    url: "/",
+    icon: "/images/twitter.png",
+    color: "#4C8FE5"
+  },
+  {
+    name: "LINE",
+    url: "/",
+    icon: "/images/line.png",
+    color: "#06C755"
+  },
+]
