@@ -11,6 +11,7 @@ export type Article = {
   category: string;
   img: string;
   description: string;
+  tag?: string[];
 };
 
 export type RecommendArticle = {
