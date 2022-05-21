@@ -30,6 +30,7 @@ export const articleDatas = [
     category: "backend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 2,
@@ -38,6 +39,7 @@ export const articleDatas = [
     category: "backend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 3,
@@ -46,6 +48,7 @@ export const articleDatas = [
     category: "backend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 4,
@@ -54,6 +57,7 @@ export const articleDatas = [
     category: "backend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 5,
@@ -62,6 +66,7 @@ export const articleDatas = [
     category: "backend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 6,
@@ -70,6 +75,7 @@ export const articleDatas = [
     category: "frontend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 7,
@@ -78,6 +84,7 @@ export const articleDatas = [
     category: "frontend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 8,
@@ -86,6 +93,7 @@ export const articleDatas = [
     category: "frontend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 9,
@@ -94,6 +102,7 @@ export const articleDatas = [
     category: "frontend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
   {
     id: 10,
@@ -102,6 +111,7 @@ export const articleDatas = [
     category: "frontend",
     img: "sample.png",
     description: "記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキスト記事テキス…",
+    tag: ["React.js", "Next.js", "Typescript", "Javascript"]
   },
 ];
 
