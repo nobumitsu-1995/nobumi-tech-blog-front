@@ -23,11 +23,10 @@ export const StyledArticle: ComponentStory<typeof Article> = args => (
 	<Container>
 		<Article
 			category="カテゴリ"
-			categoryLink="/category/sample"
 			date={new Date()}
 			id={1}
 			img="/sample.png"
-			text="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
+			description="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
 			title="記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。"
 		/>
 	</Container>
