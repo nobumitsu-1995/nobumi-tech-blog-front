@@ -21,7 +21,7 @@ const ArticleSmall: React.FC<Props> = ({ article }) => {
     <Card>
       <Link href={`/artice/${article.id}`}>
         <a>
-          <Image src={article.img} alt={article.title} width="1100" height="500"/>
+          <Image src={`/${article.img}`} alt={article.title} width="1100" height="500"/>
           <Text text={article.title} margin="15px 0"/>
           <LinkList img="tag.png" links={tagDatas} />
         </a>
