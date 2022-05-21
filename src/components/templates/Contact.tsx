@@ -4,7 +4,7 @@ import { ContactCard, ContactSNSCard } from '../organisms'
 
 const Contact = () => {
   return (
-    <GapColumnList gap='20px'>
+    <GapColumnList gap='30px'>
       <ContactCard/>
       <ContactSNSCard/>
     </GapColumnList>
