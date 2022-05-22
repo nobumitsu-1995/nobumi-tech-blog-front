@@ -13,6 +13,7 @@ type Props = {
 const Article = styled.article`
 	&:hover {
 		box-shadow: 0 0 5px 3px #00000029;
+		opacity: 0.8;
 		transition-duration: 0.3s;
 	}
 `;
