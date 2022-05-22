@@ -43,6 +43,11 @@ const Item = styled.li`
 		right: 0;
 		width: 90%;
 	}
+
+	&:hover {
+		opacity: 0.7;
+		transition-duration: 0.3s;
+	}
 `;
 
 const AccordionBody: React.FC<Props> = ({ ...props }) => {

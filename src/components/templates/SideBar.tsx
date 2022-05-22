@@ -5,9 +5,10 @@ import { getArticlesAboutBackend, getArticlesAboutFrontend } from "../../../lib/
 import { GapColumnList } from "../../styles/styled-components";
 import { RecommendArticles, RecommendArticlesCategory, SearchCard, UserCard } from "../organisms";
 
-const Side = styled(GapColumnList)`
-	width: 400px;
-`;
+const List = styled(GapColumnList)`
+	box-sizing: content-box;
+	width: 300px;
+`
 
 const SideBar = () => {
 	const recommendArticles = articleDatas.slice(0, 3);
@@ -15,15 +16,17 @@ const SideBar = () => {
 	const recommendFrontendArticles = getArticlesAboutFrontend(articleDatas).slice(0, 4);
 
 	return (
-		<Side gap="30px">
-			<UserCard {...userData} />
-			<SearchCard />
-			<RecommendArticles articles={recommendArticles} />
-			<RecommendArticlesCategory
-				backendArticles={recommendBackendArticles}
-				frontendArticles={recommendFrontendArticles}
-			/>
-		</Side>
+		<List gap="30px">
+			<li><UserCard {...userData} /></li>
+			<li><SearchCard /></li>
+			<li><RecommendArticles articles={recommendArticles} /></li>
+			<li>
+				<RecommendArticlesCategory
+					backendArticles={recommendBackendArticles}
+					frontendArticles={recommendFrontendArticles}
+				/>
+			</li>
+		</List>
 	);
 };
 

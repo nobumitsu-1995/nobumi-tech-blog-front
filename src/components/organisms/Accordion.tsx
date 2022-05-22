@@ -28,6 +28,11 @@ const Body = styled.div<{ open: boolean; height?: number }>`
 
 const Button = styled.button`
 	width: 100%;
+
+	&:hover {
+		background: #ddd;
+		transition-duration: 0.3s;
+	}
 `;
 
 const Accordion: React.FC<Props> = ({ children, isOpen = false, ...props }) => {

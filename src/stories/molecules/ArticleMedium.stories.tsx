@@ -25,7 +25,7 @@ export const StyledArticle: ComponentStory<typeof Article> = args => (
 			category="カテゴリ"
 			date={new Date()}
 			id={1}
-			img="/sample.png"
+			img="sample.png"
 			description="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
 			title="記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。"
 		/>

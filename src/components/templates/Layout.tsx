@@ -16,10 +16,10 @@ const Main = styled.main`
 const StyledContainer = styled(Container)`
   align-items: flex-start;
 	display: grid;
-  grid-template-columns: 1fr 350px;
+  grid-template-columns: 1fr 300px;
 	gap: 30px;
   justify-content: center;
-  padding: 30px 0 50px
+  padding: 30px 0 50px;
 `;
 
 const Layout: React.FC<Props> = ({ children }) => {

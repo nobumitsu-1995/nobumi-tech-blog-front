@@ -11,7 +11,7 @@ type Props = {
 const ButtonArea = styled(Flex)<{ open: boolean }>`
 	cursor: pointer;
 	border: 1px solid #9f9f9f;
-	padding: 30px 22px;
+	padding: 20px 25px;
 	position: relative;
 	width: 100%;
 
