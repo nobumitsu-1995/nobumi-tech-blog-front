@@ -7,7 +7,7 @@ import { Article as ArticleType } from "../../../lib/type";
 import { Button, Paper, Text } from "../atoms";
 import ArticleTtl from "./ArticleTtl";
 
-const Container = styled.div`
+const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
 `;
 
@@ -33,10 +33,10 @@ const Article: React.FC<ArticleType> = ({ ...props }) => {
 						<figure>
 							<Image src={`/${props.img}`} alt={props.title} width="1100" height="500" />
 						</figure>
-						<Container>
+						<ArticleContainer>
 							<Text color="#666" lineheight="30px" text={props.description} margin="40px 0" />
 							<Button fontWeight="bold" label="READ MORE" onClick={handleClickLink} />
-						</Container>
+						</ArticleContainer>
 					</a>
 				</Link>
 			</Paper>

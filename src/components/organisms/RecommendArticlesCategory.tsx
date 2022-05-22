@@ -13,7 +13,7 @@ type Props = {
 const RecommendArticlesCategory: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#E63946" padding="25px 20px">
-			<Text color="#271E16" fontSize="20px" fontWeight="bold" text="カテゴリ おすすめの記事" margin="0 0 35px" />
+			<Text color="#271E16" fontSize="20px" fontWeight="bold" text="カテゴリ おすすめの記事" textalign="center" margin="0 0 25px" />
 			<GapColumnList gap="25px">
 				<Accordion id={0} text="FRONTEND">
 					<AccordionBody articles={props.backendArticles} />
