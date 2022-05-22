@@ -7,8 +7,16 @@ import { Article as ArticleType } from "../../../lib/type";
 import { Button, Paper, Text } from "../atoms";
 import ArticleTtl from "./ArticleTtl";
 
-const Container = styled.div`
+const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
+`;
+
+const StyledArticle = styled.article`
+	&:hover {
+		box-shadow: 0 0 5px 7px #00000029;
+		opacity: 0.8;
+		transition-duration: 0.3s;
+	}
 `;
 
 const Article: React.FC<ArticleType> = ({ ...props }) => {
@@ -18,7 +26,7 @@ const Article: React.FC<ArticleType> = ({ ...props }) => {
 	};
 
 	return (
-		<article>
+		<StyledArticle>
 			<Paper borderColor="#7c83cc">
 				<Link href={`/article/${props.id}`}>
 					<a>
@@ -33,14 +41,14 @@ const Article: React.FC<ArticleType> = ({ ...props }) => {
 						<figure>
 							<Image src={`/${props.img}`} alt={props.title} width="1100" height="500" />
 						</figure>
-						<Container>
+						<ArticleContainer>
 							<Text color="#666" lineheight="30px" text={props.description} margin="40px 0" />
 							<Button fontWeight="bold" label="READ MORE" onClick={handleClickLink} />
-						</Container>
+						</ArticleContainer>
 					</a>
 				</Link>
 			</Paper>
-		</article>
+		</StyledArticle>
 	);
 };
 

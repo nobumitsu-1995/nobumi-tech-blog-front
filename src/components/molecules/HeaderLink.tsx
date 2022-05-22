@@ -16,15 +16,34 @@ const Flex = styled.a`
   gap: 5px;
   height: 100%;
   justify-content: space-between;
+  overflow: hidden;
   padding: 0 20px;
+  position: relative;
+
+  &::after {
+    background: #3D70B8;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: 0.2s;
+    width: 100%;
+  }
 
   &:hover {
-    background: #fff;
     opacity: 0.8;
     transition: 0.2s;
     
     p {
       color: #3D70B8;
+      transition: 0.2s;
+    }
+
+    &::after {
+      transform: translateX(0);
       transition: 0.2s;
     }
   }

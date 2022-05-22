@@ -14,19 +14,25 @@ type Props = {
 const Card = styled.article`
   border: 1px solid #CCC;
   padding: 10px 10px 15px;
+
+  &:hover {
+    box-shadow: 0 0 5px 3px #00000029;
+    opacity: 0.7;
+		transition-duration: 0.3s;
+  }
 `;
 
 const ArticleSmall: React.FC<Props> = ({ article }) => {
   return (
-    <Card>
-      <Link href={`/artice/${article.id}`}>
-        <a>
+    <Link href={`/article/${article.id}`}>
+      <a>
+        <Card>
           <Image src={`/${article.img}`} alt={article.title} width="1100" height="500"/>
-          <Text text={article.title} margin="15px 0"/>
-          <LinkList img="tag.png" links={tagDatas} />
-        </a>
-      </Link>
-    </Card>
+          <Text text={article.title} textalign="center" margin="15px 0"/>
+          <LinkList fontSize='12px' img="tag.png" links={tagDatas} />
+        </Card>
+      </a>
+    </Link>
   )
 }
 
