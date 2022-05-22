@@ -6,9 +6,9 @@ import { ArticleCard, ContactSNSCard, RelativeArticles } from '../organisms'
 const Article = () => {
   return (
     <GapColumnList gap="30px">
-      <ArticleCard {...articleDatas[0]} />
-      <ContactSNSCard />
-      <RelativeArticles />
+      <li><ArticleCard {...articleDatas[0]} /></li>
+      <li><ContactSNSCard /></li>
+      <li><RelativeArticles /></li>
     </GapColumnList>
   )
 }

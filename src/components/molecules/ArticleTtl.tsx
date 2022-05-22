@@ -5,8 +5,8 @@ import { Date, StyledLink, Text } from "../atoms";
 type Props = {
 	date: Date;
 	title: string;
-	category: string;
-	link: string;
+	category?: string;
+	link?: string;
 };
 
 const Title = styled.div`
@@ -27,8 +27,10 @@ const ArticleTtl: React.FC<Props> = ({ ...props }) => {
 				textalign="center"
 				margin="25px 0"
 			/>
-			<StyledLink link={props.link} text={props.category} />
-		</Title>
+			{props.link && props.category &&
+				<StyledLink link={props.link} text={props.category} />
+			}
+			</Title>
 	);
 };
 
