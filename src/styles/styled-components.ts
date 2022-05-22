@@ -27,8 +27,10 @@ export const Container = styled.div`
 	width: 1080px;
 `;
 
-export const ArticleContent = styled.div`
-	margin-bottom: 40px;
+export const ArticleContent = styled.div<{margin?: string}>`
+	margin: ${({margin}) => {
+		return margin
+	}};
 
 	h1 {
 		background: #ECF0F1;

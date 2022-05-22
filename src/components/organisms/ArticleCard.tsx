@@ -25,7 +25,7 @@ const ArticleCard: React.FC<ArticleType> = ({ ...props }) => {
         <Image src={`/${props.img}`} alt={props.title} width="1100" height="500" />
       </figure>
       <ArticleContainer>
-        <ArticleContent>
+        <ArticleContent margin='0 0 40px'>
           <h1><span>01</span>H1 TITLE</h1><br />
           <h2>H2 TITLE</h2><br />
           <p className='point'>POINT TEXT</p><br />
