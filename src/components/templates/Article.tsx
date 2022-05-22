@@ -1,10 +1,11 @@
 import React from 'react'
 import { GapColumnList } from '../../styles/styled-components'
-import { RelativeArticles } from '../organisms'
+import { ContactSNSCard, RelativeArticles } from '../organisms'
 
 const Article = () => {
   return (
     <GapColumnList gap="30px">
+      <ContactSNSCard />
       <RelativeArticles />
     </GapColumnList>
   )

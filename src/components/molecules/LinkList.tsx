@@ -21,8 +21,8 @@ const List = styled.ul`
 
 const LinkList: React.FC<Props> = ({ fontSize = "16px", img, links }) => {
   return (
-    <FlexCenter>
-      {img && <Image src={`/images/${img}`} alt="tag" width="20" height="20"/>}
+    <FlexCenter gap='10px'>
+      {img && <Image src={`/images/${img}`} alt="tag" width="30" height="30"/>}
       <List>
         {links.map(link => {
           return (

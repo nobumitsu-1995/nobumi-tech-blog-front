@@ -18,15 +18,15 @@ const Card = styled.article`
 
 const ArticleSmall: React.FC<Props> = ({ article }) => {
   return (
-    <Card>
-      <Link href={`/artice/${article.id}`}>
-        <a>
+    <Link href={`/article/${article.id}`}>
+      <a>
+        <Card>
           <Image src={`/${article.img}`} alt={article.title} width="1100" height="500"/>
-          <Text text={article.title} margin="15px 0"/>
+          <Text text={article.title} textalign="center" margin="15px 0"/>
           <LinkList img="tag.png" links={tagDatas} />
-        </a>
-      </Link>
-    </Card>
+        </Card>
+      </a>
+    </Link>
   )
 }
 

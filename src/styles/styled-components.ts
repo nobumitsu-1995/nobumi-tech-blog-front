@@ -6,9 +6,12 @@ export const Flex = styled.div`
 	justify-content: space-between;
 `;
 
-export const FlexCenter = styled.div`
+export const FlexCenter = styled.div<{gap?: string}>`
 	align-items: center;
 	display: flex;
+	gap: ${({gap}) => {
+		return gap
+	}};
 	justify-content: center;
 `;
 
