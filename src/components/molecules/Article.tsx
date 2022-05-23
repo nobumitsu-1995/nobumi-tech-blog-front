@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import { Article as ArticleType } from "../../../lib/type";
+import { Article as ArticleType, Blog } from "../../../lib/type";
 import { Button, Paper, Text } from "../atoms";
 import ArticleTtl from "./ArticleTtl";
 
@@ -19,7 +19,7 @@ const StyledArticle = styled.article`
 	}
 `;
 
-const Article: React.FC<ArticleType> = ({ ...props }) => {
+const Article: React.FC<Blog> = ({ ...props }) => {
 	const router = useRouter();
 	const handleClickLink = () => {
 		return router.push(`/article/${props.id}`);
@@ -32,14 +32,14 @@ const Article: React.FC<ArticleType> = ({ ...props }) => {
 					<a>
 						<object>
 							<ArticleTtl
-								date={props.date}
+								date={new Date(props.createdAt)}
 								title={props.title}
-								category={props.category}
-								link={`/category/${props.category}`}
+								category={props.category[0].name}
+								link={`/category/${props.category[0].name}`}
 							/>
 						</object>
 						<figure>
-							<Image src={`/${props.img}`} alt={props.title} width="1100" height="500" />
+							<Image src={props.eyecatch.url} alt={props.title} width="1100" height="500" />
 						</figure>
 						<ArticleContainer>
 							<Text color="#666" lineheight="30px" text={props.description} margin="40px 0" />

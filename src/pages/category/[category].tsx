@@ -3,7 +3,8 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import path from 'path';
 import React from 'react'
 import styled from 'styled-components';
-import { Article } from '../../../lib/type';
+import { client } from '../../../lib/client';
+import { Article, Blog } from '../../../lib/type';
 import { Title } from '../../components/molecules';
 import { Articles } from '../../components/templates';
 import Layout from '../../components/templates/Layout';
@@ -11,7 +12,7 @@ import { GapColumnList } from '../../styles/styled-components';
 
 type Props = {
   category: string;
-  articles: Article[]
+  articles: Blog[]
 }
 
 type Params = {
@@ -37,14 +38,23 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
   const category = params!.category;
-  const articles = await getArticlesMatchCategory(category);
+  // const articles = await getArticlesMatchCategory(category);
 
-  return {
-    props: {
-      category,
-      articles
-    }
-  }
+  // return {
+  //   props: {
+  //     category,
+  //     articles
+  //   }
+  // }
+  const data = await client.get({
+		endpoint: 'blogs',
+	}).then((res) => {
+		return res.contents
+	})
+
+	return {
+		props: {articles: data, category: category}
+	}
 }
 
 export const getStaticPaths: GetStaticPaths<Params> = () => {
