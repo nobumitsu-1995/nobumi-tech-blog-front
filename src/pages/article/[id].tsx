@@ -1,33 +1,46 @@
-import { GetStaticPaths } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react'
-import { returnSideBarDatas } from '../../../lib/functions/articles';
+import { returnArticle, returnArticlesMatchCategory, returnSideBarDatas } from '../../../lib/functions/articles';
 import { client } from '../../../lib/functions/client';
 import { Blog, SideBarData } from '../../../lib/type';
 import { ArticleDetail, Layout } from '../../components/templates';
 
 type Props = {
+  article: Blog;
+  relativeArticles: Blog[];
   sideBarData: SideBarData;
 }
 
-const Article: React.FC<Props> = ({ sideBarData }) => {
+type Params = {
+  id: string;
+}
+
+const Article: React.FC<Props> = ({ article, relativeArticles, sideBarData }) => {
   return (
     <Layout {...sideBarData}>
-      <ArticleDetail />
+      <ArticleDetail article={article} relativeArticles={relativeArticles}/>
     </Layout>
   )
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps<Props, Params> = async ({
+  params,
+}) => {
 	const data = await client.get({
 		endpoint: 'blogs',
 	}).then((res) => {
 		return res.contents
 	})
 
+  const id = params!.id;
+  const articleData = returnArticle(data, id)!;
+  const relativeArticles = returnArticlesMatchCategory(data, articleData.category[0].name);
 	const { sideBarData	} = returnSideBarDatas(data);
 
 	return {
 		props: {
+      article: articleData,
+      relativeArticles: relativeArticles,
 			sideBarData: sideBarData
 		}
 	}

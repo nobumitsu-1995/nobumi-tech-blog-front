@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
+import { Eyecatch } from "../../../lib/type";
 import { FlexCenter } from "../../styles/styled-components";
 import { Border, Paper, StyledLink, Text } from "../atoms";
 
 type Props = {
-	eyecatch: string;
+	eyecatch: Eyecatch;
 	title: string;
 	description: string;
 };
@@ -26,7 +27,7 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 		<Paper padding="25px 20px">
 			<Avater>
 				<StyledImage
-					src={`/${props.eyecatch}`}
+					src={`${props.eyecatch.url}`}
 					alt={props.title}
 					layout="fill"
 					objectFit="cover"

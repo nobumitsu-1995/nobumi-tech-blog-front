@@ -1,14 +1,19 @@
 import React from 'react'
-import { articleDatas } from '../../../lib/datas'
+import { Blog } from '../../../lib/type'
 import { GapColumnList } from '../../styles/styled-components'
 import { ArticleCard, ContactSNSCard, RelativeArticles } from '../organisms'
 
-const Article = () => {
+type Props = {
+  article: Blog;
+  relativeArticles: Blog[];
+}
+
+const Article: React.FC<Props> = ({ article, relativeArticles }) => {
   return (
     <GapColumnList gap="30px">
-      <li><ArticleCard {...articleDatas[0]} /></li>
+      <li><ArticleCard {...article} /></li>
       <li><ContactSNSCard /></li>
-      <li><RelativeArticles /></li>
+      <li><RelativeArticles articleDatas={relativeArticles}/></li>
     </GapColumnList>
   )
 }

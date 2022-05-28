@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import Image from 'next/image';
-import { Article as ArticleType } from "../../../lib/type";
+import { Blog } from "../../../lib/type";
 import { ArticleContent } from '../../styles/styled-components';
 import { Paper } from '../atoms'
 import { ArticleTtl, LinkList } from '../molecules'
@@ -12,17 +12,17 @@ const ArticleContainer = styled.div`
   margin-top: 40px;
 `;
 
-const ArticleCard: React.FC<ArticleType> = ({ ...props }) => {
+const ArticleCard: React.FC<Blog> = ({ ...props }) => {
   return (
     <Paper borderColor='#7C83CC'>
       <ArticleTtl
-        date={props.date}
+        date={new Date(props.publishedAt)}
         title={props.title}
-        category={props.category}
+        category={props.category[0].name}
         link={`/category/${props.category}`}
       />
       <figure>
-        <Image src={`/${props.img}`} alt={props.title} width="1100" height="500" />
+        <Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
       </figure>
       <ArticleContainer>
         <ArticleContent margin='0 0 40px'>

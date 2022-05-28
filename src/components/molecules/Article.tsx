@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import styled from "styled-components";
-import { Article as ArticleType, Blog } from "../../../lib/type";
+import { Blog } from "../../../lib/type";
 import { Button, Paper, Text } from "../atoms";
 import ArticleTtl from "./ArticleTtl";
 
