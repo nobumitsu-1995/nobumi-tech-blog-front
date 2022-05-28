@@ -1,16 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import { articleDatas } from '../../../lib/datas'
+import { Blog } from '../../../lib/type'
 import { Paper } from '../atoms'
 import { ArticleSmall, TitleInPaper } from '../molecules'
+
+type Props = {
+  articleDatas: Blog[];
+}
 
 const Grid = styled.ul`
   display: grid;
   gap: 10px;
   grid-template-columns: 1fr 1fr;
-`
+`;
 
-const RelativeArticles = () => {
+const RelativeArticles: React.FC<Props> = ({ articleDatas }) => {
   return (
     <Paper padding='50px'>
       <TitleInPaper text='関連記事'/>

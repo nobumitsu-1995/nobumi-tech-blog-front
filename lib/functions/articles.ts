@@ -9,6 +9,14 @@ export const returnArticles = (articles: Blog[]) => {
   )
 }
 
+export const returnArticle = (articles: Blog[], id: string) => {
+  return (
+    articles.find(article => {
+      return article.id === id;
+    })
+  );
+}
+
 export const returnRecommendArticles = (articles: Blog[]) => {
   return (
     articles.filter(article => {

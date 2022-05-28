@@ -4,21 +4,26 @@ import styled from "styled-components";
 import { ArticleContent } from '../../styles/styled-components'
 import { Paper } from '../atoms'
 import { ArticleTtl } from '../molecules'
+import { Blog } from '../../../lib/type';
+
+type Props = {
+  userData: Blog;
+}
 
 const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
   margin-top: 40px;
 `;
 
-const ProfileCard = () => {
+const ProfileCard: React.FC<Props> = ({ userData }) => {
   return (
     <Paper borderColor='#7C83CC'>
       <ArticleTtl 
-        date={new Date()}
-        title="nobumitsuについて"
+        date={new Date(userData.publishedAt)}
+        title={userData.title}
       />
       <figure>
-        <Image src="/sample.png" alt="nobumitsuについて" width="1100" height="500" />
+        <Image src={userData.eyecatch.url} alt={userData.title} width="1100" height="500" />
       </figure>
       <ArticleContainer>
         <ArticleContent>

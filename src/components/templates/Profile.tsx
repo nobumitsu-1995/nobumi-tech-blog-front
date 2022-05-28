@@ -1,11 +1,16 @@
 import React from 'react'
+import { Blog } from '../../../lib/type';
 import { GapColumnList } from '../../styles/styled-components'
 import { ContactSNSCard, ProfileCard } from '../organisms'
 
-const Profile = () => {
+type Props = {
+  userData: Blog;
+}
+
+const Profile: React.FC<Props> = ({ userData }) => {
   return (
     <GapColumnList gap='30px'>
-      <li><ProfileCard /></li>
+      <li><ProfileCard userData={userData}/></li>
       <li><ContactSNSCard /></li>
     </GapColumnList>
   )
