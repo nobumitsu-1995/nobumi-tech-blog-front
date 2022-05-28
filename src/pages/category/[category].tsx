@@ -1,31 +1,26 @@
-import { readFileSync } from 'fs';
 import { GetStaticPaths, GetStaticProps } from 'next'
-import path from 'path';
 import React from 'react'
-import styled from 'styled-components';
-import { Article } from '../../../lib/type';
+import { client } from '../../../lib/functions/client';
+import { returnArticles, returnArticlesMatchCategory, returnSideBarDatas } from '../../../lib/functions/articles';
+import { Blog, Category as CategoryType, SideBarData } from '../../../lib/type';
 import { Title } from '../../components/molecules';
-import { Articles } from '../../components/templates';
-import Layout from '../../components/templates/Layout';
-import { GapColumnList } from '../../styles/styled-components';
+import { Articles, Layout } from '../../components/templates';
+import { Section } from '../../styles/styled-components';
 
 type Props = {
   category: string;
-  articles: Article[]
+  articles: Blog[];
+  sideBarData: SideBarData;
 }
 
 type Params = {
   category: string;
 }
 
-const Section = styled.section`
-  padding: 80px 0 0;
-`;
-
-const Category: React.FC<Props> = ({ category, articles }) => {
+const Category: React.FC<Props> = ({ category, articles, sideBarData }) => {
   return (
-    <Layout>
-      <Section>
+    <Layout {...sideBarData}>
+      <Section padding='80px 0 0'>
         <Title text={`${category.toUpperCase()}に関する記事一覧`} subText='Category' />
         <Articles articles={articles} />
       </Section>
@@ -36,38 +31,42 @@ const Category: React.FC<Props> = ({ category, articles }) => {
 export const getStaticProps: GetStaticProps<Props, Params> = async ({
   params,
 }) => {
-  const category = params!.category;
-  const articles = await getArticlesMatchCategory(category);
+  const data = await client.get({
+		endpoint: 'blogs',
+	}).then(res => {
+		return res.contents
+	})
 
-  return {
-    props: {
-      category,
-      articles
+  const category = params!.category;
+  const articles = returnArticles(data);
+  const articlesMatchCategory = returnArticlesMatchCategory(articles, category);
+	const { sideBarData	} = returnSideBarDatas(data);
+
+	return {
+		props: {
+      articles: articlesMatchCategory,
+      category: category,
+      sideBarData: sideBarData
     }
-  }
+	}
 }
 
-export const getStaticPaths: GetStaticPaths<Params> = () => {
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+  const datas = await client.get({
+    endpoint: 'categories',
+  }).then(res => {
+    return res.contents
+  });
+
+  // [{params: {category: string}}, ...]
+  const paths = datas.map((data: CategoryType) => {
+    return {params: {category: data.name}}
+  });
+
   return {
-    paths: [
-      {params: {category: "backend"}},
-      {params: {category: "frontend"}},
-      {params: {category: "other"}},
-    ],
+    paths: paths,
     fallback: false
   }
-}
-
-const getArticlesMatchCategory = (category: string) => {
-  const jsonPath = path.join(process.cwd(), 'lib', 'datas', 'articles.json');
-  const jsonText = readFileSync(jsonPath, 'utf-8');
-  const object = JSON.parse(jsonText) as Article[];
-
-  return (
-    object.filter(article => {
-      return article.category === category;
-    })
-  );
 }
 
 export default Category;

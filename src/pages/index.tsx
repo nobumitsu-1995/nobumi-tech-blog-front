@@ -1,14 +1,38 @@
 import type { NextPage } from "next";
-import { Articles } from "../components/templates";
-import { articleDatas } from "../../lib/datas";
-import Layout from "../components/templates/Layout";
+import { Layout, Articles } from "../components/templates";
+import { client } from "../../lib/functions/client";
+import { Blog, SideBarData } from "../../lib/type";
+import { returnArticles, returnSideBarDatas } from "../../lib/functions/articles";
 
-const Home: NextPage = () => {
+type Props = {
+	articles: Blog[];
+	sideBarData: SideBarData
+}
+
+const Home: NextPage<Props> = ({ ...props }) => {		
 	return (
-		<Layout>
-			<Articles articles={articleDatas.slice(0, 5)} />
+		<Layout {...props.sideBarData} >
+			<Articles articles={props.articles.slice(0, 5)} />
 		</Layout>
 	);
 };
+
+export const getStaticProps = async () => {
+	const data = await client.get({
+		endpoint: 'blogs',
+	}).then((res) => {
+		return res.contents
+	})
+
+	const articles = returnArticles(data);
+	const { sideBarData	} = returnSideBarDatas(data);
+
+	return {
+		props: {
+			articles: articles,
+			sideBarData: sideBarData
+		}
+	}
+}
 
 export default Home;

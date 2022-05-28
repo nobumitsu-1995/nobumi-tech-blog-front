@@ -1,10 +1,10 @@
 import React from "react";
-import { Article as ArticleType } from "../../../lib/type";
+import { Article as ArticleType, Blog } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
 import { Article } from "../molecules";
 
 type Props = {
-	articles: ArticleType[];
+	articles: Blog[];
 };
 
 const Articles: React.FC<Props> = ({ articles }) => {

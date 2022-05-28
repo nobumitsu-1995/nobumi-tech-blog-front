@@ -5,7 +5,7 @@ import { Text } from "../atoms";
 
 type Props = {
 	articles: {
-		id: number;
+		id: string;
 		title: string;
 	}[];
 };

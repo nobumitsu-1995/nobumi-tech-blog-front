@@ -5,9 +5,9 @@ import { FlexCenter } from "../../styles/styled-components";
 import { Border, Paper, StyledLink, Text } from "../atoms";
 
 type Props = {
-	img: string;
-	name: string;
-	text: string;
+	eyecatch: string;
+	title: string;
+	description: string;
 };
 
 const Avater = styled.figure`
@@ -26,8 +26,8 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 		<Paper padding="25px 20px">
 			<Avater>
 				<StyledImage
-					src={`/${props.img}`}
-					alt={props.name}
+					src={`/${props.eyecatch}`}
+					alt={props.title}
 					layout="fill"
 					objectFit="cover"
 				/>
@@ -37,12 +37,12 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 				fontSize="20px"
 				fontWeight="bold"
 				tag="h2"
-				text={props.name}
+				text={props.title}
 				textalign="center"
 				margin="20px 0"
 			/>
 			<Border color="#7C83CC" height="5px" width="200px" />
-			<Text color="#666" fontSize="14px" text={props.text} margin="25px 0" />
+			<Text color="#666" fontSize="14px" text={props.description} margin="25px 0" />
 			<FlexCenter>
 				<StyledLink link="/profile" text="Profile Detail >" />
 			</FlexCenter>
