@@ -4,7 +4,7 @@ ENV APP /usr/src/app
 RUN mkdir $APP
 WORKDIR $APP
 
-COPY package.json yarn.lock $APP/
+COPY package.json $APP/
 RUN yarn
 
 COPY . $APP/

@@ -1,29 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-import { articleDatas, userData } from "../../../lib/datas";
-import { getArticlesAboutBackend, getArticlesAboutFrontend } from "../../../lib/functions/articles";
+import { Blog } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
 import { RecommendArticles, RecommendArticlesCategory, SearchCard, UserCard } from "../organisms";
+
+type Props = {
+	userData: Blog;
+  recommendArticles: Blog[];
+  recommendBackendArticles: Blog[];
+  recommendFrontendArticles: Blog[];
+}
 
 const List = styled(GapColumnList)`
 	box-sizing: content-box;
 	width: 300px;
-`
+`;
 
-const SideBar = () => {
-	const recommendArticles = articleDatas.slice(0, 3);
-	const recommendBackendArticles = getArticlesAboutBackend(articleDatas).slice(0, 4);
-	const recommendFrontendArticles = getArticlesAboutFrontend(articleDatas).slice(0, 4);
-
+const SideBar: React.FC<Props> = ({ ...props }) => {
 	return (
 		<List gap="30px">
-			<li><UserCard {...userData} /></li>
+			<li><UserCard {...props.userData} /></li>
 			<li><SearchCard /></li>
-			<li><RecommendArticles articles={recommendArticles} /></li>
+			<li><RecommendArticles articles={props.recommendArticles} /></li>
 			<li>
 				<RecommendArticlesCategory
-					backendArticles={recommendBackendArticles}
-					frontendArticles={recommendFrontendArticles}
+					backendArticles={props.recommendBackendArticles}
+					frontendArticles={props.recommendFrontendArticles}
 				/>
 			</li>
 		</List>

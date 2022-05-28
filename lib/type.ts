@@ -4,27 +4,6 @@ export type UserData = {
   text: string;
 };
 
-export type Article = {
-  id: number;
-  date: Date;
-  title: string;
-  category: string;
-  img: string;
-  description: string;
-  tag?: string[];
-};
-
-export type RecommendArticle = {
-  id: number;
-  img: string;
-  title: string;
-};
-
-export type RecommendArticleCategory = {
-  id: number;
-  title: string;
-};
-
 export type Eyecatch = {
   url: string;
   height: number;
@@ -59,9 +38,16 @@ export type Blog = {
   title: string;
   content: string;
   description: string;
-  eyecatch: Eyecatch;
+  eyecatch: string;
   category: Category[];
   tag?: Tag[];
   recommend: boolean;
   userinfo: boolean;
+}
+
+export type SideBarData = {
+  userData: Blog;
+  recommendArticles: Blog[];
+  recommendBackendArticles: Blog[];
+  recommendFrontendArticles: Blog[];
 }

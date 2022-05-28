@@ -27,6 +27,12 @@ export const Container = styled.div`
 	width: 1080px;
 `;
 
+export const Section = styled.section<{padding: string}>`
+  padding: ${({padding}) => {
+		return padding;
+	}};
+`;
+
 export const ArticleContent = styled.div<{margin?: string}>`
 	margin: ${({margin}) => {
 		return margin
@@ -107,4 +113,4 @@ export const ArticleContent = styled.div<{margin?: string}>`
 			width: 11px;
 		}
 	}
-`
+`;

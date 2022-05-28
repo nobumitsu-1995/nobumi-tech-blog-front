@@ -1,22 +1,40 @@
 import React from 'react'
-import styled from 'styled-components'
+import { returnSideBarDatas } from '../../lib/functions/articles';
+import { client } from '../../lib/functions/client';
+import { SideBarData } from '../../lib/type';
 import { Title } from '../components/molecules';
-import { Contact } from '../components/templates';
-import Layout from '../components/templates/Layout'
+import { Contact, Layout } from '../components/templates';
+import { Section } from '../styles/styled-components';
 
-const Section = styled.section`
-  padding: 80px 0 0;
-`;
+type Props = {
+	sideBarData: SideBarData;
+}
 
-const contact = () => {
+const contact: React.FC<Props> = ({ sideBarData }) => {
   return (
-    <Layout>
-      <Section>
+    <Layout {...sideBarData}>
+      <Section padding='80px 0 0'>
         <Title text="お問い合わせ" subText='Contact'/>
         <Contact />
       </Section>
     </Layout>
   )
+}
+
+export const getStaticProps = async () => {
+	const data = await client.get({
+		endpoint: 'blogs',
+	}).then((res) => {
+		return res.contents
+	})
+
+	const { sideBarData	} = returnSideBarDatas(data);
+
+	return {
+		props: {
+			sideBarData: sideBarData
+		}
+	}
 }
 
 export default contact
