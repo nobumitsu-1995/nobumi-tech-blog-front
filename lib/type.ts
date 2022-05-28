@@ -38,7 +38,7 @@ export type Blog = {
   title: string;
   content: string;
   description: string;
-  eyecatch: string;
+  eyecatch: Eyecatch;
   category: Category[];
   tag?: Tag[];
   recommend: boolean;
