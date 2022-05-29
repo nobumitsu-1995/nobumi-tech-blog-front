@@ -1,15 +1,22 @@
-import React from 'react'
-import { SearchCategoryCard, SearchKeywordCard, SearchTagCard } from '../../components/organisms'
-import { GapColumnList } from '../../styles/styled-components'
+import React from "react";
+import { SearchCategoryCard, SearchKeywordCard, SearchTagCard } from "../../components/organisms";
+import { GapColumnList } from "../../styles/styled-components";
 
-const Search = () => {
-  return (
-    <GapColumnList gap='20px'>
-      <SearchKeywordCard/>
-      <SearchCategoryCard/>
-      <SearchTagCard/>
-    </GapColumnList>
-  )
+type Props = {
+	tagDatas: {
+		text: string;
+		link: string;
+	}[];
 }
 
-export default Search
+const Search: React.FC<Props> = ({ tagDatas }) => {
+	return (
+		<GapColumnList gap="20px">
+			<SearchKeywordCard />
+			<SearchCategoryCard />
+			<SearchTagCard tagDatas={tagDatas}/>
+		</GapColumnList>
+	);
+};
+
+export default Search;

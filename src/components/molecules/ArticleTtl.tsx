@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { Category } from "../../../lib/type";
 import { Date, StyledLink, Text } from "../atoms";
 
 type Props = {
 	date: Date;
 	title: string;
-	category?: string;
-	link?: string;
+	categories?: Category[];
 };
 
 const Title = styled.div`
@@ -27,8 +27,14 @@ const ArticleTtl: React.FC<Props> = ({ ...props }) => {
 				textalign="center"
 				margin="25px 0"
 			/>
-			{props.link && props.category &&
-				<StyledLink link={props.link} text={props.category} />
+			{props.categories &&
+				props.categories.map(category => {
+					return (
+						<li key={category.id}>
+							<StyledLink link={`/category/${category.name}`} text={category.name} />
+						</li>
+					)
+				})
 			}
 			</Title>
 	);

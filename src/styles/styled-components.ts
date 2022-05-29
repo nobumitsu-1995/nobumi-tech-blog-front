@@ -6,11 +6,11 @@ export const Flex = styled.div`
 	justify-content: space-between;
 `;
 
-export const FlexCenter = styled.div<{gap?: string}>`
+export const FlexCenter = styled.div<{ gap?: string }>`
 	align-items: center;
 	display: flex;
-	gap: ${({gap}) => {
-		return gap
+	gap: ${({ gap }) => {
+		return gap;
 	}};
 	justify-content: center;
 `;
@@ -27,20 +27,20 @@ export const Container = styled.div`
 	width: 1080px;
 `;
 
-export const Section = styled.section<{padding: string}>`
-  padding: ${({padding}) => {
+export const Section = styled.section<{ padding: string }>`
+	padding: ${({ padding }) => {
 		return padding;
 	}};
 `;
 
-export const ArticleContent = styled.div<{margin?: string}>`
-	margin: ${({margin}) => {
-		return margin
+export const ArticleContent = styled.div<{ margin?: string }>`
+	margin: ${({ margin }) => {
+		return margin;
 	}};
 
 	h1 {
-		background: #ECF0F1;
-		border-top: 5px solid #7C83CC;
+		background: #ecf0f1;
+		border-top: 5px solid #7c83cc;
 		border-radius: 5px 0 0 5px;
 		box-shadow: 3px 3px 8px #00000029;
 		font-size: 36px;
@@ -49,9 +49,9 @@ export const ArticleContent = styled.div<{margin?: string}>`
 		position: relative;
 
 		span {
-			background: #7C83CC;
+			background: #7c83cc;
 			border-radius: 5px 0 20px 5px;
-			color: #ECF0F1;
+			color: #ecf0f1;
 			font-size: 52px;
 			font-weight: bold;
 			height: 80px;
@@ -65,21 +65,21 @@ export const ArticleContent = styled.div<{margin?: string}>`
 	}
 
 	h2 {
-		background: #EFEFEF;
-		border-left: 5px solid #7C83CC;
+		background: #efefef;
+		border-left: 5px solid #7c83cc;
 		font-size: 20px;
 		font-weight: bold;
 		padding: 10px 20px;
 	}
 
 	p.important {
-		background: #ECF0F1;
-		border: 1px dashed #2E3E4E;
+		background: #ecf0f1;
+		border: 1px dashed #2e3e4e;
 		padding: 10px;
 	}
 
 	span.important {
-		color: #E63946;
+		color: #e63946;
 		font-weight: bold;
 	}
 
@@ -89,7 +89,7 @@ export const ArticleContent = styled.div<{margin?: string}>`
 		position: relative;
 
 		&::before {
-			border: 2px solid #7C83CC;
+			border: 2px solid #7c83cc;
 			border-radius: 100%;
 			content: "";
 			display: block;
@@ -101,8 +101,8 @@ export const ArticleContent = styled.div<{margin?: string}>`
 		}
 
 		&::after {
-			border-left: 3px solid #7C83CC;
-			border-bottom: 3px solid #7C83CC;
+			border-left: 3px solid #7c83cc;
+			border-bottom: 3px solid #7c83cc;
 			content: "";
 			display: block;
 			height: 7px;

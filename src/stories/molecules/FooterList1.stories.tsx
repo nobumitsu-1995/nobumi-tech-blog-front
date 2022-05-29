@@ -15,30 +15,32 @@ export default {
 } as ComponentMeta<typeof FooterList1>;
 
 const Container = styled.div`
-	background: #2E3E4E;
+	background: #2e3e4e;
 	margin: 0 auto;
 	width: 400px;
 `;
 
 export const StyledFooterList1: ComponentStory<typeof FooterList1> = args => (
 	<Container>
-		<FooterList1 datas={[
-			{
-				text: "HOME",
-				link: "/",
-			},
-			{
-				text: "SEARCH",
-				link: "/search",
-			},
-			{
-				text: "PROFILE",
-				link: "/profile",
-			},
-			{
-				text: "CONTACT",
-				link: "/contact",
-			},
-		]}/>
+		<FooterList1
+			datas={[
+				{
+					text: "HOME",
+					link: "/",
+				},
+				{
+					text: "SEARCH",
+					link: "/search",
+				},
+				{
+					text: "PROFILE",
+					link: "/profile",
+				},
+				{
+					text: "CONTACT",
+					link: "/contact",
+				},
+			]}
+		/>
 	</Container>
 );

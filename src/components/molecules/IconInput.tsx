@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Input } from "../atoms";
+import { Input, Text } from "../atoms";
 
 type InputProps = Omit<JSX.IntrinsicElements["input"], "ref">;
 
 type Props = InputProps & {
 	borderRadius?: string;
+	error?: boolean;
 	fontSize?: string;
 	icon: React.ReactNode;
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -37,15 +38,26 @@ const Button = styled.button`
 `;
 
 const IconInput: React.FC<Props> = ({ ...props }) => {
-	const { icon, onClick, ...inputProps } = props;
+	const { icon, error = false, onClick, ...inputProps } = props;
 
 	return (
-		<InputArea>
-			<Input {...inputProps} />
-			<Button type="button" onClick={onClick}>
-				{icon}
-			</Button>
-		</InputArea>
+		<>
+			<InputArea>
+				<Input {...inputProps} />
+				<Button type="button" onClick={onClick}>
+					{icon}
+				</Button>
+			</InputArea>
+			{error && (
+				<Text
+					color="#E63946"
+					fontSize="12px"
+					fontWeight="bold"
+					text={`キーワードを入力してください。`}
+					margin="20px 0 0"
+				/>
+			)}
+		</>
 	);
 };
 
