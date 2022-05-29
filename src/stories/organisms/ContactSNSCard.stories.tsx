@@ -14,6 +14,4 @@ export default {
 	},
 } as ComponentMeta<typeof ContactSNSCard>;
 
-export const StyledContactSNSCard: ComponentStory<typeof ContactSNSCard> = args => (
-	<ContactSNSCard />
-);
+export const StyledContactSNSCard: ComponentStory<typeof ContactSNSCard> = args => <ContactSNSCard />;

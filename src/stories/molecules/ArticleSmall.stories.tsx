@@ -20,10 +20,10 @@ const Container = styled.div`
 	width: 640px;
 `;
 
-const article = articleDatas[0]
+const article = articleDatas[0];
 
 export const StyledArticleSmall: ComponentStory<typeof ArticleSmall> = args => (
 	<Container>
-		<ArticleSmall article={article}/>
+		<ArticleSmall article={article} />
 	</Container>
 );

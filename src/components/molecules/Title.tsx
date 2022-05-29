@@ -10,11 +10,11 @@ type Props = {
 	subText: string;
 };
 
-const StyledTtl = styled.h2<{margin: string}>`
+const StyledTtl = styled.h2<{ margin: string }>`
 	text-align: right;
-	margin: ${({margin}) => {
+	margin: ${({ margin }) => {
 		return margin;
-	}}
+	}};
 `;
 
 const Container = styled.div<{ subText: string }>`

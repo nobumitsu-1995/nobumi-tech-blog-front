@@ -26,41 +26,45 @@ const Container = styled(Flex)`
 
 export const StyledLinkList: ComponentStory<typeof LinkList> = args => (
 	<Container>
-		<LinkList links={[
-			{
-				text: "FRONTEND",
-				link: ""
-			},
-			{
-				text: "BACKEND",
-				link: ""
-			},
-			{
-				text: "OTHER",
-				link: ""
-			},
-		]} />
-		<LinkList links={[
-			{
-				text: "React.js",
-				link: ""
-			},
-			{
-				text: "Next.js",
-				link: ""
-			},
-			{
-				text: "Typescript",
-				link: ""
-			},
-			{
-				text: "Javascript",
-				link: ""
-			},
-			{
-				text: "Ruby on Rails",
-				link: ""
-			},
-		]} />
+		<LinkList
+			links={[
+				{
+					text: "FRONTEND",
+					link: "",
+				},
+				{
+					text: "BACKEND",
+					link: "",
+				},
+				{
+					text: "OTHER",
+					link: "",
+				},
+			]}
+		/>
+		<LinkList
+			links={[
+				{
+					text: "React.js",
+					link: "",
+				},
+				{
+					text: "Next.js",
+					link: "",
+				},
+				{
+					text: "Typescript",
+					link: "",
+				},
+				{
+					text: "Javascript",
+					link: "",
+				},
+				{
+					text: "Ruby on Rails",
+					link: "",
+				},
+			]}
+		/>
 	</Container>
 );

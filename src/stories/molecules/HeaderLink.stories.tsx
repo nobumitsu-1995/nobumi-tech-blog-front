@@ -15,7 +15,7 @@ export default {
 } as ComponentMeta<typeof HeaderLink>;
 
 const Container = styled.div`
-	background-color: #2E3E4E;
+	background-color: #2e3e4e;
 	display: flex;
 	height: 70px;
 	margin: 0 auto;
@@ -24,8 +24,8 @@ const Container = styled.div`
 
 export const StyledHeaderLink: ComponentStory<typeof HeaderLink> = args => (
 	<Container>
-		<HeaderLink link="/sample" img="images/home.png" text="HOME"	/>
-		<HeaderLink link="/sample" img="images/home.png" text="HOME"	/>
-		<HeaderLink link="/sample" img="images/home.png" text="HOME"	/>
+		<HeaderLink link="/sample" img="images/home.png" text="HOME" />
+		<HeaderLink link="/sample" img="images/home.png" text="HOME" />
+		<HeaderLink link="/sample" img="images/home.png" text="HOME" />
 	</Container>
 );

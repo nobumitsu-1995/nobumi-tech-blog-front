@@ -14,6 +14,4 @@ export default {
 	},
 } as ComponentMeta<typeof SearchCategoryCard>;
 
-export const StyledSearchCategoryCard: ComponentStory<typeof SearchCategoryCard> = args => (
-	<SearchCategoryCard />
-);
+export const StyledSearchCategoryCard: ComponentStory<typeof SearchCategoryCard> = args => <SearchCategoryCard />;
