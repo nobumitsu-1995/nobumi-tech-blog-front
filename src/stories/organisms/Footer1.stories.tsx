@@ -14,6 +14,4 @@ export default {
 	},
 } as ComponentMeta<typeof Footer1>;
 
-export const StyledFooter1: ComponentStory<typeof Footer1> = args => (
-	<Footer1 />
-);
+export const StyledFooter1: ComponentStory<typeof Footer1> = args => <Footer1 />;

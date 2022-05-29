@@ -16,22 +16,17 @@ const Avater = styled.figure`
 	position: relative;
 	margin: auto;
 	width: 140px;
-`
+`;
 
 const StyledImage = styled(Image)`
 	border-radius: 100%;
-`
+`;
 
 const UserCard: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Paper padding="25px 20px">
 			<Avater>
-				<StyledImage
-					src={`${props.eyecatch.url}`}
-					alt={props.title}
-					layout="fill"
-					objectFit="cover"
-				/>
+				<StyledImage src={`${props.eyecatch.url}`} alt={props.title} layout="fill" objectFit="cover" />
 			</Avater>
 			<Text
 				color="#271E16"

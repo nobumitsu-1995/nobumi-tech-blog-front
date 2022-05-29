@@ -7,7 +7,7 @@ import { IconInput } from "../molecules";
 
 const LinkContainer = styled(FlexCenter)`
 	margin-top: 10px;
-`
+`;
 
 const SearchCard = () => {
 	return (

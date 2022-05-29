@@ -27,10 +27,8 @@ const ArticleTtl: React.FC<Props> = ({ ...props }) => {
 				textalign="center"
 				margin="25px 0"
 			/>
-			{props.link && props.category &&
-				<StyledLink link={props.link} text={props.category} />
-			}
-			</Title>
+			{props.link && props.category && <StyledLink link={props.link} text={props.category} />}
+		</Title>
 	);
 };
 

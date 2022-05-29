@@ -14,6 +14,4 @@ export default {
 	},
 } as ComponentMeta<typeof SearchKeywordCard>;
 
-export const StyledSearchKeywordCard: ComponentStory<typeof SearchKeywordCard> = args => (
-	<SearchKeywordCard />
-);
+export const StyledSearchKeywordCard: ComponentStory<typeof SearchKeywordCard> = args => <SearchKeywordCard />;

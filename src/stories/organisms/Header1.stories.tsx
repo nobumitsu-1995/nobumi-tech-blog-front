@@ -14,6 +14,4 @@ export default {
 	},
 } as ComponentMeta<typeof Header1>;
 
-export const StyledHeader1: ComponentStory<typeof Header1> = args => (
-	<Header1 />
-);
+export const StyledHeader1: ComponentStory<typeof Header1> = args => <Header1 />;
