@@ -34,8 +34,7 @@ const Article: React.FC<Blog> = ({ ...props }) => {
 							<ArticleTtl
 								date={new Date(props.createdAt)}
 								title={props.title}
-								category={props.category[0].name}
-								link={`/category/${props.category[0].name}`}
+								categories={props.category}
 							/>
 						</object>
 						<figure>
