@@ -9,8 +9,11 @@ type Props = {
 
 const Container = styled.div`
 	background: #fff;
+	bottom: -30px;
 	display: inline-block;
-	padding: 3px 5px;
+	padding: 3px 15px;
+	position: absolute;
+	right: 0;
 `;
 
 const TtlTag: React.FC<Props> = props => {
@@ -19,7 +22,7 @@ const TtlTag: React.FC<Props> = props => {
 
 	return (
 		<Container>
-			<Text {...textProps} color={color} fontSize={fontSize} text={joinTags} />
+			<Text {...textProps} color={color} fontSize={fontSize} text={`検索条件：${joinTags}`} />
 		</Container>
 	);
 };

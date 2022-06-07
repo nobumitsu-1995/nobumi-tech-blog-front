@@ -1,5 +1,5 @@
 import React from "react";
-import { Article as ArticleType, Blog } from "../../../lib/type";
+import { Blog } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
 import { Article } from "../molecules";
 

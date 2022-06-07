@@ -1,11 +1,11 @@
 import React from "react";
-import { returnSideBarDatas } from "../../lib/functions/articles";
-import { client } from "../../lib/functions/client";
-import { returnTagDatas } from "../../lib/functions/tags";
-import { SideBarData } from "../../lib/type";
-import { Title } from "../components/molecules";
-import { Layout, Search } from "../components/templates";
-import { Section } from "../styles/styled-components";
+import { returnSideBarDatas } from "../../../lib/functions/articles";
+import { client } from "../../../lib/functions/client";
+import { returnTagDatas } from "../../../lib/functions/tags";
+import { SideBarData } from "../../../lib/type";
+import { Title } from "../../components/molecules";
+import { Layout, Search } from "../../components/templates";
+import { Section } from "../../styles/styled-components";
 
 type Props = {
 	sideBarData: SideBarData;

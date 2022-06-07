@@ -17,7 +17,10 @@ const SearchKeywordCard = () => {
 	const handleClickButton = () => {
 		if (!keyword) return setError(true);
 		setError(false);
-		router.push(`/search?keyword=${keyword}`);
+		router.push({
+			pathname:"/search/result",	//URL
+			query: {keyword :keyword}		//検索クエリ
+		});
 	};
 
 	return (
