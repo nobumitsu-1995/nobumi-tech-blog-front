@@ -1,5 +1,4 @@
 import React from "react";
-import { tagDatas } from "../../../lib/datas";
 import { Paper } from "../atoms";
 import { LinkList, TitleInPaper } from "../molecules";
 

@@ -58,6 +58,17 @@ export const returnArticlesMatchCategory = (articles: Blog[], category: string) 
   );
 }
 
+export const returnArticlesMatchTag = (articles: Blog[], tag: string) => {
+  return (
+    articles.filter(article => {
+      const tags = article.tag?.map(tag => {
+        return tag.link;
+      })
+      return tags?.includes(tag);
+    })
+  );
+}
+
 export const returnSideBarDatas = (articles: Blog[]) => {
 	const datas = returnArticles(articles);
   const userData = returnUserData(articles)!;

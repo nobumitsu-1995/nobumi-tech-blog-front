@@ -5,7 +5,7 @@ export const returnTagDatas = (datas: Tag[]) => {
     datas.map(data => {
       return {
         text: data.name,
-        link: `/search?tag=${data.link}`
+        link: `/search/result?tag=${data.link}`
       }
     })
   )

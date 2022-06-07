@@ -53,8 +53,8 @@ const Title: React.FC<Props> = ({ margin = "0 0 50px", ...props }) => {
 		<StyledTtl margin={margin}>
 			<Container subText={props.subText}>
 				<Text color="#271E16" fontSize="36px" fontWeight="bold" text={props.text} textalign="right" />
+				{props.tags && <TtlTag tags={props.tags} />}
 			</Container>
-			{props.tags && <TtlTag tags={props.tags} />}
 		</StyledTtl>
 	);
 };
