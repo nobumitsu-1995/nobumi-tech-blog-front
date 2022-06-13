@@ -5,20 +5,21 @@ import { ArticleCard, ContactSNSCard, RelativeArticles } from "../organisms";
 
 type Props = {
 	article: Blog;
-	relativeArticles: Blog[];
+	relativeArticles?: Blog[];
+	hideContact?: boolean;
 };
 
-const Article: React.FC<Props> = ({ article, relativeArticles }) => {
+const Article: React.FC<Props> = ({ article, relativeArticles, hideContact =  false}) => {
 	return (
 		<GapColumnList gap="30px">
 			<li>
 				<ArticleCard {...article} />
 			</li>
 			<li>
-				<ContactSNSCard />
+				{!hideContact && <ContactSNSCard />}
 			</li>
 			<li>
-				<RelativeArticles articleDatas={relativeArticles} />
+				{relativeArticles && <RelativeArticles articleDatas={relativeArticles} />}
 			</li>
 		</GapColumnList>
 	);
