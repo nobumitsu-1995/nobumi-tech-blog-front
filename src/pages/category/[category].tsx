@@ -3,7 +3,7 @@ import React from "react";
 import { client } from "../../../lib/functions/client";
 import { returnArticles, returnArticlesMatchCategory, returnSideBarDatas } from "../../../lib/functions/articles";
 import { Blog, Category as CategoryType, SideBarData } from "../../../lib/type";
-import { Title } from "../../components/molecules";
+import { Failed, Title } from "../../components/molecules";
 import { Articles, Layout } from "../../components/templates";
 import { Section } from "../../styles/styled-components";
 
@@ -22,7 +22,10 @@ const Category: React.FC<Props> = ({ category, articles, sideBarData }) => {
 		<Layout {...sideBarData}>
 			<Section padding="80px 0 0">
 				<Title text={`${category.toUpperCase()}に関する記事一覧`} subText="Category" />
-				<Articles articles={articles} />
+				{ articles.length > 0 ?
+					<Articles articles={articles} />
+				: <Failed/>
+				}
 			</Section>
 		</Layout>
 	);
