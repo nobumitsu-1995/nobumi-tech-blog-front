@@ -4,7 +4,7 @@ import { returnUserData } from "./profiles";
 export const returnArticles = (articles: Blog[]) => {
   return (
     articles.filter(article => {
-      return !article.userinfo;
+      return !article.userinfo && !article.privacy;
     })
   )
 }
@@ -54,6 +54,17 @@ export const returnArticlesMatchCategory = (articles: Blog[], category: string) 
         return cat.name
       })
       return cats.includes(category);
+    })
+  );
+}
+
+export const returnArticlesMatchTag = (articles: Blog[], tag: string) => {
+  return (
+    articles.filter(article => {
+      const tags = article.tag?.map(tag => {
+        return tag.link;
+      })
+      return tags?.includes(tag);
     })
   );
 }

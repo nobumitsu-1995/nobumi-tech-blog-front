@@ -18,12 +18,12 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 			<ArticleTtl
 				date={new Date(props.publishedAt)}
 				title={props.title}
-				category={props.category[0].name}
-				link={`/category/${props.category}`}
+				categories={props.category}
 			/>
+			{props.eyecatch &&
 			<figure>
 				<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
-			</figure>
+			</figure>}
 			<ArticleContainer>
 				<ArticleContent margin="0 0 40px">
 					<h1>

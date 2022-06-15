@@ -20,10 +20,6 @@ export const footerDatas = {
   list1: {
     datas: [
       {
-        text: "HOME",
-        link: "/",
-      },
-      {
         text: "SEARCH",
         link: "/search",
       },
@@ -34,6 +30,10 @@ export const footerDatas = {
       {
         text: "CONTACT",
         link: "/contact",
+      },
+      {
+        text: "PRIVACY PORICY",
+        link: "/privacy",
       },
     ]
   },

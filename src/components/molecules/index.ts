@@ -4,6 +4,7 @@ export { default as Article } from "./Article";
 export { default as ArticleMedium } from "./ArticleMedium";
 export { default as ArticleSmall } from "./ArticleSmall";
 export { default as ArticleTtl } from "./ArticleTtl";
+export { default as Failed } from "./Failed";
 export { default as FooterList1 } from "./FooterList1";
 export { default as FooterList2 } from "./FooterList2";
 export { default as HeaderLink } from "./HeaderLink";

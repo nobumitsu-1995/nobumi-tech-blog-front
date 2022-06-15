@@ -6,6 +6,7 @@ export { default as Footer1 } from "./Footer1";
 export { default as Footer2 } from "./Footer2";
 export { default as Header1 } from "./Header1";
 export { default as Header2 } from "./Header2";
+export { default as Pagination } from "./Pagination";
 export { default as ProfileCard } from "./ProfileCard";
 export { default as RecommendArticles } from "./RecommendArticles";
 export { default as RecommendArticlesCategory } from "./RecommendArticlesCategory";
