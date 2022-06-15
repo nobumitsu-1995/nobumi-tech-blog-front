@@ -4,7 +4,7 @@ import { returnUserData } from "./profiles";
 export const returnArticles = (articles: Blog[]) => {
   return (
     articles.filter(article => {
-      return !article.userinfo;
+      return !article.userinfo && !article.privacy;
     })
   )
 }

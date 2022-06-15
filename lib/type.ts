@@ -33,6 +33,7 @@ export type Blog = {
   id: string;
   createdAt: string;
   updatedAt: string;
+  privacy: boolean;
   publishedAt: string;
   revisedAt: string;
   title: string;

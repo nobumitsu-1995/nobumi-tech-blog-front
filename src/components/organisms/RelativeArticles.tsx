@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { articleDatas } from "../../../lib/datas";
 import { Blog } from "../../../lib/type";
 import { Paper } from "../atoms";
 import { ArticleSmall, TitleInPaper } from "../molecules";
