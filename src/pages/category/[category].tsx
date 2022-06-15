@@ -6,6 +6,7 @@ import { Blog, Category as CategoryType, SideBarData } from "../../../lib/type";
 import { Failed, Title } from "../../components/molecules";
 import { Articles, Layout } from "../../components/templates";
 import { Section } from "../../styles/styled-components";
+import { PageProvider } from "../../../lib/PagenationContext";
 
 type Props = {
 	category: string;
@@ -23,7 +24,9 @@ const Category: React.FC<Props> = ({ category, articles, sideBarData }) => {
 			<Section padding="80px 0 0">
 				<Title text={`${category.toUpperCase()}に関する記事一覧`} subText="Category" />
 				{ articles.length > 0 ?
-					<Articles articles={articles} />
+					<PageProvider itemLength={articles.length}>
+						<Articles articles={articles} />
+					</PageProvider>
 				: <Failed/>
 				}
 			</Section>

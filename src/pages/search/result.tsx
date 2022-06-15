@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next'
 import React from 'react'
 import { returnArticles, returnArticlesMatchTag, returnSideBarDatas } from '../../../lib/functions/articles'
 import { client } from '../../../lib/functions/client'
+import { PageProvider } from '../../../lib/PagenationContext'
 import { Blog, SideBarData } from '../../../lib/type'
 import { Failed, Title } from '../../components/molecules'
 import { Articles, Layout } from '../../components/templates'
@@ -20,7 +21,9 @@ const result: React.FC<Props> = ({ sideBarData, articles, tags }) => {
       <Section padding='80px 0 0'>
         <Title text='記事検索結果' subText='Result' tags={tags}/>
         { articles.length > 0 ?
-        <Articles articles={articles} />
+          <PageProvider itemLength={articles.length}>
+            <Articles articles={articles} />
+          </PageProvider>
         : <Failed />
         }
       </Section>
