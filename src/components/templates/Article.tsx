@@ -9,18 +9,14 @@ type Props = {
 	hideContact?: boolean;
 };
 
-const Article: React.FC<Props> = ({ article, relativeArticles, hideContact =  false}) => {
+const Article: React.FC<Props> = ({ article, relativeArticles, hideContact = false }) => {
 	return (
 		<GapColumnList gap="30px">
 			<li>
 				<ArticleCard {...article} />
 			</li>
-			<li>
-				{!hideContact && <ContactSNSCard />}
-			</li>
-			<li>
-				{relativeArticles && <RelativeArticles articleDatas={relativeArticles} />}
-			</li>
+			<li>{!hideContact && <ContactSNSCard />}</li>
+			<li>{relativeArticles && <RelativeArticles articleDatas={relativeArticles} />}</li>
 		</GapColumnList>
 	);
 };

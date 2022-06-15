@@ -15,7 +15,7 @@ export default {
 } as ComponentMeta<typeof Pagination>;
 
 export const StyledPagination: ComponentStory<typeof Pagination> = args => (
-  <PageProvider itemLength={100}>
-    <Pagination/>
-  </PageProvider>
+	<PageProvider itemLength={100}>
+		<Pagination />
+	</PageProvider>
 );

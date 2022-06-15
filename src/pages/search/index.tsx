@@ -20,7 +20,7 @@ const index: React.FC<Props> = ({ sideBarData, tagDatas }) => {
 		<Layout {...sideBarData}>
 			<Section padding="80px 0 0">
 				<Title text="記事検索フォーム" subText="Search" />
-				<Search tagDatas={tagDatas}/>
+				<Search tagDatas={tagDatas} />
 			</Section>
 		</Layout>
 	);
@@ -37,18 +37,18 @@ export const getStaticProps = async () => {
 	const { sideBarData } = returnSideBarDatas(data);
 
 	const datas = await client
-	.get({
-		endpoint: "tags",
-	})
-	.then(res => {
-		return res.contents;
-	});
+		.get({
+			endpoint: "tags",
+		})
+		.then(res => {
+			return res.contents;
+		});
 	const tagDatas = returnTagDatas(datas);
 
 	return {
 		props: {
 			sideBarData: sideBarData,
-			tagDatas: tagDatas
+			tagDatas: tagDatas,
 		},
 	};
 };

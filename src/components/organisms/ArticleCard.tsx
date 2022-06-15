@@ -15,15 +15,12 @@ const ArticleContainer = styled.div`
 const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#7C83CC">
-			<ArticleTtl
-				date={new Date(props.publishedAt)}
-				title={props.title}
-				categories={props.category}
-			/>
-			{props.eyecatch &&
-			<figure>
-				<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
-			</figure>}
+			<ArticleTtl date={new Date(props.publishedAt)} title={props.title} categories={props.category} />
+			{props.eyecatch && (
+				<figure>
+					<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
+				</figure>
+			)}
 			<ArticleContainer>
 				<ArticleContent margin="0 0 40px">
 					<h1>

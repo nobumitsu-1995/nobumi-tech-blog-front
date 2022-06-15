@@ -23,12 +23,13 @@ const Category: React.FC<Props> = ({ category, articles, sideBarData }) => {
 		<Layout {...sideBarData}>
 			<Section padding="80px 0 0">
 				<Title text={`${category.toUpperCase()}に関する記事一覧`} subText="Category" />
-				{ articles.length > 0 ?
+				{articles.length > 0 ? (
 					<PageProvider itemLength={articles.length}>
 						<Articles articles={articles} />
 					</PageProvider>
-				: <Failed/>
-				}
+				) : (
+					<Failed />
+				)}
 			</Section>
 		</Layout>
 	);
