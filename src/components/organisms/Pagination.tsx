@@ -17,17 +17,14 @@ const Pagination = () => {
 
 	return (
 		<nav>
-
-		<StyledPagination>
-			<PaginationPrev/>
-			{createArr(pages).map((page, index) => {
-				return (
-					<PaginationButton key={page} page={page} index={index}/>
-					);
+			<StyledPagination>
+				<PaginationPrev />
+				{createArr(pages).map((page, index) => {
+					return <PaginationButton key={page} page={page} index={index} />;
 				})}
-			<PaginationNext/>
-		</StyledPagination>
-				</nav>
+				<PaginationNext />
+			</StyledPagination>
+		</nav>
 	);
 };
 

@@ -21,25 +21,27 @@ const Container = styled.div`
 
 export const StyledArticleSmall: ComponentStory<typeof ArticleSmall> = args => (
 	<Container>
-		<ArticleSmall article={{
-			id: "",
-			createdAt: "",
-			updatedAt: "",
-			privacy: false,
-			publishedAt: "",
-			revisedAt: "",
-			title: "",
-			content: "",
-			description: "",
-			eyecatch: {
-				url: "",
-				height: 0,
-				width: 0
-			},
-			category: [],
-			tag: undefined,
-			recommend: false,
-			userinfo: false
-		}} />
+		<ArticleSmall
+			article={{
+				id: "",
+				createdAt: "",
+				updatedAt: "",
+				privacy: false,
+				publishedAt: "",
+				revisedAt: "",
+				title: "",
+				content: "",
+				description: "",
+				eyecatch: {
+					url: "",
+					height: 0,
+					width: 0,
+				},
+				category: [],
+				tag: undefined,
+				recommend: false,
+				userinfo: false,
+			}}
+		/>
 	</Container>
 );

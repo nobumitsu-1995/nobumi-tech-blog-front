@@ -1,17 +1,17 @@
-import React from 'react'
-import { usePageContext } from '../../../lib/PagenationContext';
-import { ArrowIcon, Button } from '../atoms'
+import React from "react";
+import { usePageContext } from "../../../lib/PagenationContext";
+import { ArrowIcon, Button } from "../atoms";
 
 const PaginationNext = () => {
 	const { current, setCurrent, pages } = usePageContext();
-  const nextPage = () => {
+	const nextPage = () => {
 		// 最終ページの時は何もしない
 		return current === pages ? false : setCurrent(current + 1);
 	};
 
-  return (
-    <>
-      <li>
+	return (
+		<>
+			<li>
 				<Button
 					icon={<ArrowIcon color="#fff" />}
 					iconSpace="12px"
@@ -42,8 +42,8 @@ const PaginationNext = () => {
 					disabled={current === pages}
 				/>
 			</li>
-    </>
-  )
-}
+		</>
+	);
+};
 
-export default PaginationNext
+export default PaginationNext;

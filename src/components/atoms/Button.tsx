@@ -64,11 +64,11 @@ const StyledButton = styled.button<{
 
 	&:hover {
 		opacity: 0.7;
-		background-color: ${({hoverBackgroundColor}) => {
-			return hoverBackgroundColor
+		background-color: ${({ hoverBackgroundColor }) => {
+			return hoverBackgroundColor;
 		}};
-		color: ${({hoverColor}) => {
-			return hoverColor
+		color: ${({ hoverColor }) => {
+			return hoverColor;
 		}};
 		transition-duration: 0.3s;
 	}

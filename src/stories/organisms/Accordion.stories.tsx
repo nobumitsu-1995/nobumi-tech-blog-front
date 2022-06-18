@@ -23,8 +23,7 @@ const Container = styled.div`
 export const StyledAccordion: ComponentStory<typeof Accordion> = args => (
 	<Container>
 		<Accordion id={0} text="BACKEND">
-			<AccordionBody articles={[]}				
-			/>
+			<AccordionBody articles={[]} />
 		</Accordion>
 	</Container>
 );
