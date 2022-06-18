@@ -33,10 +33,9 @@ const ArticleTtl: React.FC<Props> = ({ ...props }) => {
 						<li key={category.id}>
 							<StyledLink link={`/category/${category.name}`} text={category.name} />
 						</li>
-					)
-				})
-			}
-			</Title>
+					);
+				})}
+		</Title>
 	);
 };
 

@@ -6,8 +6,8 @@ type Props = {
 	tagDatas: {
 		text: string;
 		link: string;
-	}[]
-}
+	}[];
+};
 
 const SearchTagCard: React.FC<Props> = ({ tagDatas }) => {
 	return (

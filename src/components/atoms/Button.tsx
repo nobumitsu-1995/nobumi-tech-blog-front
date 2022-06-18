@@ -9,6 +9,8 @@ export type ButtonProps = {
 	disabled?: boolean;
 	fontSize?: string;
 	fontWeight?: string;
+	hoverBackgroundColor?: string;
+	hoverColor?: string;
 	icon?: React.ReactNode;
 	iconPosition?: "right" | "left";
 	iconSpace?: string;
@@ -25,6 +27,8 @@ const StyledButton = styled.button<{
 	color: string;
 	fontSize: string;
 	fontWeight?: string;
+	hoverBackgroundColor?: string;
+	hoverColor?: string;
 	margin?: string;
 	padding: string;
 }>`
@@ -60,12 +64,18 @@ const StyledButton = styled.button<{
 
 	&:hover {
 		opacity: 0.7;
+		background-color: ${({ hoverBackgroundColor }) => {
+			return hoverBackgroundColor;
+		}};
+		color: ${({ hoverColor }) => {
+			return hoverColor;
+		}};
 		transition-duration: 0.3s;
 	}
 
 	&:disabled {
 		cursor: not-allowed;
-		opacity: 0.07;
+		opacity: 0.3;
 	}
 `;
 
@@ -110,6 +120,8 @@ const Button: React.FC<ButtonProps> = ({
 			type="button"
 			onClick={props.onClick}
 			disabled={disabled}
+			hoverBackgroundColor={props.hoverBackgroundColor}
+			hoverColor={props.hoverColor}
 		>
 			<Icon iconPosition={props.iconPosition} iconSpace={props.iconSpace}>
 				{props.icon}

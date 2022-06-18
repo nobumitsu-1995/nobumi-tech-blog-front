@@ -18,8 +18,8 @@ const SearchKeywordCard = () => {
 		if (!keyword) return setError(true);
 		setError(false);
 		router.push({
-			pathname:"/search/result",	//URL
-			query: {keyword :keyword}		//検索クエリ
+			pathname: "/search/result", //URL
+			query: { keyword: keyword }, //検索クエリ
 		});
 	};
 

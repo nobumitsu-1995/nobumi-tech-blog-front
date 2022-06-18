@@ -50,7 +50,7 @@ const FooterList2: React.FC<Props> = ({ title, datas }) => {
 					return (
 						<li key={data.text}>
 							<Link href={data.link} passHref>
-								<LinkArea>
+								<LinkArea target="_blank">
 									<Text color="#7C83CC" fontWeight="bold" text={data.text} />
 								</LinkArea>
 							</Link>

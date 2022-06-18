@@ -14,6 +14,4 @@ export default {
 	},
 } as ComponentMeta<typeof Failed>;
 
-export const StyledFailed: ComponentStory<typeof Failed> = args => (
-		<Failed/>
-);
+export const StyledFailed: ComponentStory<typeof Failed> = args => <Failed />;

@@ -12,21 +12,27 @@ const ArticleContainer = styled.div`
 	margin-top: 40px;
 `;
 
+const Line = styled.figure`
+	background-color: #ddd;
+	display: block;
+	height: 2px;
+	margin: 40px 0;
+	width: 100%;
+`;
+
 const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#7C83CC">
-			<ArticleTtl
-				date={new Date(props.publishedAt)}
-				title={props.title}
-				categories={props.category}
-			/>
-			{props.eyecatch &&
-			<figure>
-				<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
-			</figure>}
+			<article>
+			<ArticleTtl date={new Date(props.publishedAt)} title={props.title} categories={props.category} />
+			{props.eyecatch && (
+				<figure>
+					<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
+				</figure>
+			)}
 			<ArticleContainer>
 				<ArticleContent margin="0 0 40px">
-					<h1>
+					{/* <h1>
 						<span>01</span>H1 TITLE
 					</h1>
 					<br />
@@ -38,10 +44,23 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 						テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
 					</p>
 					<br />
-					<span className="important">Important Important Important Important Important Important</span>
+					<span className="important">Important Important Important Important Important Important</span> */}
+					<p
+						dangerouslySetInnerHTML={{
+							__html: `${props.description}`,
+						}}
+					/>
+					<Line />
+					<div
+						dangerouslySetInnerHTML={{
+							__html: `${props.content}`,
+						}}
+					/>
 				</ArticleContent>
+				<Line />
 				<LinkList img="tag.png" links={tagDatas} />
 			</ArticleContainer>
+			</article>
 		</Paper>
 	);
 };
