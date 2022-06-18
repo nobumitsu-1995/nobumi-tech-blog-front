@@ -2,10 +2,11 @@ import { GetServerSideProps } from "next";
 import React from "react";
 import { returnArticles, returnArticlesMatchTag, returnSideBarDatas } from "../../../lib/functions/articles";
 import { client } from "../../../lib/functions/client";
+import { resultMetaData } from "../../../lib/metaDatas";
 import { PageProvider } from "../../../lib/PagenationContext";
 import { Blog, SideBarData } from "../../../lib/type";
 import { Failed, Title } from "../../components/molecules";
-import { Articles, Layout } from "../../components/templates";
+import { Articles, Meta, Layout } from "../../components/templates";
 import { Section } from "../../styles/styled-components";
 
 type Props = {
@@ -16,18 +17,21 @@ type Props = {
 
 const result: React.FC<Props> = ({ sideBarData, articles, tags }) => {
 	return (
-		<Layout {...sideBarData}>
-			<Section padding="80px 0 0">
-				<Title text="記事検索結果" subText="Result" tags={tags} />
-				{articles.length > 0 ? (
-					<PageProvider itemLength={articles.length}>
-						<Articles articles={articles} />
-					</PageProvider>
-				) : (
-					<Failed />
-				)}
-			</Section>
-		</Layout>
+		<>
+			<Meta {...resultMetaData}/>
+			<Layout {...sideBarData}>
+				<Section padding="80px 0 0">
+					<Title text="記事検索結果" subText="Result" tags={tags} />
+					{articles.length > 0 ? (
+						<PageProvider itemLength={articles.length}>
+							<Articles articles={articles} />
+						</PageProvider>
+					) : (
+						<Failed />
+						)}
+				</Section>
+			</Layout>
+		</>
 	);
 };
 

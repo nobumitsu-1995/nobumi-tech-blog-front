@@ -23,7 +23,7 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 			)}
 			<ArticleContainer>
 				<ArticleContent margin="0 0 40px">
-					<h1>
+					{/* <h1>
 						<span>01</span>H1 TITLE
 					</h1>
 					<br />
@@ -35,7 +35,17 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 						テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
 					</p>
 					<br />
-					<span className="important">Important Important Important Important Important Important</span>
+					<span className="important">Important Important Important Important Important Important</span> */}
+					<div
+						dangerouslySetInnerHTML={{
+							__html: `${props.description}`,
+						}}
+					/>
+					<div
+						dangerouslySetInnerHTML={{
+							__html: `${props.content}`,
+						}}
+					/>
 				</ArticleContent>
 				<LinkList img="tag.png" links={tagDatas} />
 			</ArticleContainer>

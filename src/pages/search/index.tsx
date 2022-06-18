@@ -2,9 +2,10 @@ import React from "react";
 import { returnSideBarDatas } from "../../../lib/functions/articles";
 import { client } from "../../../lib/functions/client";
 import { returnTagDatas } from "../../../lib/functions/tags";
+import { searchMetaData } from "../../../lib/metaDatas";
 import { SideBarData } from "../../../lib/type";
 import { Title } from "../../components/molecules";
-import { Layout, Search } from "../../components/templates";
+import { Layout, Meta, Search } from "../../components/templates";
 import { Section } from "../../styles/styled-components";
 
 type Props = {
@@ -17,12 +18,15 @@ type Props = {
 
 const index: React.FC<Props> = ({ sideBarData, tagDatas }) => {
 	return (
-		<Layout {...sideBarData}>
-			<Section padding="80px 0 0">
-				<Title text="記事検索フォーム" subText="Search" />
-				<Search tagDatas={tagDatas} />
-			</Section>
-		</Layout>
+		<>
+			<Meta {...searchMetaData}/>
+			<Layout {...sideBarData}>
+				<Section padding="80px 0 0">
+					<Title text="記事検索フォーム" subText="Search" />
+					<Search tagDatas={tagDatas} />
+				</Section>
+			</Layout>
+		</>
 	);
 };
 

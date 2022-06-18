@@ -4,9 +4,10 @@ import { client } from "../../../lib/functions/client";
 import { returnArticles, returnArticlesMatchCategory, returnSideBarDatas } from "../../../lib/functions/articles";
 import { Blog, Category as CategoryType, SideBarData } from "../../../lib/type";
 import { Failed, Title } from "../../components/molecules";
-import { Articles, Layout } from "../../components/templates";
+import { Articles, Layout, Meta } from "../../components/templates";
 import { Section } from "../../styles/styled-components";
 import { PageProvider } from "../../../lib/PagenationContext";
+import { categoryMetaData } from "../../../lib/metaDatas";
 
 type Props = {
 	category: string;
@@ -20,18 +21,21 @@ type Params = {
 
 const Category: React.FC<Props> = ({ category, articles, sideBarData }) => {
 	return (
-		<Layout {...sideBarData}>
-			<Section padding="80px 0 0">
-				<Title text={`${category.toUpperCase()}に関する記事一覧`} subText="Category" />
-				{articles.length > 0 ? (
-					<PageProvider itemLength={articles.length}>
-						<Articles articles={articles} />
-					</PageProvider>
-				) : (
-					<Failed />
-				)}
-			</Section>
-		</Layout>
+		<>
+			<Meta {...categoryMetaData}/>
+			<Layout {...sideBarData}>
+				<Section padding="80px 0 0">
+					<Title text={`${category.toUpperCase()}に関する記事一覧`} subText="Category" />
+					{articles.length > 0 ? (
+						<PageProvider itemLength={articles.length}>
+							<Articles articles={articles} />
+						</PageProvider>
+					) : (
+						<Failed />
+						)}
+				</Section>
+			</Layout>
+		</>
 	);
 };
 

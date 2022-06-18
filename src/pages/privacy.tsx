@@ -1,10 +1,10 @@
-/* eslint-disable @next/next/no-typos */
 import React from "react";
 import { returnSideBarDatas } from "../../lib/functions/articles";
 import { client } from "../../lib/functions/client";
 import { returnPrivacyPoricyData } from "../../lib/functions/privacy";
+import { privacyMetaData } from "../../lib/metaDatas";
 import { Blog, SideBarData } from "../../lib/type";
-import { Layout } from "../components/templates";
+import { Layout, Meta } from "../components/templates";
 import Article from "../components/templates/Article";
 
 type Props = {
@@ -14,9 +14,12 @@ type Props = {
 
 const privacy: React.FC<Props> = ({ ...props }) => {
 	return (
-		<Layout {...props.sideBarData}>
-			<Article article={props.article} hideContact />
-		</Layout>
+		<>
+			<Meta {...privacyMetaData}/>
+			<Layout {...props.sideBarData}>
+				<Article article={props.article} hideContact />
+			</Layout>
+		</>
 	);
 };
 

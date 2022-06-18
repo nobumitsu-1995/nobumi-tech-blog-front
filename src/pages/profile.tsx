@@ -1,8 +1,9 @@
 import React from "react";
 import { returnSideBarDatas } from "../../lib/functions/articles";
 import { client } from "../../lib/functions/client";
+import { profileMetaData } from "../../lib/metaDatas";
 import { Blog, SideBarData } from "../../lib/type";
-import { Layout, Profile } from "../components/templates";
+import { Layout, Meta, Profile } from "../components/templates";
 
 type Props = {
 	userData: Blog;
@@ -11,9 +12,12 @@ type Props = {
 
 const profile: React.FC<Props> = ({ userData, sideBarData }) => {
 	return (
-		<Layout {...sideBarData}>
-			<Profile userData={userData} />
-		</Layout>
+		<>
+			<Meta {...profileMetaData}/>
+			<Layout {...sideBarData}>
+				<Profile userData={userData} />
+			</Layout>
+		</>
 	);
 };
 
