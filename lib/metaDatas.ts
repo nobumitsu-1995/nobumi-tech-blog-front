@@ -1,4 +1,6 @@
-export const url = process.env.NODE_ENV === "production" ? "" : "http://localhost:3000";
+export const url = process.env.NODE_ENV === "production" 
+  ? "https://nobumi-tech-blog-front.vercel.app/"
+  : "http://localhost:3000";
 
 export const topMetaData = {
   url: url
