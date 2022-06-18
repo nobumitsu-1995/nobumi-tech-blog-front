@@ -1,92 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import { createArr, usePageContext } from "../../../lib/PagenationContext";
-import { ArrowIcon, Button } from "../atoms";
+import { PaginationButton, PaginationPrev } from "../molecules";
+import PaginationNext from "../molecules/PaginationNext";
 
 const StyledPagination = styled.ul`
+	align-items: center;
 	display: flex;
+	justify-content: center;
 	gap: 10px;
+	margin-top: 50px;
 `;
 
 const Pagination = () => {
-	const { current, setCurrent, pages } = usePageContext();
-
-	const prevPage = () => {
-		// 1ページ目の時は何もしない
-		return current === 1 ? false : setCurrent(current - 1);
-	};
-
-	const nextPage = () => {
-		// 最終ページの時は何もしない
-		return current === pages ? false : setCurrent(current + 1);
-	};
+	const { pages } = usePageContext();
 
 	return (
+		<nav>
+
 		<StyledPagination>
-			<li>
-				<Button
-					icon={
-						<>
-							<ArrowIcon direction="left" />
-							<ArrowIcon direction="left" />
-						</>
-					}
-					iconSpace="6px"
-					iconPosition="right"
-					label={""}
-					onClick={() => setCurrent(1)}
-					padding="15px"
-				/>
-			</li>
-			<li>
-				<Button
-					icon={<ArrowIcon direction="left" />}
-					iconSpace="9px"
-					iconPosition="right"
-					label={""}
-					onClick={prevPage}
-					padding="15px"
-				/>
-			</li>
-			{createArr(pages).map(page => {
+			<PaginationPrev/>
+			{createArr(pages).map((page, index) => {
 				return (
-					<li key={page}>
-						<Button
-							fontSize="14px"
-							fontWeight="bold"
-							label={page.toString()}
-							onClick={() => setCurrent(page)}
-							padding="7px 10px"
-						/>
-					</li>
-				);
-			})}
-			<li>
-				<Button
-					icon={<ArrowIcon />}
-					iconSpace="12px"
-					iconPosition="right"
-					label={""}
-					onClick={nextPage}
-					padding="15px"
-				/>
-			</li>
-			<li>
-				<Button
-					icon={
-						<>
-							<ArrowIcon />
-							<ArrowIcon />
-						</>
-					}
-					iconSpace="9px"
-					iconPosition="right"
-					label={""}
-					onClick={() => setCurrent(pages)}
-					padding="15px"
-				/>
-			</li>
+					<PaginationButton key={page} page={page} index={index}/>
+					);
+				})}
+			<PaginationNext/>
 		</StyledPagination>
+				</nav>
 	);
 };
 
