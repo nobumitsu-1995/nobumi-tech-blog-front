@@ -1,7 +1,7 @@
 import React from "react";
 import { Blog } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
-import { ArticleCard, ContactSNSCard, RelativeArticles } from "../organisms";
+import { ArticleCard, ContactSNSCard, RelativeArticles, ShareSNSCard } from "../organisms";
 
 type Props = {
 	article: Blog;
@@ -15,7 +15,7 @@ const Article: React.FC<Props> = ({ article, relativeArticles, hideContact = fal
 			<li>
 				<ArticleCard {...article} />
 			</li>
-			<li>{!hideContact && <ContactSNSCard />}</li>
+			<li>{!hideContact && <ShareSNSCard />}</li>
 			<li>{relativeArticles && <RelativeArticles articleDatas={relativeArticles} />}</li>
 		</GapColumnList>
 	);

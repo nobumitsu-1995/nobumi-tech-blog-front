@@ -12,9 +12,18 @@ const ArticleContainer = styled.div`
 	margin-top: 40px;
 `;
 
+const Line = styled.figure`
+	background-color: #ddd;
+	display: block;
+	height: 2px;
+	margin: 40px 0;
+	width: 100%;
+`;
+
 const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#7C83CC">
+			<article>
 			<ArticleTtl date={new Date(props.publishedAt)} title={props.title} categories={props.category} />
 			{props.eyecatch && (
 				<figure>
@@ -36,19 +45,22 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 					</p>
 					<br />
 					<span className="important">Important Important Important Important Important Important</span> */}
-					<div
+					<p
 						dangerouslySetInnerHTML={{
 							__html: `${props.description}`,
 						}}
 					/>
+					<Line />
 					<div
 						dangerouslySetInnerHTML={{
 							__html: `${props.content}`,
 						}}
 					/>
 				</ArticleContent>
+				<Line />
 				<LinkList img="tag.png" links={tagDatas} />
 			</ArticleContainer>
+			</article>
 		</Paper>
 	);
 };

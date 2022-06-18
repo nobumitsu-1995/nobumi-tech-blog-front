@@ -23,7 +23,7 @@ const RecommendArticlesCategory: React.FC<Props> = ({ ...props }) => {
 			/>
 			<GapColumnList gap="25px">
 				<Accordion id={0} text="FRONTEND">
-					<AccordionBody articles={props.backendArticles} />
+					<AccordionBody articles={props.frontendArticles} />
 				</Accordion>
 				<Accordion id={0} text="BACKEND">
 					<AccordionBody articles={props.backendArticles} />
