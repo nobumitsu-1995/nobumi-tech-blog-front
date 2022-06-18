@@ -22,9 +22,11 @@ const Container = styled.div`
 export const StyledArticleMedium: ComponentStory<typeof ArticleMedium> = args => (
 	<Container>
 		<ArticleMedium
-			id={0}
-			img="sample.png"
-			title="タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。"
-		/>
+			id='0'
+			title="タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。" eyecatch={{
+				url: "",
+				height: 0,
+				width: 0
+			}}		/>
 	</Container>
 );
