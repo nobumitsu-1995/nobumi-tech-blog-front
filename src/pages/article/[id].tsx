@@ -1,6 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import { returnArticle, returnArticles, returnArticlesMatchCategory, returnSideBarDatas } from "../../../lib/functions/articles";
+import {
+	returnArticle,
+	returnArticles,
+	returnArticlesMatchCategory,
+	returnSideBarDatas,
+} from "../../../lib/functions/articles";
 import { client } from "../../../lib/functions/client";
 import { url } from "../../../lib/metaDatas";
 import { Blog, SideBarData } from "../../../lib/type";

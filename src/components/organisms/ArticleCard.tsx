@@ -24,15 +24,15 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#7C83CC">
 			<article>
-			<ArticleTtl date={new Date(props.publishedAt)} title={props.title} categories={props.category} />
-			{props.eyecatch && (
-				<figure>
-					<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
-				</figure>
-			)}
-			<ArticleContainer>
-				<ArticleContent margin="0 0 40px">
-					{/* <h1>
+				<ArticleTtl date={new Date(props.publishedAt)} title={props.title} categories={props.category} />
+				{props.eyecatch && (
+					<figure>
+						<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
+					</figure>
+				)}
+				<ArticleContainer>
+					<ArticleContent margin="0 0 40px">
+						{/* <h1>
 						<span>01</span>H1 TITLE
 					</h1>
 					<br />
@@ -45,21 +45,21 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 					</p>
 					<br />
 					<span className="important">Important Important Important Important Important Important</span> */}
-					<p
-						dangerouslySetInnerHTML={{
-							__html: `${props.description}`,
-						}}
-					/>
+						<p
+							dangerouslySetInnerHTML={{
+								__html: `${props.description}`,
+							}}
+						/>
+						<Line />
+						<div
+							dangerouslySetInnerHTML={{
+								__html: `${props.content}`,
+							}}
+						/>
+					</ArticleContent>
 					<Line />
-					<div
-						dangerouslySetInnerHTML={{
-							__html: `${props.content}`,
-						}}
-					/>
-				</ArticleContent>
-				<Line />
-				<LinkList img="tag.png" links={tagDatas} />
-			</ArticleContainer>
+					<LinkList img="tag.png" links={tagDatas} />
+				</ArticleContainer>
 			</article>
 		</Paper>
 	);

@@ -1,8 +1,8 @@
 import React from "react";
-import { url } from "../../../lib/metaDatas"
+import { url } from "../../../lib/metaDatas";
 import { Blog } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
-import { ArticleCard, ContactSNSCard, RelativeArticles, ShareSNSCard } from "../organisms";
+import { ArticleCard, RelativeArticles, ShareSNSCard } from "../organisms";
 
 type Props = {
 	article: Blog;

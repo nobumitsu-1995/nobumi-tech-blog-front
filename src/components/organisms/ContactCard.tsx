@@ -15,7 +15,7 @@ const ContactCard = () => {
 	});
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const { value, id } = e.target;	
+		const { value, id } = e.target;
 		setMessage({ ...message, [id]: value });
 	};
 
@@ -27,13 +27,17 @@ const ContactCard = () => {
 		});
 
 		if (!message.name || !message.email || !message.content) return false;
-		
-		if (confirm(`以下の内容でよろしいですか？\r\n\r\nお名前：${message.name}\r\nメールアドレス：${message.email}\r\nお問合せ内容：${message.content}`)) {
-			alert(`${message.name}様、お問い合わせを受け付けました。\r\nありがとうございました！`)
+
+		if (
+			confirm(
+				`以下の内容でよろしいですか？\r\n\r\nお名前：${message.name}\r\nメールアドレス：${message.email}\r\nお問合せ内容：${message.content}`,
+			)
+		) {
+			alert(`${message.name}様、お問い合わせを受け付けました。\r\nありがとうございました！`);
 			setMessage({
 				name: "",
 				email: "",
-				content: ""
+				content: "",
 			});
 		}
 	};
@@ -58,7 +62,7 @@ const ContactCard = () => {
 					value={message.email}
 					onChange={handleInputChange}
 				/>
-				<InputArea 
+				<InputArea
 					error={error.content}
 					id="content"
 					label="お問い合わせ内容"

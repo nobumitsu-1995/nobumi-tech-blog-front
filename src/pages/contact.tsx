@@ -14,7 +14,7 @@ type Props = {
 const contact: React.FC<Props> = ({ sideBarData }) => {
 	return (
 		<>
-			<Meta {...contactMetaData}/>
+			<Meta {...contactMetaData} />
 			<Layout {...sideBarData}>
 				<Section padding="80px 0 0">
 					<Title text="お問い合わせ" subText="Contact" />
