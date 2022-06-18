@@ -15,7 +15,6 @@ const Articles: React.FC<Props> = ({ articles }) => {
 	const itemPerPage = 2;
 
 	useEffect(() => {
-		console.log(current);
 		setCurrentBlogs(returnCurrentBrogs(articles, itemPerPage, current));
 	}, [articles, current]);
 

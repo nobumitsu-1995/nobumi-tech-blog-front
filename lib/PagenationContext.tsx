@@ -54,8 +54,5 @@ export const returnPageNum = (itemPerPage: number, itemQuantity: number) => {
 export const returnCurrentBrogs = ( items: Blog[], itemPerPage: number, currentPage: number ) => {
 	const firstVal = (currentPage - 1) * itemPerPage;
 	const lastVal = currentPage * itemPerPage;
-	console.log(firstVal);
-	console.log(lastVal);
-	console.log(items.slice(firstVal, lastVal));
 	return items.slice(firstVal, lastVal);
 }
