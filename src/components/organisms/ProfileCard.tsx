@@ -24,7 +24,7 @@ const ProfileCard: React.FC<Props> = ({ userData }) => {
 			</figure>
 			<ArticleContainer>
 				<ArticleContent>
-					<h1>
+					{/* <h1>
 						<span>01</span>H1 TITLE
 					</h1>
 					<br />
@@ -35,7 +35,12 @@ const ProfileCard: React.FC<Props> = ({ userData }) => {
 					<p className="important">
 						テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
 					</p>
-					<br />
+					<br /> */}
+					<div
+						dangerouslySetInnerHTML={{
+							__html: `${userData.content}`,
+						}}
+					/>
 				</ArticleContent>
 			</ArticleContainer>
 		</Paper>

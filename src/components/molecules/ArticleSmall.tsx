@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { tagDatas } from "../../../lib/datas";
+import { returnTagDatas } from "../../../lib/functions/tags";
 import { Blog } from "../../../lib/type";
 import { Text } from "../atoms";
 import LinkList from "./LinkList";
@@ -29,7 +30,7 @@ const ArticleSmall: React.FC<Props> = ({ article }) => {
 				<Card>
 					<Image src={`${article.eyecatch.url}`} alt={article.title} width="1100" height="500" />
 					<Text text={article.title} textalign="center" margin="15px 0" />
-					<LinkList fontSize="12px" img="tag.png" links={tagDatas} />
+					{article.tag && <LinkList fontSize="12px" img="tag.png" links={returnTagDatas(article.tag)} />}
 				</Card>
 			</a>
 		</Link>

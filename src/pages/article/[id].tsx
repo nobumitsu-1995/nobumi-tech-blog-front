@@ -2,8 +2,9 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
 import { returnArticle, returnArticlesMatchCategory, returnSideBarDatas } from "../../../lib/functions/articles";
 import { client } from "../../../lib/functions/client";
+import { url } from "../../../lib/metaDatas";
 import { Blog, SideBarData } from "../../../lib/type";
-import { ArticleDetail, Layout } from "../../components/templates";
+import { ArticleDetail, Layout, Meta } from "../../components/templates";
 
 type Props = {
 	article: Blog;
@@ -17,9 +18,17 @@ type Params = {
 
 const Article: React.FC<Props> = ({ article, relativeArticles, sideBarData }) => {
 	return (
-		<Layout {...sideBarData}>
-			<ArticleDetail article={article} relativeArticles={relativeArticles} />
-		</Layout>
+		<>
+			<Meta
+				url={`${url}/${article.id}`}
+				pageTitle={article.title}
+				pageDescription={article.description}
+				imgUrl={article.eyecatch.url}
+			/>
+			<Layout {...sideBarData}>
+				<ArticleDetail article={article} relativeArticles={relativeArticles} />
+			</Layout>
+		</>
 	);
 };
 

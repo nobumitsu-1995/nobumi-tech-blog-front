@@ -1,7 +1,8 @@
 export { default as Accordion } from "./Accordion";
 export { default as ArticleCard } from "./ArticleCard";
 export { default as ContactCard } from "./ContactCard";
-export { default as ContactSNSCard } from "./ContactSNSCard";
+export { default as ContactSNSCard } from "./SNSContactCard";
+export { default as ShareSNSCard } from "./SNSShareCard";
 export { default as Footer1 } from "./Footer1";
 export { default as Footer2 } from "./Footer2";
 export { default as Header1 } from "./Header1";

@@ -22,12 +22,27 @@ const Container = styled.div`
 export const StyledArticle: ComponentStory<typeof Article> = args => (
 	<Container>
 		<Article
-			category="カテゴリ"
-			date={new Date()}
-			id={1}
-			img="sample.png"
+			// category="カテゴリ"
+			// date={new Date()}
+			// id={1}
+			// img="sample.png"
 			description="テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。"
 			title="記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。"
+			id={""}
+			createdAt={""}
+			updatedAt={""}
+			privacy={false}
+			publishedAt={""}
+			revisedAt={""}
+			content={""}
+			eyecatch={{
+				url: "",
+				height: 0,
+				width: 0,
+			}}
+			category={[]}
+			recommend={false}
+			userinfo={false}
 		/>
 	</Container>
 );

@@ -7,14 +7,14 @@ type Props = {
 		text: string;
 		link: string;
 	}[];
-}
+};
 
 const Search: React.FC<Props> = ({ tagDatas }) => {
 	return (
 		<GapColumnList gap="20px">
 			<SearchKeywordCard />
 			<SearchCategoryCard />
-			<SearchTagCard tagDatas={tagDatas}/>
+			<SearchTagCard tagDatas={tagDatas} />
 		</GapColumnList>
 	);
 };

@@ -1,9 +1,10 @@
 import React from "react";
 import { returnSideBarDatas } from "../../lib/functions/articles";
 import { client } from "../../lib/functions/client";
+import { contactMetaData } from "../../lib/metaDatas";
 import { SideBarData } from "../../lib/type";
 import { Title } from "../components/molecules";
-import { Contact, Layout } from "../components/templates";
+import { Contact, Layout, Meta } from "../components/templates";
 import { Section } from "../styles/styled-components";
 
 type Props = {
@@ -12,12 +13,15 @@ type Props = {
 
 const contact: React.FC<Props> = ({ sideBarData }) => {
 	return (
-		<Layout {...sideBarData}>
-			<Section padding="80px 0 0">
-				<Title text="お問い合わせ" subText="Contact" />
-				<Contact />
-			</Section>
-		</Layout>
+		<>
+			<Meta {...contactMetaData}/>
+			<Layout {...sideBarData}>
+				<Section padding="80px 0 0">
+					<Title text="お問い合わせ" subText="Contact" />
+					<Contact />
+				</Section>
+			</Layout>
+		</>
 	);
 };
 

@@ -2,7 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Input, Text } from "../atoms";
 
-type Props = {
+type InputProps = Omit<JSX.IntrinsicElements["input"], "ref">;
+type TextAreaProps = Omit<JSX.IntrinsicElements["textarea"], "ref">;
+
+type Props = (InputProps | TextAreaProps) & {
 	error?: boolean;
 	label: string;
 	name: string;
@@ -23,7 +26,8 @@ const TextArea = styled.textarea<{ error: boolean }>`
 	width: 100%;
 `;
 
-const InputArea: React.FC<Props> = ({ label, name, error = false, type = "input" }) => {
+const InputArea: React.FC<Props> = ({ ...props }) => {
+	const { label, name, error = false, type = "input", ...inputProps } = props;
 	const capitalizedName = name[0].toUpperCase() + name.slice(1);
 
 	return (
@@ -31,11 +35,10 @@ const InputArea: React.FC<Props> = ({ label, name, error = false, type = "input"
 			<label htmlFor={name}>
 				<Text color="#999" fontSize="20px" fontWeight="bold" text={label} margin="0 0 10px" />
 			</label>
-			{type === "textarea" ? (
-				<TextArea rows={10} id={name} name={name} error={error}></TextArea>
-			) : (
-				<Input placeholder={capitalizedName} id={name} name={name} margin={error ? "0 0 10px" : "0 0 47px"} />
-			)}
+			{type === "textarea"
+			?	<TextArea {...inputProps as TextAreaProps} rows={10} error={error}></TextArea>
+			: <Input {...inputProps as InputProps} placeholder={capitalizedName} margin={error ? "0 0 10px" : "0 0 47px"} />
+			}
 			{error && (
 				<Text
 					color="#E63946"

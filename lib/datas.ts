@@ -1,3 +1,5 @@
+import { url } from "./metaDatas";
+
 export const headerDatas = [
   {
     text: "FRONTEND",
@@ -67,7 +69,7 @@ export const footerDatas = {
       },
       {
         text: "GITHUB",
-        link: "/category/other",
+        link: "https://github.com/nobumitsu-1995",
       },
     ]
   },
@@ -76,7 +78,7 @@ export const footerDatas = {
 export const tagDatas = [
   {
     text: "React.js",
-    link: ""
+    link: `${url}/search/result?tag=rubyonrails`
   },
   {
     text: "Next.js",
