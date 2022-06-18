@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import React from "react";
-import { returnArticle, returnArticlesMatchCategory, returnSideBarDatas } from "../../../lib/functions/articles";
+import { returnArticle, returnArticles, returnArticlesMatchCategory, returnSideBarDatas } from "../../../lib/functions/articles";
 import { client } from "../../../lib/functions/client";
 import { url } from "../../../lib/metaDatas";
 import { Blog, SideBarData } from "../../../lib/type";
@@ -64,8 +64,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 			return res.contents;
 		});
 
+	const articleDatas = returnArticles(datas);
+
 	// [{params: {id: string}}, ...]
-	const paths = datas.map((data: Blog) => {
+	const paths = articleDatas.map((data: Blog) => {
 		return { params: { id: data.id } };
 	});
 
