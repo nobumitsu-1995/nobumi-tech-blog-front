@@ -13,9 +13,9 @@ const Profile: React.FC<Props> = ({ userData }) => {
 			<li>
 				<ProfileCard userData={userData} />
 			</li>
-			<li>
+			{/* <li>
 				<ContactSNSCard />
-			</li>
+			</li> */}
 		</GapColumnList>
 	);
 };

@@ -28,7 +28,7 @@ const Footer1 = () => {
 				<Flex>
 					<FooterList1 {...footerDatas.list1} />
 					<FooterList2 {...footerDatas.list2} />
-					<FooterList2 {...footerDatas.list3} />
+					{/* <FooterList2 {...footerDatas.list3} /> */}
 				</Flex>
 			</Container>
 		</Footer>
