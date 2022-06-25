@@ -35,10 +35,15 @@ const InputArea: React.FC<Props> = ({ ...props }) => {
 			<label htmlFor={name}>
 				<Text color="#999" fontSize="20px" fontWeight="bold" text={label} margin="0 0 10px" />
 			</label>
-			{type === "textarea"
-			?	<TextArea {...inputProps as TextAreaProps} rows={10} error={error}></TextArea>
-			: <Input {...inputProps as InputProps} placeholder={capitalizedName} margin={error ? "0 0 10px" : "0 0 47px"} />
-			}
+			{type === "textarea" ? (
+				<TextArea {...(inputProps as TextAreaProps)} rows={10} error={error}></TextArea>
+			) : (
+				<Input
+					{...(inputProps as InputProps)}
+					placeholder={capitalizedName}
+					margin={error ? "0 0 10px" : "0 0 47px"}
+				/>
+			)}
 			{error && (
 				<Text
 					color="#E63946"

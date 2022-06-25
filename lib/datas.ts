@@ -34,7 +34,7 @@ export const footerDatas = {
         link: "/contact",
       },
       {
-        text: "PRIVACY PORICY",
+        text: "PRIVACY POLICY",
         link: "/privacy",
       },
     ]

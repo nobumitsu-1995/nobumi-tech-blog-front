@@ -18,7 +18,7 @@ type Props = {
 const result: React.FC<Props> = ({ sideBarData, articles, tags }) => {
 	return (
 		<>
-			<Meta {...resultMetaData}/>
+			<Meta {...resultMetaData} />
 			<Layout {...sideBarData}>
 				<Section padding="80px 0 0">
 					<Title text="記事検索結果" subText="Result" tags={tags} />
@@ -28,7 +28,7 @@ const result: React.FC<Props> = ({ sideBarData, articles, tags }) => {
 						</PageProvider>
 					) : (
 						<Failed />
-						)}
+					)}
 				</Section>
 			</Layout>
 		</>

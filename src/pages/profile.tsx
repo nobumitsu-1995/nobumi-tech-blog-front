@@ -13,7 +13,7 @@ type Props = {
 const profile: React.FC<Props> = ({ userData, sideBarData }) => {
 	return (
 		<>
-			<Meta {...profileMetaData}/>
+			<Meta {...profileMetaData} />
 			<Layout {...sideBarData}>
 				<Profile userData={userData} />
 			</Layout>

@@ -14,7 +14,7 @@ type Props = {
 const Home: NextPage<Props> = ({ ...props }) => {
 	return (
 		<>
-			<Meta {...topMetaData}/>
+			<Meta {...topMetaData} />
 			<Layout {...props.sideBarData}>
 				<PageProvider itemLength={props.articles.length}>
 					<Articles articles={props.articles.slice(0, 5)} />

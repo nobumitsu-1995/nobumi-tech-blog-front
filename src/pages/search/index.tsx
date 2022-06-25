@@ -19,7 +19,7 @@ type Props = {
 const index: React.FC<Props> = ({ sideBarData, tagDatas }) => {
 	return (
 		<>
-			<Meta {...searchMetaData}/>
+			<Meta {...searchMetaData} />
 			<Layout {...sideBarData}>
 				<Section padding="80px 0 0">
 					<Title text="記事検索フォーム" subText="Search" />
