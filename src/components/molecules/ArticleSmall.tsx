@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import { tagDatas } from "../../../lib/datas";
 import { returnTagDatas } from "../../../lib/functions/tags";
 import { Blog } from "../../../lib/type";
 import { Text } from "../atoms";

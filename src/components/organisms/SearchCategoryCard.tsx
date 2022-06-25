@@ -1,6 +1,5 @@
 import React from "react";
 import { headerDatas } from "../../../lib/datas";
-import { FlexCenter } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { LinkList, TitleInPaper } from "../molecules";
 

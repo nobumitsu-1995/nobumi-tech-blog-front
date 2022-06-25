@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
-import { FlexCenter } from "../../styles/styled-components";
+import { FlexStart } from "../../styles/styled-components";
 import { StyledLink } from "../atoms";
 
 type Props = {
@@ -21,7 +21,7 @@ const List = styled.ul`
 
 const LinkList: React.FC<Props> = ({ fontSize = "16px", img, links }) => {
 	return (
-		<FlexCenter gap="10px">
+		<FlexStart gap="10px">
 			{img && <Image src={`/images/${img}`} alt="tag" width="30" height="30" />}
 			<List>
 				{links.map(link => {
@@ -32,7 +32,7 @@ const LinkList: React.FC<Props> = ({ fontSize = "16px", img, links }) => {
 					);
 				})}
 			</List>
-		</FlexCenter>
+		</FlexStart>
 	);
 };
 

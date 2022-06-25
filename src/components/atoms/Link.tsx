@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import Text, { TextProps } from "./Text";
 
 type Props = {
 	fontSize?: string;
