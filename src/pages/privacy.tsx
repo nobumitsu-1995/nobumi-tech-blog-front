@@ -15,7 +15,7 @@ type Props = {
 const privacy: React.FC<Props> = ({ ...props }) => {
 	return (
 		<>
-			<Meta {...privacyMetaData}/>
+			<Meta {...privacyMetaData} />
 			<Layout {...props.sideBarData}>
 				<Article article={props.article} hideContact />
 			</Layout>

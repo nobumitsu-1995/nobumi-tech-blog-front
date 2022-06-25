@@ -7,7 +7,7 @@ import { TitleInPaper } from "../molecules";
 
 type Props = {
 	url: string;
-}
+};
 
 const ButtonArea = styled.div`
 	display: grid;
