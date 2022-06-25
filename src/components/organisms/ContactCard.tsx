@@ -35,7 +35,6 @@ const ContactCard = () => {
 			)
 		) {
       await sendEmail(message);
-      console.log(message);
       
 			await setMessage({
 				name: "",
