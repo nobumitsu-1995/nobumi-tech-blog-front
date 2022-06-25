@@ -4,8 +4,8 @@ import { client } from "../../lib/functions/client";
 import { returnPrivacyPoricyData } from "../../lib/functions/privacy";
 import { privacyMetaData } from "../../lib/metaDatas";
 import { Blog, SideBarData } from "../../lib/type";
+import { PrivacyCard } from "../components/organisms";
 import { Layout, Meta } from "../components/templates";
-import Article from "../components/templates/Article";
 
 type Props = {
 	article: Blog;
@@ -17,7 +17,7 @@ const privacy: React.FC<Props> = ({ ...props }) => {
 		<>
 			<Meta {...privacyMetaData} />
 			<Layout {...props.sideBarData}>
-				<Article article={props.article} hideContact />
+				<PrivacyCard privacyData={props.article} />
 			</Layout>
 		</>
 	);
