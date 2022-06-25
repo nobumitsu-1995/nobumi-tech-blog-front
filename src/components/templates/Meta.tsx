@@ -30,6 +30,7 @@ const Meta: React.FC<Props> = ({ ...props }) => {
 			<meta property="og:image" content={props.imgUrl} />
 			<meta property="og:image:width" content={props.imgWidth} />
 			<meta property="og:image:height" content={props.imgHeight} />
+			<meta property="fb:app_id" content="560441162405267" />
 		</Head>
 	);
 };
