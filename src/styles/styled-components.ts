@@ -78,7 +78,17 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 		border-left: 5px solid #7c83cc;
 		font-size: 20px;
 		font-weight: bold;
+		margin-bottom: 20px;
 		padding: 10px 20px;
+	
+		&:not(:first-child){
+			margin-top: 20px;
+		}
+	}
+
+	p {
+		line-height: 30px;
+		margin-bottom: 20px;
 	}
 
 	p.important {
@@ -96,6 +106,7 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 		font-weight: bold;
 		padding-left: 30px;
 		position: relative;
+		line-height: 30px;
 
 		&::before {
 			border: 2px solid #7c83cc;
@@ -104,8 +115,9 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			display: block;
 			height: 20px;
 			left: 0;
+			line-height: 30px;
 			position: absolute;
-			top: -1px;
+			top: 5px;
 			width: 20px;
 		}
 
@@ -116,8 +128,9 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			display: block;
 			height: 7px;
 			left: 4px;
+			line-height: 30px;
 			position: absolute;
-			top: 4px;
+			top: 10px;
 			transform: rotate(-45deg);
 			width: 11px;
 		}
