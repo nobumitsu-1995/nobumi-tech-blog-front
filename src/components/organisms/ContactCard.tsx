@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendEmail } from "../../../lib/functions/contact";
 import { Button, Paper } from "../atoms";
 import { InputArea, TitleInPaper } from "../molecules";
 
@@ -19,7 +20,7 @@ const ContactCard = () => {
 		setMessage({ ...message, [id]: value });
 	};
 
-	const submitForm = () => {
+	const submitForm = async () => {
 		setError({
 			name: !message.name,
 			email: !message.email,
@@ -33,8 +34,10 @@ const ContactCard = () => {
 				`以下の内容でよろしいですか？\r\n\r\nお名前：${message.name}\r\nメールアドレス：${message.email}\r\nお問合せ内容：${message.content}`,
 			)
 		) {
-			alert(`${message.name}様、お問い合わせを受け付けました。\r\nありがとうございました！`);
-			setMessage({
+      await sendEmail(message);
+      console.log(message);
+      
+			await setMessage({
 				name: "",
 				email: "",
 				content: "",
