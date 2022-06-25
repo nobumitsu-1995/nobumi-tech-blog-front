@@ -25,7 +25,7 @@ const Article: React.FC<Props> = ({ article, relativeArticles, sideBarData }) =>
 	return (
 		<>
 			<Meta
-				url={`${url}/${article.id}`}
+				url={`${url}/article/${article.id}`}
 				pageTitle={article.title}
 				pageDescription={article.description}
 				imgUrl={article.eyecatch.url}

@@ -5,7 +5,7 @@ import { Blog } from "../../../lib/type";
 import { ArticleContent } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { ArticleTtl, LinkList } from "../molecules";
-import { tagDatas } from "../../../lib/datas";
+import { returnTagDatas } from "../../../lib/functions/tags";
 
 const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
@@ -32,19 +32,6 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 				)}
 				<ArticleContainer>
 					<ArticleContent margin="0 0 40px">
-						{/* <h1>
-						<span>01</span>H1 TITLE
-					</h1>
-					<br />
-					<h2>H2 TITLE</h2>
-					<br />
-					<p className="point">POINT TEXT</p>
-					<br />
-					<p className="important">
-						テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-					</p>
-					<br />
-					<span className="important">Important Important Important Important Important Important</span> */}
 						<p
 							dangerouslySetInnerHTML={{
 								__html: `${props.description}`,
@@ -58,7 +45,8 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 						/>
 					</ArticleContent>
 					<Line />
-					<LinkList img="tag.png" links={tagDatas} />
+					{props.tag &&
+					<LinkList img="tag.png" links={returnTagDatas(props.tag)} />}
 				</ArticleContainer>
 			</article>
 		</Paper>

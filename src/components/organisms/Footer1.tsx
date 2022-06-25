@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { footerDatas } from "../../../lib/datas";
@@ -19,11 +20,15 @@ const Footer1 = () => {
 	return (
 		<Footer>
 			<Container>
-				<Text color="#fff" fontWeight="bold" fontSize="36px" text="LOGO" margin="0 0 40px" />
+				<Link href="/">
+					<a>
+						<Text color="#fff" fontWeight="bold" fontSize="36px" text="LOGO" margin="0 0 40px" />
+					</a>
+				</Link>
 				<Flex>
 					<FooterList1 {...footerDatas.list1} />
 					<FooterList2 {...footerDatas.list2} />
-					<FooterList2 {...footerDatas.list3} />
+					{/* <FooterList2 {...footerDatas.list3} /> */}
 				</Flex>
 			</Container>
 		</Footer>

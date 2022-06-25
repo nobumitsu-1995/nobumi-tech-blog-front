@@ -16,7 +16,7 @@ const Article: React.FC<Props> = ({ article, relativeArticles, hideContact = fal
 			<li>
 				<ArticleCard {...article} />
 			</li>
-			<li>{!hideContact && <ShareSNSCard url={`${url}article/${article.id}`} />}</li>
+			<li>{!hideContact && <ShareSNSCard url={`${url}/article/${article.id}`} />}</li>
 			<li>{relativeArticles && <RelativeArticles articleDatas={relativeArticles} />}</li>
 		</GapColumnList>
 	);

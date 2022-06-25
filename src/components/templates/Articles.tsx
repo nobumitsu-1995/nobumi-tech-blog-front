@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { PageProvider, returnCurrentBrogs, returnPageNum, usePageContext } from "../../../lib/PagenationContext";
+import { returnCurrentBrogs, usePageContext } from "../../../lib/PagenationContext";
 import { Blog } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
 import { Article } from "../molecules";
@@ -30,7 +30,8 @@ const Articles: React.FC<Props> = ({ articles }) => {
 						);
 					})}
 			</GapColumnList>
-			<Pagination />
+			{articles.length > itemPerPage &&
+			<Pagination />}
 		</div>
 	);
 };
