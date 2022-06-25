@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { sendEmail } from "../../../lib/functions/contact";
-import { Button, Paper } from "../atoms";
+import { FlexCenter, FlexEnd, FlexStart } from "../../styles/styled-components";
+import { Button, Paper, StyledLink } from "../atoms";
 import { InputArea, TitleInPaper } from "../molecules";
 
 const ContactCard = () => {
@@ -46,7 +47,13 @@ const ContactCard = () => {
 
 	return (
 		<Paper borderColor="#7C83CC" padding="40px 50px">
-			<TitleInPaper text="メールアドレスでお問い合わせ" />
+			<TitleInPaper text="メールアドレスでお問い合わせ" margin="10px 0" />
+			<FlexEnd>
+				<StyledLink
+					link="/privacy"
+					text="個人情報の取り扱いについて"
+				/>
+			</FlexEnd>
 			<form>
 				<InputArea
 					error={error.name}

@@ -15,6 +15,15 @@ export const FlexStart = styled.div<{ gap?: string }>`
 	justify-content: flex-start;
 `;
 
+export const FlexEnd = styled.div<{ gap?: string }>`
+align-items: center;
+display: flex;
+gap: ${({ gap }) => {
+	return gap;
+}};
+justify-content: flex-end;
+`;
+
 export const FlexCenter = styled.div<{ gap?: string }>`
 	align-items: center;
 	display: flex;
