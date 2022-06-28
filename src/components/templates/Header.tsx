@@ -3,7 +3,7 @@ import { Header1, Header2 } from "../organisms";
 
 const Header = () => {
 	return (
-		<header>
+		<header id="top">
 			<Header1 />
 			<Header2 />
 		</header>
