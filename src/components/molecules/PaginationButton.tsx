@@ -1,5 +1,5 @@
 import React from "react";
-import { usePageContext } from "../../../lib/PagenationContext";
+import { scrollTop, usePageContext } from "../../../lib/PagenationContext";
 import { Button } from "../atoms";
 
 type Props = {
@@ -9,10 +9,15 @@ type Props = {
 };
 
 const PaginationButton: React.FC<Props> = ({ padding = "7px 10px", page, index }) => {
-	const { current, setCurrent, pages } = usePageContext();
+	const { current, setCurrent } = usePageContext();
 	const isCurrent = (index: number) => {
 		return index === current - 1;
 	};
+
+	const handleClickButton = () => {
+		scrollTop()
+		setCurrent(page)
+	}
 
 	return (
 		<li>
@@ -20,7 +25,7 @@ const PaginationButton: React.FC<Props> = ({ padding = "7px 10px", page, index }
 				fontSize="14px"
 				fontWeight="bold"
 				label={page?.toString()}
-				onClick={() => setCurrent(page)}
+				onClick={handleClickButton}
 				padding={padding}
 				backgroundColor={isCurrent(index) ? "#2e3e4e" : "#eee"}
 				borderColor="#2e3e4e"

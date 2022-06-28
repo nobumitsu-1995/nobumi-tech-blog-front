@@ -1,5 +1,5 @@
 import React from "react";
-import { usePageContext } from "../../../lib/PagenationContext";
+import { scrollTop, usePageContext } from "../../../lib/PagenationContext";
 import { ArrowIcon, Button } from "../atoms";
 
 const PaginationNext = () => {
@@ -13,13 +13,15 @@ const PaginationNext = () => {
 		<>
 			<li>
 				<Button
-					icon={<ArrowIcon color="#fff" />}
+					icon={<ArrowIcon thickness="2px" color="#2e3e4e" />}
 					iconSpace="12px"
 					iconPosition="right"
 					label={""}
-					onClick={nextPage}
+					onClick={async () => {
+						await nextPage();
+						await scrollTop()
+					}}
 					padding="15px"
-					backgroundColor="#2e3e4e"
 					borderColor="#2e3e4e"
 					disabled={current === pages}
 				/>
@@ -28,16 +30,18 @@ const PaginationNext = () => {
 				<Button
 					icon={
 						<>
-							<ArrowIcon color="#fff" />
-							<ArrowIcon color="#fff" />
+							<ArrowIcon thickness="2px" color="#2e3e4e" />
+							<ArrowIcon thickness="2px" color="#2e3e4e" />
 						</>
 					}
 					iconSpace="9px"
 					iconPosition="right"
 					label={""}
-					onClick={() => setCurrent(pages)}
+					onClick={async () => {
+						await setCurrent(pages)
+						await scrollTop()
+					}}
 					padding="15px"
-					backgroundColor="#2e3e4e"
 					borderColor="#2e3e4e"
 					disabled={current === pages}
 				/>
