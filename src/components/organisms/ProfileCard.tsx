@@ -32,9 +32,9 @@ const ProfileCard: React.FC<Props> = ({ userData }) => {
 					<br />
 					<p className="point">POINT TEXT</p>
 					<br />
-					<p className="important">
+					<div className="important">
 						テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-					</p>
+					</div>
 					<br /> */}
 					<div
 						dangerouslySetInnerHTML={{

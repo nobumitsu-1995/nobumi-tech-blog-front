@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "../../styles/styled-components";
 
-const Header = styled.section`
+const Header = styled.div`
 	background: #fff;
 	height: 100px;
 `;
@@ -12,7 +12,7 @@ const Header1 = () => {
 	return (
 		<Header>
 			<Container>
-				<h1>{/* <Image src="/" alt='nobumi tech' width="" height="" /> */}</h1>
+				<h1 >{/* <Image src="/" alt='nobumi tech' width="" height="" /> */}</h1>
 			</Container>
 		</Header>
 	);

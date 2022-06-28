@@ -56,3 +56,12 @@ export const returnCurrentBrogs = ( items: Blog[], itemPerPage: number, currentP
 	const lastVal = currentPage * itemPerPage;
 	return items.slice(firstVal, lastVal);
 }
+
+// topスクロール
+export const scrollTop = () => {
+	document.getElementById("top")?.scroll(0,0)
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth'
+	})
+}
