@@ -22,6 +22,13 @@ const StyledImage = styled(Image)`
 	border-radius: 100%;
 `;
 
+const Div = styled.div`
+	color: #666;
+	font-size: 12px;
+	line-height: 20px;
+	margin: 25px 0;
+`;
+
 const UserCard: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Paper padding="25px 20px">
@@ -38,7 +45,11 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 				margin="20px 0"
 			/>
 			<Border color="#7C83CC" height="5px" width="200px" />
-			<Text color="#666" fontSize="14px" text={props.description} margin="25px 0" />
+			<Div
+				dangerouslySetInnerHTML={{
+					__html: `${props.description}`,
+				}}
+			/>
 			<FlexCenter>
 				<StyledLink link="/profile" text="Profile Detail >" />
 			</FlexCenter>

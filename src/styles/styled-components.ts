@@ -100,10 +100,19 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 		margin-bottom: 20px;
 	}
 
-	p.important {
+	div.important {
 		background: #ecf0f1;
 		border: 1px dashed #2e3e4e;
 		padding: 10px;
+
+		ul {
+			list-style-type: disc;
+			padding-left: 20px;
+
+			li {
+				line-height: 30px
+			}
+		}
 	}
 
 	span.important {

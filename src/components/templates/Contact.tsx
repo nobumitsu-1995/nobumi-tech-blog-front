@@ -6,7 +6,7 @@ const Contact = () => {
 	return (
 		<GapColumnList gap="30px">
 			<ContactCard />
-			<ContactSNSCard />
+			{/* <ContactSNSCard /> */}
 		</GapColumnList>
 	);
 };
