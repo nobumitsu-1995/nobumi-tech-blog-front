@@ -1,7 +1,8 @@
 import React from "react";
+import { url } from "../../../lib/metaDatas";
 import { Blog } from "../../../lib/type";
 import { GapColumnList } from "../../styles/styled-components";
-import { ContactSNSCard, ProfileCard } from "../organisms";
+import { ProfileCard, ShareSNSCard } from "../organisms";
 
 type Props = {
 	userData: Blog;
@@ -13,9 +14,9 @@ const Profile: React.FC<Props> = ({ userData }) => {
 			<li>
 				<ProfileCard userData={userData} />
 			</li>
-			{/* <li>
-				<ContactSNSCard />
-			</li> */}
+			<li>
+				<ShareSNSCard url={`${url}/profile`} />
+			</li>
 		</GapColumnList>
 	);
 };

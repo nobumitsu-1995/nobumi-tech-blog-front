@@ -18,7 +18,7 @@ const ArticleContainer = styled.div`
 const ProfileCard: React.FC<Props> = ({ userData }) => {
 	return (
 		<Paper borderColor="#7C83CC">
-			<ArticleTtl date={new Date(userData.publishedAt)} title={userData.title} />
+			<ArticleTtl date={new Date(userData.publishedAt)} title={`${userData.title}のプロフィール`} />
 			<figure>
 				<Image src={userData.eyecatch.url} alt={userData.title} width="1100" height="500" />
 			</figure>
