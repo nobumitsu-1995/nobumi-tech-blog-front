@@ -12,7 +12,7 @@ const Header1 = () => {
 	return (
 		<Header>
 			<Container>
-				<h1 >{/* <Image src="/" alt='nobumi tech' width="" height="" /> */}</h1>
+				<h1 >Nobumi Tech</h1>
 			</Container>
 		</Header>
 	);
