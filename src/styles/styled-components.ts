@@ -56,13 +56,18 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 		return margin;
 	}};
 
-	h1 {
+	section {
+		margin-bottom: 50px;
+	}
+
+	h2 {
 		background: #ecf0f1;
 		border-top: 5px solid #7c83cc;
 		border-radius: 5px 0 0 5px;
 		box-shadow: 3px 3px 8px #00000029;
 		font-size: 36px;
 		font-weight: bold;
+		margin-bottom: 50px;
 		padding: 17px 0 17px 125px;
 		position: relative;
 
@@ -82,28 +87,33 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 		}
 	}
 
-	h2 {
+	h3 {
 		background: #efefef;
 		border-left: 5px solid #7c83cc;
 		font-size: 20px;
 		font-weight: bold;
 		margin-bottom: 20px;
 		padding: 10px 20px;
-	
-		&:not(:first-child){
-			margin-top: 20px;
-		}
 	}
 
 	p {
-		line-height: 30px;
-		margin-bottom: 20px;
+		line-height: 2.5;
 	}
 
-	p.important {
+	div.important {
 		background: #ecf0f1;
 		border: 1px dashed #2e3e4e;
+		margin: 20px 0;
 		padding: 10px;
+
+		ul {
+			list-style-type: disc;
+			padding-left: 20px;
+
+			li {
+				line-height: 30px
+			}
+		}
 	}
 
 	span.important {
@@ -142,6 +152,59 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			top: 10px;
 			transform: rotate(-45deg);
 			width: 11px;
+		}
+	}
+
+	.card {
+		border-radius: 5px;
+		box-shadow: 3px 3px 8px #00000029;
+		overflow: hidden;
+
+		&:not(:first-child) {
+			margin-top: 10px;
+		}
+
+		a {
+			cursor: pointer;
+			display: flex;
+			transition-duration: 0.3s opacity;
+
+			:hover {
+				opacity: 0.7;
+			}
+		}
+
+		&__img {
+			align-items: center;
+			background-color: #ccc;
+			display: flex;
+			padding: 5px;
+		}
+
+		&__body {
+			padding: 10px;
+		}
+
+		&__ttl {
+			border-bottom: 1px solid #ccc;
+			font-size: 18px;
+			font-weight: bold;
+			margin-bottom: 5px;
+			padding-bottom: 5px;
+		}
+
+		&__content {
+			border-bottom: 1px solid #ccc;
+			font-size: 12px;
+			line-height: 1.8;
+			padding-bottom: 5px;
+		}
+
+		&__link {
+			color: #7c83cc;
+			font-size: 12px;
+			line-height: 1.8;
+			text-decoration: underline;
 		}
 	}
 `;
