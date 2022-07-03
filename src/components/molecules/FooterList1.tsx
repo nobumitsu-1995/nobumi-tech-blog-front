@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import { GapColumnList } from "../../styles/styled-components";
+import { device, GapColumnList } from "../../styles/styled-components";
 import { Text } from "../atoms";
 
 type Props = {
@@ -11,7 +11,20 @@ type Props = {
 	}[];
 };
 
+const List = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	@media ${device.sp} {
+		align-items: center;
+		justify-content: center;
+	}
+`;
+
 const LinkArea = styled.a`
+	display: inline-block;
+
 	&:hover {
 		p {
 			color: #3d70b8;
@@ -22,19 +35,19 @@ const LinkArea = styled.a`
 
 const FooterList1: React.FC<Props> = ({ datas }) => {
 	return (
-		<GapColumnList gap="30px">
+		<List>
 			{datas.map(data => {
 				return (
 					<li key={data.text}>
 						<Link href={data.link} passHref>
 							<LinkArea>
-								<Text color="#fff" fontSize="20px" fontWeight="bold" text={data.text} />
+								<Text color="#fff" display="inline-block" fontSize="20px" fontWeight="bold" text={data.text} />
 							</LinkArea>
 						</Link>
 					</li>
 				);
 			})}
-		</GapColumnList>
+		</List>
 	);
 };
 

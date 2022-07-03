@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { FacebookShareButton, LineShareButton, TwitterShareButton } from "react-share";
 import styled from "styled-components";
+import { device } from "../../styles/styled-components";
 import { Button, Paper } from "../atoms";
 import { TitleInPaper } from "../molecules";
 
@@ -12,6 +13,10 @@ type Props = {
 const ButtonArea = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+
+	@media ${device.sp} {
+		grid-template-columns: 1fr;
+	}
 `;
 
 const ContactSNSCard: React.FC<Props> = ({ ...props }) => {

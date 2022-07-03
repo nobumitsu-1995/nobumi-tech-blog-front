@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { headerDatas } from "../../../lib/datas";
-import { Container, Flex } from "../../styles/styled-components";
+import { Container, device } from "../../styles/styled-components";
 import { HeaderLink } from "../molecules";
 
 const Header = styled.div`
@@ -11,6 +11,7 @@ const Header = styled.div`
 
 const StyledContainer = styled(Container)`
 	height: 100%;
+	width: 100vw;
 `;
 
 const Nav = styled.nav`
@@ -20,7 +21,13 @@ const Nav = styled.nav`
 	justify-content: space-between;
 `;
 
-const List = Nav.withComponent("ul");
+const List = styled.ul`
+	display: flex;
+	
+	@media ${device.midSp} {
+		display: none;
+	}
+`;
 
 const Header2 = () => {
 	return (

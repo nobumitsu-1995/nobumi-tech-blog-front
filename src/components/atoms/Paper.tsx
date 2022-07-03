@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../styles/styled-components";
 
 type Props = {
 	borderColor?: string;
@@ -26,6 +27,10 @@ const Card = styled.div<Omit<Props, "children">>`
       `
 		);
 	}}
+
+	@media ${device.sp} {
+		padding: 15px 15px;
+	}
 `;
 
 const Paper: React.FC<Props> = props => {

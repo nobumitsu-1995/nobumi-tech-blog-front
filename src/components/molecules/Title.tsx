@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../styles/styled-components";
 import { Text } from "../atoms";
 import TtlTag from "./TtlTag";
 
@@ -10,11 +11,14 @@ type Props = {
 	subText: string;
 };
 
-const StyledTtl = styled.h2<{ margin: string }>`
+const StyledTtl = styled.h2`
 	text-align: right;
-	margin: ${({ margin }) => {
-		return margin;
-	}};
+	display: inline-block;
+	margin: 0 0 50px;
+
+	@media ${device.sp} {
+		width: 100%;
+	}
 `;
 
 const Container = styled.div<{ subText: string }>`
@@ -22,6 +26,11 @@ const Container = styled.div<{ subText: string }>`
 	padding-bottom: 25.5px;
 	position: relative;
 	width: 510px;
+
+	@media ${device.sp} {
+		padding-bottom: 10px;
+		width: 95%;
+	}
 
 	&::before {
 		content: "${({ subText }) => {
@@ -34,6 +43,12 @@ const Container = styled.div<{ subText: string }>`
 		left: -40px;
 		top: -70px;
 		position: absolute;
+
+		@media ${device.sp} {
+			font-size: 70px;
+			left: 0;
+			top: -50px;
+		}
 	}
 
 	&::after {
@@ -45,12 +60,16 @@ const Container = styled.div<{ subText: string }>`
 		position: absolute;
 		right: 0;
 		width: 420px;
+
+		@media ${device.sp} {
+			width: 100%;
+		}
 	}
 `;
 
-const Title: React.FC<Props> = ({ margin = "0 0 50px", ...props }) => {
+const Title: React.FC<Props> = ({ ...props }) => {
 	return (
-		<StyledTtl margin={margin}>
+		<StyledTtl>
 			<Container subText={props.subText}>
 				<Text color="#271E16" fontSize="36px" fontWeight="bold" text={props.text} textalign="right" />
 				{props.tags && <TtlTag tags={props.tags} />}
