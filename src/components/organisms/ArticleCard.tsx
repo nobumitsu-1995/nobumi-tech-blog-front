@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { Blog } from "../../../lib/type";
-import { ArticleContent } from "../../styles/styled-components";
+import { ArticleContent, device } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { ArticleTtl, LinkList } from "../molecules";
 import { returnTagDatas } from "../../../lib/functions/tags";
@@ -10,6 +10,10 @@ import { returnTagDatas } from "../../../lib/functions/tags";
 const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
 	margin-top: 40px;
+
+	@media ${device.tablet} {
+		padding: 0 20px 20px;
+	}
 `;
 
 const Line = styled.figure`

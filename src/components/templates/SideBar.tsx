@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Blog } from "../../../lib/type";
-import { GapColumnList } from "../../styles/styled-components";
+import { device, GapColumnList } from "../../styles/styled-components";
 import { RecommendArticles, RecommendArticlesCategory, SearchCard, UserCard } from "../organisms";
 
 type Props = {
@@ -13,16 +13,31 @@ type Props = {
 
 const List = styled(GapColumnList)`
 	box-sizing: content-box;
-	width: 300px;
+
+	@media ${device.tablet} {
+		grid-template-columns: 1fr 1fr;
+
+		.card {
+			grid-column: 1 / 3;
+		}
+	}
+
+	@media ${device.sp} {
+		grid-template-columns: 1fr;
+
+		.card {
+			grid-column: 1 / 1;
+		}
+	}
 `;
 
 const SideBar: React.FC<Props> = ({ ...props }) => {
 	return (
 		<List gap="30px">
-			<li>
+			<li className="card">
 				<UserCard {...props.userData} />
 			</li>
-			<li>
+			<li className="card">
 				<SearchCard />
 			</li>
 			<li>

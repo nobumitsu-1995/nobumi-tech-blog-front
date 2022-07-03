@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const size = {
+	sp: '619px',
+	midSp: '699px',
+	tablet: '919px'
+}
+
+export const device = {
+	sp: `(max-width: ${size.sp})`,
+	midSp: `(max-width: ${size.midSp})`,
+	tablet: `(max-width: ${size.tablet})`,
+}
+
 export const Flex = styled.div`
 	align-items: center;
 	display: flex;
@@ -42,7 +54,13 @@ export const GapColumnList = styled.ul<{ gap: string }>`
 
 export const Container = styled.div`
 	margin: 0 auto;
-	width: 1080px;
+	max-width: 1080px;
+	padding: 0 20px;
+	width: 100%;
+
+	@media ${device.tablet} {
+		max-width: 800px;
+	}
 `;
 
 export const Section = styled.section<{ padding: string }>`
@@ -55,9 +73,14 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 	margin: ${({ margin }) => {
 		return margin;
 	}};
+	max-width: calc(100vw - 30px);
 
 	section {
 		margin-bottom: 50px;
+
+		@media ${device.sp} {
+			margin-bottom: 30px;
+		}
 	}
 
 	h2 {
@@ -77,13 +100,26 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			color: #ecf0f1;
 			font-size: 52px;
 			font-weight: bold;
-			height: 80px;
+			height: calc(100% + 5px);
 			left: 0;
-			line-height: 80px;
+			line-height: 1.5;
 			position: absolute;
 			text-align: center;
 			top: -5px;
 			width: 100px;
+
+			@media ${device.sp} {
+				font-size: 36px;
+				height: 48px;
+				line-height: 48px;
+				width: 70px;
+			}
+		}
+
+		@media ${device.sp} {
+			font-size: 20px;
+			margin-bottom: 30px;
+			padding: 10px 10px 10px 80px;
 		}
 	}
 
@@ -98,6 +134,10 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 
 	p {
 		line-height: 2.5;
+
+		@media ${device.sp} {
+			line-height: 2;
+		}
 	}
 
 	div.important {
@@ -164,6 +204,11 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			margin-top: 10px;
 		}
 
+		@media ${device.sp} {
+			margin: 0 auto;
+			max-width: 400px;
+		}
+
 		a {
 			cursor: pointer;
 			display: flex;
@@ -172,12 +217,17 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			:hover {
 				opacity: 0.7;
 			}
+
+			@media ${device.sp} {
+				flex-direction: column;
+			}
 		}
 
 		&__img {
 			align-items: center;
 			background-color: #ccc;
 			display: flex;
+			justify-content: center;
 			padding: 5px;
 		}
 

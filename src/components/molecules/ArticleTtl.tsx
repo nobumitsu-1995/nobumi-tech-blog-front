@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Category } from "../../../lib/type";
+import { device } from "../../styles/styled-components";
 import { Date, StyledLink, Text } from "../atoms";
 
 type Props = {
@@ -12,6 +13,10 @@ type Props = {
 const Title = styled.div`
 	padding: 40px 50px;
 	text-align: center;
+
+	@media ${device.sp} {
+		padding: 0 0 25px;
+	}
 `;
 
 const ArticleTtl: React.FC<Props> = ({ ...props }) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Blog } from "../../../lib/type";
-import { Container } from "../../styles/styled-components";
+import { Container, device } from "../../styles/styled-components";
 import Footer from "./Footer";
 import Header from "./Header";
 import SideBar from "./SideBar";
@@ -21,10 +21,18 @@ const Main = styled.main`
 const StyledContainer = styled(Container)`
 	align-items: flex-start;
 	display: grid;
-	grid-template-columns: 1fr 300px;
+	grid-template-columns: 2.5fr 1fr;
 	gap: 30px;
 	justify-content: center;
-	padding: 30px 0 50px;
+	padding: 30px 20px 50px;
+
+	@media ${device.tablet} {
+		grid-template-columns: 1fr;
+	}
+
+	@media ${device.sp} {
+		padding: 10px 5px 20px;
+	}
 `;
 
 const Layout: React.FC<Props> = ({ ...props }) => {

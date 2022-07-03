@@ -13,6 +13,7 @@ type Props = {
 
 const Card = styled.article`
 	border: 1px solid #ccc;
+	height: 100%;
 	padding: 10px 10px 15px;
 
 	&:hover {

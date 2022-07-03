@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import { footerDatas } from "../../../lib/datas";
-import { Container } from "../../styles/styled-components";
+import { Container, device } from "../../styles/styled-components";
 import { Text } from "../atoms";
 import { FooterList1, FooterList2 } from "../molecules";
 
@@ -11,12 +11,31 @@ const Footer = styled.div`
 	padding: 40px 0 50px;
 `;
 
+const StyledContainer = styled(Container)`
+	@media ${device.sp} {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+	}
+`;
+
 const Flex = styled.div`
 	display: flex;
 	gap: 80px;
+	margin-top: 40px;
+
+	@media ${device.tablet} {
+		gap: 40px;
+	}
+
+	@media ${device.sp} {
+		justify-content: center;
+	}
 `;
 
 const LinkArea = styled.a`
+	display: inline-block;
+
 	&:hover {
 		p {
 			color: #3d70b8;
@@ -28,18 +47,18 @@ const LinkArea = styled.a`
 const Footer1 = () => {
 	return (
 		<Footer>
-			<Container>
+			<StyledContainer>
 				<Link href="/" passHref>
 					<LinkArea>
-						<Text color="#fff" fontWeight="bold" fontSize="36px" text="Nobumi Tech" margin="0 0 40px" />
+						<Text color="#fff" display="inline-block" fontWeight="bold" fontSize="36px" tag="h1" text="Nobumi Tech" />
 					</LinkArea>
 				</Link>
 				<Flex>
 					<FooterList1 {...footerDatas.list1} />
 					<FooterList2 {...footerDatas.list2} />
-					{/* <FooterList2 {...footerDatas.list3} /> */}
+					<FooterList2 {...footerDatas.list3} />
 				</Flex>
-			</Container>
+			</StyledContainer>
 		</Footer>
 	);
 };

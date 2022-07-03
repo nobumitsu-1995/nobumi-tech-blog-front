@@ -16,6 +16,7 @@ const StyledContainer = styled(Container)`
 
 const CopyWrite = styled.small`
 	color: #fff;
+	text-align: center;
 `;
 
 const Footer2 = () => {
