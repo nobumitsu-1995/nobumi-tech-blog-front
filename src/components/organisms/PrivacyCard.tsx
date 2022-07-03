@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ArticleContent } from "../../styles/styled-components";
+import { ArticleContent, device } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { ArticleTtl } from "../molecules";
 import { Blog } from "../../../lib/type";
@@ -11,6 +11,10 @@ type Props = {
 
 const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
+
+	@media ${device.sp} {
+		padding: 0;
+	}
 `;
 
 const PrivacyCard: React.FC<Props> = ({ privacyData }) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { ArticleContent } from "../../styles/styled-components";
+import { ArticleContent, device } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { ArticleTtl } from "../molecules";
 import { Blog } from "../../../lib/type";
@@ -13,6 +13,14 @@ type Props = {
 const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
 	margin-top: 40px;
+
+	@media ${device.tablet} {
+		padding: 0 20px 20px;
+	}
+
+	@media ${device.sp} {
+		padding: 0;
+	}
 `;
 
 const ProfileCard: React.FC<Props> = ({ userData }) => {

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export type TextProps = {
 	color?: string;
+	display?: string;
 	fontFamily?: string;
 	fontSize?: string;
 	fontWeight?: string;
@@ -17,6 +18,9 @@ export type TextProps = {
 const P = styled(({ tag, ...props }) => React.createElement(tag, props))<TextProps>`
 	color: ${({ color }) => {
 		return color;
+	}};
+	display: ${({ display }) => {
+		return display;
 	}};
 	font-family: ${({ fontFamily }) => {
 		return fontFamily;

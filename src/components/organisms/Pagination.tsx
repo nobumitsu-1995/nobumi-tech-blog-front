@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { createArr, usePageContext } from "../../../lib/PagenationContext";
+import { device } from "../../styles/styled-components";
 import { PaginationButton, PaginationPrev } from "../molecules";
 import PaginationNext from "../molecules/PaginationNext";
 
@@ -10,6 +11,10 @@ const StyledPagination = styled.ul`
 	justify-content: center;
 	gap: 10px;
 	margin-top: 50px;
+
+	@media ${device.tablet} {
+		margin-bottom: 20px;
+	}
 `;
 
 const Pagination = () => {
