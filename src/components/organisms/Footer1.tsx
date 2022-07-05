@@ -12,7 +12,7 @@ const Footer = styled.div`
 `;
 
 const StyledContainer = styled(Container)`
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
@@ -28,7 +28,7 @@ const Flex = styled.div`
 		gap: 40px;
 	}
 
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		justify-content: center;
 	}
 `;
@@ -36,10 +36,13 @@ const Flex = styled.div`
 const LinkArea = styled.a`
 	display: inline-block;
 
+	h1 {
+		transition: 0.2s;
+	}
+	
 	&:hover {
-		p {
+		h1 {
 			color: #3d70b8;
-			transition: 0.2s;
 		}
 	}
 `;

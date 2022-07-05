@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Section = styled.section`
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		display: none;
 	}
 `
@@ -39,10 +39,13 @@ const LinkArea = styled.a`
 		width: 15px;
 	}
 
+	p {
+		transition: 0.2s;
+	}
+
 	&:hover {
 		p {
 			opacity: 0.6;
-			transition: 0.2s;
 		}
 	}
 `;
