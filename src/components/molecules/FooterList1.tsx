@@ -9,14 +9,15 @@ type Props = {
 		text: string;
 		link: string;
 	}[];
+	gap?: string;
 };
 
-const List = styled.ul`
+const List = styled.ul<{gap: string}>`
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: ${({gap}) => gap};
 
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		align-items: center;
 		justify-content: center;
 	}
@@ -25,17 +26,20 @@ const List = styled.ul`
 const LinkArea = styled.a`
 	display: inline-block;
 
+	p {
+		transition: 0.2s;
+	}
+
 	&:hover {
 		p {
 			color: #3d70b8;
-			transition: 0.2s;
 		}
 	}
 `;
 
-const FooterList1: React.FC<Props> = ({ datas }) => {
+const FooterList1: React.FC<Props> = ({ datas, gap = "30px" }) => {
 	return (
-		<List>
+		<List gap={gap}>
 			{datas.map(data => {
 				return (
 					<li key={data.text}>

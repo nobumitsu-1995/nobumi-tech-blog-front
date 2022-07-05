@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { HamburgerMenu } from ".";
 import { headerDatas } from "../../../lib/datas";
 import { Container, device } from "../../styles/styled-components";
 import { HeaderLink } from "../molecules";
@@ -29,6 +30,15 @@ const List = styled.ul`
 	}
 `;
 
+const Hamburger = styled.div`
+	display: flex;
+	align-items: center;
+
+	@media (min-width: 700px) {
+		display: none;
+	}
+`;
+
 const Header2 = () => {
 	return (
 		<Header>
@@ -44,6 +54,9 @@ const Header2 = () => {
 							);
 						})}
 					</List>
+					<Hamburger>
+						<HamburgerMenu />
+					</Hamburger>
 				</Nav>
 			</StyledContainer>
 		</Header>
