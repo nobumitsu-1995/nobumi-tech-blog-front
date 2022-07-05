@@ -5,6 +5,7 @@ export { default as ContactSNSCard } from "./SNSContactCard";
 export { default as ShareSNSCard } from "./SNSShareCard";
 export { default as Footer1 } from "./Footer1";
 export { default as Footer2 } from "./Footer2";
+export { default as HamburgerMenu } from "./HamburgerMenu";
 export { default as Header1 } from "./Header1";
 export { default as Header2 } from "./Header2";
 export { default as Pagination } from "./Pagination";

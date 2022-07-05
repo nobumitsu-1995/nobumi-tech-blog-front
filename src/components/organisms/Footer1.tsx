@@ -12,7 +12,7 @@ const Footer = styled.div`
 `;
 
 const StyledContainer = styled(Container)`
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		align-items: center;
 		display: flex;
 		flex-direction: column;
@@ -28,7 +28,7 @@ const Flex = styled.div`
 		gap: 40px;
 	}
 
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		justify-content: center;
 	}
 `;

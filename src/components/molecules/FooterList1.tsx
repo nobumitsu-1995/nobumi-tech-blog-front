@@ -9,14 +9,15 @@ type Props = {
 		text: string;
 		link: string;
 	}[];
+	gap?: string;
 };
 
-const List = styled.ul`
+const List = styled.ul<{gap: string}>`
 	display: flex;
 	flex-direction: column;
-	gap: 30px;
+	gap: ${({gap}) => gap};
 
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		align-items: center;
 		justify-content: center;
 	}
@@ -36,9 +37,9 @@ const LinkArea = styled.a`
 	}
 `;
 
-const FooterList1: React.FC<Props> = ({ datas }) => {
+const FooterList1: React.FC<Props> = ({ datas, gap = "30px" }) => {
 	return (
-		<List>
+		<List gap={gap}>
 			{datas.map(data => {
 				return (
 					<li key={data.text}>

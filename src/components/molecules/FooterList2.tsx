@@ -13,7 +13,7 @@ type Props = {
 };
 
 const Section = styled.section`
-	@media ${device.sp} {
+	@media ${device.midSp} {
 		display: none;
 	}
 `
