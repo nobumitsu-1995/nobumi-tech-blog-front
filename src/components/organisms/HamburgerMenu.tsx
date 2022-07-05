@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react'
 import { HamburgerButton, HamburgerModal } from '../molecules';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if(isOpen){
@@ -13,6 +15,10 @@ const HamburgerMenu = () => {
       document.documentElement.style.overflow = "auto";
     }
   }, [isOpen])
+
+  useEffect(() => {    
+    setIsOpen(false);
+  }, [router])
 
   return (
     <>
