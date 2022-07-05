@@ -25,10 +25,13 @@ const List = styled.ul`
 const LinkArea = styled.a`
 	display: inline-block;
 
+	p {
+		transition: 0.2s;
+	}
+
 	&:hover {
 		p {
 			color: #3d70b8;
-			transition: 0.2s;
 		}
 	}
 `;

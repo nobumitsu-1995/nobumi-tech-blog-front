@@ -36,10 +36,13 @@ const Flex = styled.div`
 const LinkArea = styled.a`
 	display: inline-block;
 
+	h1 {
+		transition: 0.2s;
+	}
+	
 	&:hover {
-		p {
+		h1 {
 			color: #3d70b8;
-			transition: 0.2s;
 		}
 	}
 `;
