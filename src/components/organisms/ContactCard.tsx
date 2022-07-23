@@ -35,8 +35,8 @@ const ContactCard = () => {
 				`以下の内容でよろしいですか？\r\n\r\nお名前：${message.name}\r\nメールアドレス：${message.email}\r\nお問合せ内容：${message.content}`,
 			)
 		) {
-      await sendEmail(message);
-      
+			await sendEmail(message);
+
 			await setMessage({
 				name: "",
 				email: "",
@@ -49,10 +49,7 @@ const ContactCard = () => {
 		<Paper borderColor="#7C83CC" padding="40px 50px">
 			<TitleInPaper text="メールアドレスでお問い合わせ" margin="10px 0" />
 			<FlexEnd>
-				<StyledLink
-					link="/privacy"
-					text="個人情報の取り扱いについて"
-				/>
+				<StyledLink link="/privacy" text="個人情報の取り扱いについて" />
 			</FlexEnd>
 			<form>
 				<InputArea

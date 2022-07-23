@@ -31,18 +31,17 @@ const ProfileCard: React.FC<Props> = ({ userData }) => {
 				<Image src={userData.eyecatch.url} alt={userData.title} width="1100" height="500" />
 			</figure>
 			<ArticleContainer>
-				<ArticleContent>
-				{userData.content && userData.content.map(contentData => {
-							return (
-								<div
-									key={contentData.html}
-									dangerouslySetInnerHTML={{
-										__html: `${contentData.html || contentData.richEditor}`,
-									}}
-								/>
-							)
-						})}
-				</ArticleContent>
+				{userData.content &&
+					userData.content.map(contentData => {
+						return (
+							<ArticleContent
+								key={contentData.html}
+								dangerouslySetInnerHTML={{
+									__html: `${contentData.html || contentData.richEditor}`,
+								}}
+							/>
+						);
+					})}
 			</ArticleContainer>
 		</Paper>
 	);

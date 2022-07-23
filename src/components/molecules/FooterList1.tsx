@@ -12,10 +12,10 @@ type Props = {
 	gap?: string;
 };
 
-const List = styled.ul<{gap: string}>`
+const List = styled.ul<{ gap: string }>`
 	display: flex;
 	flex-direction: column;
-	gap: ${({gap}) => gap};
+	gap: ${({ gap }) => gap};
 
 	@media ${device.midSp} {
 		align-items: center;
@@ -45,7 +45,13 @@ const FooterList1: React.FC<Props> = ({ datas, gap = "30px" }) => {
 					<li key={data.text}>
 						<Link href={data.link} passHref>
 							<LinkArea>
-								<Text color="#fff" display="inline-block" fontSize="20px" fontWeight="bold" text={data.text} />
+								<Text
+									color="#fff"
+									display="inline-block"
+									fontSize="20px"
+									fontWeight="bold"
+									text={data.text}
+								/>
 							</LinkArea>
 						</Link>
 					</li>

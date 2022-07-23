@@ -43,20 +43,20 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 							}}
 						/>
 						<Line />
-						{props.content && props.content.map(contentData => {
-							return (
-								<div
-									key={contentData.html}
-									dangerouslySetInnerHTML={{
-										__html: `${contentData.html || contentData.richEditor}`,
-									}}
-								/>
-							)
-						})}
+						{props.content &&
+							props.content.map(contentData => {
+								return (
+									<div
+										key={contentData.html}
+										dangerouslySetInnerHTML={{
+											__html: `${contentData.html || contentData.richEditor}`,
+										}}
+									/>
+								);
+							})}
 					</ArticleContent>
 					<Line />
-					{props.tag &&
-					<LinkList img="tag.png" links={returnTagDatas(props.tag)} />}
+					{props.tag && <LinkList img="tag.png" links={returnTagDatas(props.tag)} />}
 				</ArticleContainer>
 			</article>
 		</Paper>

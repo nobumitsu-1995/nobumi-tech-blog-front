@@ -14,7 +14,7 @@ const Title = styled.div`
 	padding: 40px 50px;
 	text-align: center;
 	max-width: 720px;
-	
+
 	@media ${device.sp} {
 		max-width: calc(100vw - 10px);
 		padding: 15px 0 25px;

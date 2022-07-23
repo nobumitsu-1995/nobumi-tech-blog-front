@@ -23,7 +23,8 @@ const PrivacyCard: React.FC<Props> = ({ privacyData }) => {
 			<ArticleTtl date={new Date(privacyData.publishedAt)} title={privacyData.title} />
 			<ArticleContainer>
 				<ArticleContent>
-				{privacyData.content && privacyData.content.map(contentData => {
+					{privacyData.content &&
+						privacyData.content.map(contentData => {
 							return (
 								<div
 									key={contentData.html}
@@ -31,7 +32,7 @@ const PrivacyCard: React.FC<Props> = ({ privacyData }) => {
 										__html: `${contentData.html || contentData.richEditor}`,
 									}}
 								/>
-							)
+							);
 						})}
 				</ArticleContent>
 			</ArticleContainer>

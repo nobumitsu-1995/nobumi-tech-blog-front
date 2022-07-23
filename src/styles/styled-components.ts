@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const size = {
-	sp: '619px',
-	midSp: '699px',
-	tablet: '919px'
-}
+	sp: "619px",
+	midSp: "699px",
+	tablet: "919px",
+};
 
 export const device = {
 	sp: `(max-width: ${size.sp})`,
 	midSp: `(max-width: ${size.midSp})`,
 	tablet: `(max-width: ${size.tablet})`,
-}
+};
 
 export const Flex = styled.div`
 	align-items: center;
@@ -28,12 +28,12 @@ export const FlexStart = styled.div<{ gap?: string }>`
 `;
 
 export const FlexEnd = styled.div<{ gap?: string }>`
-align-items: center;
-display: flex;
-gap: ${({ gap }) => {
-	return gap;
-}};
-justify-content: flex-end;
+	align-items: center;
+	display: flex;
+	gap: ${({ gap }) => {
+		return gap;
+	}};
+	justify-content: flex-end;
 `;
 
 export const FlexCenter = styled.div<{ gap?: string }>`
@@ -156,7 +156,7 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			padding-left: 20px;
 
 			li {
-				line-height: 30px
+				line-height: 30px;
 			}
 		}
 	}

@@ -24,7 +24,7 @@ const PaginationPrev = () => {
 					label={""}
 					onClick={async () => {
 						await setCurrent(1);
-						await scrollTop()
+						await scrollTop();
 					}}
 					padding="15px"
 					borderColor="#2e3e4e"
@@ -39,7 +39,7 @@ const PaginationPrev = () => {
 					label={""}
 					onClick={async () => {
 						await prevPage();
-						await scrollTop()
+						await scrollTop();
 					}}
 					padding="15px"
 					borderColor="#2e3e4e"

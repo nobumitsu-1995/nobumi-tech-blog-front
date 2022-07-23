@@ -15,10 +15,10 @@ const Container = styled.div`
 	background-color: #111;
 	display: inline-block;
 	padding: 30px;
-`
+`;
 
 export const StyledCrossIcon: ComponentStory<typeof HamburgerIcon> = args => (
 	<Container>
-		<HamburgerIcon/>
+		<HamburgerIcon />
 	</Container>
 );

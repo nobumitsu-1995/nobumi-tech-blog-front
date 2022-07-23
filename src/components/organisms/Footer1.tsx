@@ -39,7 +39,7 @@ const LinkArea = styled.a`
 	h1 {
 		transition: 0.2s;
 	}
-	
+
 	&:hover {
 		h1 {
 			color: #3d70b8;
@@ -53,7 +53,14 @@ const Footer1 = () => {
 			<StyledContainer>
 				<Link href="/" passHref>
 					<LinkArea>
-						<Text color="#fff" display="inline-block" fontWeight="bold" fontSize="36px" tag="h1" text="Nobumi Tech" />
+						<Text
+							color="#fff"
+							display="inline-block"
+							fontWeight="bold"
+							fontSize="36px"
+							tag="h1"
+							text="Nobumi Tech"
+						/>
 					</LinkArea>
 				</Link>
 				<Flex>

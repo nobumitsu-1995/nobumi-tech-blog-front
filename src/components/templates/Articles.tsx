@@ -30,8 +30,7 @@ const Articles: React.FC<Props> = ({ articles }) => {
 						);
 					})}
 			</GapColumnList>
-			{articles.length > itemPerPage &&
-			<Pagination />}
+			{articles.length > itemPerPage && <Pagination />}
 		</div>
 	);
 };

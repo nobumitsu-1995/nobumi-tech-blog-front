@@ -24,6 +24,6 @@ const Container = styled.div`
 
 export const StyledHamburgerButton: ComponentStory<typeof HamburgerButton> = args => (
 	<Container>
-		<HamburgerButton isOpen={args.isOpen} onClick={args.onClick}/>
+		<HamburgerButton isOpen={args.isOpen} onClick={args.onClick} />
 	</Container>
 );
