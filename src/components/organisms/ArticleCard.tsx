@@ -10,9 +10,10 @@ import { returnTagDatas } from "../../../lib/functions/tags";
 const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
 	margin-top: 40px;
+	width: 100%;
 
 	@media ${device.tablet} {
-		padding: 0 20px 20px;
+		padding: 0 10px 20px;
 	}
 `;
 
@@ -42,11 +43,16 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 							}}
 						/>
 						<Line />
-						<div
-							dangerouslySetInnerHTML={{
-								__html: `${props.content}`,
-							}}
-						/>
+						{props.content && props.content.map(contentData => {
+							return (
+								<div
+									key={contentData.html}
+									dangerouslySetInnerHTML={{
+										__html: `${contentData.html || contentData.richEditor}`,
+									}}
+								/>
+							)
+						})}
 					</ArticleContent>
 					<Line />
 					{props.tag &&

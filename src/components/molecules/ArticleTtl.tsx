@@ -13,9 +13,11 @@ type Props = {
 const Title = styled.div`
 	padding: 40px 50px;
 	text-align: center;
-
+	max-width: 720px;
+	
 	@media ${device.sp} {
-		padding: 0 0 25px;
+		max-width: calc(100vw - 10px);
+		padding: 15px 0 25px;
 	}
 `;
 

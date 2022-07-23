@@ -32,23 +32,16 @@ const ProfileCard: React.FC<Props> = ({ userData }) => {
 			</figure>
 			<ArticleContainer>
 				<ArticleContent>
-					{/* <h1>
-						<span>01</span>H1 TITLE
-					</h1>
-					<br />
-					<h2>H2 TITLE</h2>
-					<br />
-					<p className="point">POINT TEXT</p>
-					<br />
-					<div className="important">
-						テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-					</div>
-					<br /> */}
-					<div
-						dangerouslySetInnerHTML={{
-							__html: `${userData.content}`,
-						}}
-					/>
+				{userData.content && userData.content.map(contentData => {
+							return (
+								<div
+									key={contentData.html}
+									dangerouslySetInnerHTML={{
+										__html: `${contentData.html || contentData.richEditor}`,
+									}}
+								/>
+							)
+						})}
 				</ArticleContent>
 			</ArticleContainer>
 		</Paper>

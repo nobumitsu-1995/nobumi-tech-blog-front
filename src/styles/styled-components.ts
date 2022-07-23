@@ -130,6 +130,11 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 		font-weight: bold;
 		margin-bottom: 20px;
 		padding: 10px 20px;
+
+		@media ${device.sp} {
+			font-size: 18px;
+			padding: 10px 10px;
+		}
 	}
 
 	p {
@@ -229,6 +234,10 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			display: flex;
 			justify-content: center;
 			padding: 5px;
+
+			img {
+				width: 200px;
+			}
 		}
 
 		&__body {
@@ -256,5 +265,15 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			line-height: 1.8;
 			text-decoration: underline;
 		}
+	}
+
+	img {
+		width: 90%;
+		height: auto;
+	}
+
+	blockquote {
+		width: 90%;
+		word-wrap: break-word;
 	}
 `;

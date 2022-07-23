@@ -21,7 +21,7 @@ const ButtonArea = styled.div`
 
 const ContactSNSCard: React.FC<Props> = ({ ...props }) => {
 	return (
-		<Paper padding="50px">
+		<Paper padding="25px 20px">
 			<TitleInPaper text="SNSで共有" />
 			<ButtonArea>
 				<FacebookShareButton url={props.url}>

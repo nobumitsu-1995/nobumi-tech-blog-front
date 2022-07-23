@@ -37,7 +37,11 @@ export type Blog = {
   publishedAt: string;
   revisedAt: string;
   title: string;
-  content: string;
+  content: {
+    fieldId: "html" | "richEditor",
+    html: string,
+    richEditor: string
+  }[];
   description: string;
   eyecatch: Eyecatch;
   category: Category[];
