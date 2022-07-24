@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { ArticleContent, device } from "../../styles/styled-components";
+import { device } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { ArticleTtl } from "../molecules";
 import { Blog } from "../../../lib/type";
+import { ArticleContent } from "../../styles/articleStyles";
 
 type Props = {
 	userData: Blog;

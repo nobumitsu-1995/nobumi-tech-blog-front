@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { ArticleContent, device } from "../../styles/styled-components";
+import { device } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { ArticleTtl } from "../molecules";
 import { Blog } from "../../../lib/type";
+import { ArticleContent } from "../../styles/articleStyles";
 
 type Props = {
 	privacyData: Blog;
