@@ -68,5 +68,3 @@ export const Section = styled.section<{ padding: string }>`
 		return padding;
 	}};
 `;
-
-
