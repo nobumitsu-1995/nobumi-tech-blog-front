@@ -20,7 +20,7 @@ const Preview: React.FC<Props> = ({ article, relativeArticles, sideBarData }) =>
   const [isPermit, setIsPermit] = useState(false);
 
   useEffect(() => {
-    if (window.prompt("passwordを入力してください") === "password") {
+    if (window.prompt("passwordを入力してください") === process.env.NEXT_PUBLIC_PREVIEW_PASSWORD) {
       return setIsPermit(true)
     }
     alert("passwordが違います。")
