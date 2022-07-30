@@ -95,7 +95,65 @@ export const ArticleContent = styled.div<{ margin?: string }>`
         font-weight: bold;
       }
     }
+
+    &__table {
+      margin-bottom: 50px;
+      width: 100%;
+
+      .table {        
+        &__head {
+          background: #7c83cc;
+          border-bottom: 1px solid #ccc;
+
+          &__content {
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            padding: 10px 0;
+
+            @media ${device.sp} {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &__body {
+          &__content {
+            font-size: 8px;
+            text-align: center;
+            padding: 8px 0;
+            width: 25%;
+
+            @media ${device.sp} {
+              font-size: 6px;
+            }
+
+            .article__text__important {
+              font-size: 18px;
+            }
+          }
+        }
+
+        &__row {
+          border-bottom: 1px solid #ddd;
+        }
+
+        &__caption {
+          caption-side: bottom;
+          text-align: right;
+          margin-top: 5px;
+        }
+      }
+    }
 	}
+
+  .pc-hide {
+    display: none;
+
+    @media ${device.sp} {
+      display: block;
+    }
+  }
 
 	.point {
 		font-weight: bold;
@@ -146,9 +204,11 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 		}
 
 		a {
+      color: #333;
 			cursor: pointer;
 			display: flex;
-			transition-duration: 0.3s opacity;
+      text-decoration: none;
+      transition: opacity 0.3s;
 
 			:hover {
 				opacity: 0.7;
@@ -167,6 +227,7 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			padding: 5px;
 
 			img {
+        margin-bottom: inherit;
 				width: 200px;
 			}
 		}
@@ -201,7 +262,7 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 	img {
     height: auto;
     margin-bottom: 30px;
-		width: 100%;
+		max-width: 100%;
 	}
 
 	blockquote {
@@ -247,6 +308,20 @@ export const ArticleContent = styled.div<{ margin?: string }>`
         top: 5px;
         width: 20px;
       }
+    }
+  }
+
+  p {
+    line-height: 2;
+  }
+
+  a {
+    color: #06c;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6
     }
   }
 `;
