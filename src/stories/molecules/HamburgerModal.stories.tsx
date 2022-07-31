@@ -15,5 +15,5 @@ export default {
 } as ComponentMeta<typeof HamburgerModal>;
 
 export const StyledHamburgerModal: ComponentStory<typeof HamburgerModal> = args => (
-	<HamburgerModal isOpen={args.isOpen}/>
+	<HamburgerModal isOpen={args.isOpen} />
 );

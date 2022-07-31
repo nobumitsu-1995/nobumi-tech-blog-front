@@ -5,10 +5,10 @@ import { GoogleAnalytics } from "../components/atoms";
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
-			<GoogleAnalytics/>
+			<GoogleAnalytics />
 			<Component {...pageProps} />
 		</>
-	)
+	);
 }
 
 export default MyApp;

@@ -7,6 +7,7 @@ export { default as GoogleAnalytics } from "./GoogleAnalytics";
 export { default as HamburgerIcon } from "./HamburgerIcon";
 export { default as Input } from "./Input";
 export { default as StyledLink } from "./Link";
+export { default as SNSShareButton } from "./SNSShareButton";
 export { default as Paper } from "./Paper";
 export { default as PreviewTag } from "./PreviewTag";
 export { default as Text } from "./Text";

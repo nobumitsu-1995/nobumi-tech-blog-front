@@ -12,7 +12,7 @@ const Header1 = () => {
 	return (
 		<Header>
 			<Container>
-				<h1 >Nobumi Tech</h1>
+				<h1>Nobumi Tech</h1>
 			</Container>
 		</Header>
 	);

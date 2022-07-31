@@ -19,7 +19,7 @@ const PaginationNext = () => {
 					label={""}
 					onClick={async () => {
 						await nextPage();
-						await scrollTop()
+						await scrollTop();
 					}}
 					padding="15px"
 					borderColor="#2e3e4e"
@@ -38,8 +38,8 @@ const PaginationNext = () => {
 					iconPosition="right"
 					label={""}
 					onClick={async () => {
-						await setCurrent(pages)
-						await scrollTop()
+						await setCurrent(pages);
+						await scrollTop();
 					}}
 					padding="15px"
 					borderColor="#2e3e4e"

@@ -21,7 +21,7 @@ const Grid = styled.ul`
 
 const RelativeArticles: React.FC<Props> = ({ articleDatas }) => {
 	return (
-		<Paper padding="50px">
+		<Paper padding="20px">
 			<TitleInPaper text="関連記事" />
 			<Grid>
 				{articleDatas.map(data => {

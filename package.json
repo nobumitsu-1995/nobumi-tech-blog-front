@@ -12,7 +12,6 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
-    "@next/swc-linux-x64-gnu": "^12.1.6",
     "microcms-js-sdk": "^2.0.0",
     "next": "12.1.6",
     "react": "17.0.2",

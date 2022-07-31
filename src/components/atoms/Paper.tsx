@@ -27,10 +27,6 @@ const Card = styled.div<Omit<Props, "children">>`
       `
 		);
 	}}
-
-	@media ${device.sp} {
-		padding: 15px 15px;
-	}
 `;
 
 const Paper: React.FC<Props> = props => {
