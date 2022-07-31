@@ -25,6 +25,11 @@ const StyledDiv = styled.div<{backgroundColor: string}>`
   padding: 18px 0;
 	position: relative;
   text-align: center;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const Icon = styled.div`
