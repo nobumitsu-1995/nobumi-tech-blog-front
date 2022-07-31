@@ -43,6 +43,7 @@ const P = styled(({ tag, ...props }) => React.createElement(tag, props))<TextPro
 	text-align: ${({ textalign }) => {
 		return textalign;
 	}};
+	word-wrap: break-word;
 `;
 
 const Text: React.FC<TextProps> = ({

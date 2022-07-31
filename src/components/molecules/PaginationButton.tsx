@@ -15,9 +15,9 @@ const PaginationButton: React.FC<Props> = ({ padding = "7px 10px", page, index }
 	};
 
 	const handleClickButton = () => {
-		scrollTop()
-		setCurrent(page)
-	}
+		scrollTop();
+		setCurrent(page);
+	};
 
 	return (
 		<li>

@@ -16,7 +16,7 @@ const Section = styled.section`
 	@media ${device.midSp} {
 		display: none;
 	}
-`
+`;
 
 const List = styled(GapColumnList)`
 	padding-left: 50px;

@@ -2,17 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
 import { Blog } from "../../../lib/type";
-import { ArticleContent, device } from "../../styles/styled-components";
+import { device } from "../../styles/styled-components";
 import { Paper } from "../atoms";
 import { ArticleTtl, LinkList } from "../molecules";
 import { returnTagDatas } from "../../../lib/functions/tags";
+import { ArticleContent } from "../../styles/articleStyles";
 
 const ArticleContainer = styled.div`
 	padding: 0 50px 50px;
 	margin-top: 40px;
+	width: 100%;
 
 	@media ${device.tablet} {
-		padding: 0 20px 20px;
+		padding: 0 10px 20px;
 	}
 `;
 
@@ -42,15 +44,20 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 							}}
 						/>
 						<Line />
-						<div
-							dangerouslySetInnerHTML={{
-								__html: `${props.content}`,
-							}}
-						/>
+						{props.content &&
+							props.content.map(contentData => {
+								return (
+									<div
+										key={contentData.html}
+										dangerouslySetInnerHTML={{
+											__html: `${contentData.html || contentData.richEditor}`,
+										}}
+									/>
+								);
+							})}
 					</ArticleContent>
 					<Line />
-					{props.tag &&
-					<LinkList img="tag.png" links={returnTagDatas(props.tag)} />}
+					{props.tag && <LinkList img="tag.png" links={returnTagDatas(props.tag)} />}
 				</ArticleContainer>
 			</article>
 		</Paper>

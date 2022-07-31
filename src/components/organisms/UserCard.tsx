@@ -33,7 +33,7 @@ const UserCard: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Paper padding="25px 20px">
 			<Avater>
-				<StyledImage src={`${props.eyecatch.url}`} alt={props.title} layout="fill" objectFit="cover" />
+				<StyledImage src="/images/avater.png" alt={props.title} layout="fill" objectFit="cover" />
 			</Avater>
 			<Text
 				color="#271E16"

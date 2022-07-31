@@ -24,7 +24,7 @@ const Nav = styled.nav`
 
 const List = styled.ul`
 	display: flex;
-	
+
 	@media ${device.midSp} {
 		display: none;
 	}
