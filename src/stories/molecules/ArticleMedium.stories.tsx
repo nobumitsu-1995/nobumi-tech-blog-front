@@ -34,7 +34,11 @@ export const StyledArticle: ComponentStory<typeof Article> = args => (
 			privacy={false}
 			publishedAt={""}
 			revisedAt={""}
-			content={""}
+			content={[{
+				fieldId: "html",
+				html: "sample",
+				richEditor: ""
+			}]}
 			eyecatch={{
 				url: "",
 				height: 0,

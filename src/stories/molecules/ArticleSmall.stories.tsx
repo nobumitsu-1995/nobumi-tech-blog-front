@@ -30,7 +30,11 @@ export const StyledArticleSmall: ComponentStory<typeof ArticleSmall> = args => (
 				publishedAt: "",
 				revisedAt: "",
 				title: "",
-				content: "",
+				content: [{
+					fieldId: "html",
+					html: "sample",
+					richEditor: ""
+				}],
 				description: "",
 				eyecatch: {
 					url: "",
