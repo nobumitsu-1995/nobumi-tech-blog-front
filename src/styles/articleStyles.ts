@@ -229,6 +229,7 @@ export const ArticleContent = styled.div<{ margin?: string }>`
 			img {
 				margin-bottom: inherit;
 				width: 200px;
+				max-width: inherit;
 			}
 		}
 
