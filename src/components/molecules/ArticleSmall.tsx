@@ -29,7 +29,7 @@ const ArticleSmall: React.FC<Props> = ({ article }) => {
 			<a>
 				<Card>
 					<Image src={`${article.eyecatch.url}`} alt={article.title} width="1100" height="500" />
-					<Text text={article.title} textalign="center" margin="15px 0" />
+					<StyledText tag="h3" text={article.title} textalign="center" margin="15px 0" />
 					{article.tag && <LinkList fontSize="12px" img="tag.png" links={returnTagDatas(article.tag)} />}
 				</Card>
 			</a>
@@ -38,3 +38,10 @@ const ArticleSmall: React.FC<Props> = ({ article }) => {
 };
 
 export default ArticleSmall;
+
+const StyledText = styled(Text)`
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+`

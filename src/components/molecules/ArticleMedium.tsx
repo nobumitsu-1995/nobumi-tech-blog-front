@@ -27,7 +27,7 @@ const ArticleMedium: React.FC<Props> = ({ ...props }) => {
 					<figure>
 						<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
 					</figure>
-					<Text color="#555" fontSize="14px" text={props.title} textalign="center" margin="15px 0 20px" />
+					<StyledText tag="h3" color="#555" fontSize="14px" text={props.title} textalign="center" margin="15px 0 20px" />
 					<Border color="#882107" height="1px" width="50px" />
 				</a>
 			</Link>
@@ -36,3 +36,10 @@ const ArticleMedium: React.FC<Props> = ({ ...props }) => {
 };
 
 export default ArticleMedium;
+
+const StyledText = styled(Text)`
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+`
