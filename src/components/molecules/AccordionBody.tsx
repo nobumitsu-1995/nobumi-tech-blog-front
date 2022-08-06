@@ -58,7 +58,7 @@ const AccordionBody: React.FC<Props> = ({ ...props }) => {
 					<Item key={article.id}>
 						<Link href={`/article/${article.id}`}>
 							<a>
-								<Text color="#555" fontSize="14px" tag="h2" lineheight="24px" text={article.title} />
+								<StyledText color="#555" fontSize="14px" tag="h2" lineheight="24px" text={article.title} />
 							</a>
 						</Link>
 					</Item>
@@ -69,3 +69,10 @@ const AccordionBody: React.FC<Props> = ({ ...props }) => {
 };
 
 export default AccordionBody;
+
+const StyledText = styled(Text)`
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+`
