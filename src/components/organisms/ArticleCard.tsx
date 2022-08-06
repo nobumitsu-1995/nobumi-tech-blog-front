@@ -30,7 +30,7 @@ const ArticleCard: React.FC<Blog> = ({ ...props }) => {
 	return (
 		<Paper borderColor="#7C83CC">
 			<article>
-				<ArticleTtl date={new Date(props.publishedAt)} title={props.title} categories={props.category} />
+				<ArticleTtl date={props.publishedAt} updateAt={props.updatedAt} title={props.title} categories={props.category} />
 				{props.eyecatch && (
 					<figure>
 						<Image src={`${props.eyecatch.url}`} alt={props.title} width="1100" height="500" />
