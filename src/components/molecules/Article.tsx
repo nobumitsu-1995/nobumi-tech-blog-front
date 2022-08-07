@@ -33,6 +33,7 @@ const Article: React.FC<Blog> = ({ ...props }) => {
 						<object>
 							<ArticleTtl
 								date={props.createdAt}
+								updateAt={props.updatedAt}
 								title={props.title}
 								categories={props.category}
 							/>
