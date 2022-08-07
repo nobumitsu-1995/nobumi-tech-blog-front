@@ -9,6 +9,8 @@ type Props = {
 	margin?: string;
 	padding?: string;
 	textalign?: "center" | "right" | "left";
+	text1?: string;
+	text2?: string;
 };
 
 const Time = styled.time<Omit<Props, "time">>`
@@ -48,7 +50,7 @@ const StyledDate: React.FC<Props> = ({ color = "#111", fontSize = "16px", textal
 			padding={props.padding}
 			textalign={textalign}
 			dateTime={`${year}-${month}-${date}`}
-		>{`${year}/${month}/${date}`}</Time>
+		>{props.text1}{`${year}/${month}/${date}`}{props.text2}</Time>
 	);
 };
 

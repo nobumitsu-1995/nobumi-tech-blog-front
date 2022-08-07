@@ -5,7 +5,8 @@ import { device } from "../../styles/styled-components";
 import { Date, StyledLink, Text } from "../atoms";
 
 type Props = {
-	date: Date;
+	date: string;
+	updateAt?: string;
 	title: string;
 	categories?: Category[];
 };
@@ -25,6 +26,10 @@ const ArticleTtl: React.FC<Props> = ({ ...props }) => {
 	return (
 		<Title>
 			<Date color="#aaa" fontSize="12px" time={props.date} />
+			{props.updateAt && props.updateAt?.substring(0, props.updateAt?.indexOf("T")) !== props.date?.substring(0, props.date?.indexOf("T"))
+				&& 
+				<Date color="#aaa" fontSize="12px" time={props.updateAt} text1="(記事更新日:" text2=")" margin="0 0 0 10px"/>
+			}
 			<Text
 				color="#555"
 				fontSize="24px"
