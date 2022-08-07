@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from 'react'
 import { returnArticle, returnArticlesMatchCategory, returnSideBarDatas } from "../../../lib/functions/articles";
 import { client } from "../../../lib/functions/client";
@@ -36,7 +37,7 @@ const Preview: React.FC<Props> = ({ article, relativeArticles, sideBarData }) =>
   )
 }
 
-export const getServerSideProps: GetServerSideProps<Props, Params> = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<Props, Params> = async ({ params, query }) => {  
   const data = await client
     .get({
       endpoint: "blogs"
@@ -45,8 +46,16 @@ export const getServerSideProps: GetServerSideProps<Props, Params> = async ({ pa
       return res.contents
     });
 
-  const id = params!.id;
-  const articleData = returnArticle(data, id)!;
+  const articleData = await client
+    .get({
+      endpoint: 'blogs',
+      contentId: params!.id,
+      queries: {draftKey: query.pre as string | undefined}
+    })
+    .then(res => {
+      return res
+    });
+
   const relativeArticles = returnArticlesMatchCategory(data, articleData.category[0].name);
   const { sideBarData } = returnSideBarDatas(data);
 

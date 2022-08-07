@@ -21,7 +21,7 @@ const ArticleContainer = styled.div`
 const PrivacyCard: React.FC<Props> = ({ privacyData }) => {
 	return (
 		<Paper borderColor="#7C83CC">
-			<ArticleTtl date={new Date(privacyData.publishedAt)} title={privacyData.title} />
+			<ArticleTtl date={privacyData.publishedAt} title={privacyData.title} />
 			<ArticleContainer>
 				<ArticleContent>
 					{privacyData.content &&
